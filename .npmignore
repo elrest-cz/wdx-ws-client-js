@@ -1,0 +1,11 @@
+src/
+.logs/
+docs/
+nodemon.json
+tsconfig.json
+.build.json
+ecosystem.config.dev
+typedoc.json
+.gitlab-ci.yml
+.project
+.settings

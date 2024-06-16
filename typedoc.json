@@ -1,0 +1,11 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"entryPoints": [
+		"src/index.ts"
+	],
+	"cleanOutputDir": true,
+	"out": "./docs",
+	"exclude": [
+		"./build/**"
+	]
+}

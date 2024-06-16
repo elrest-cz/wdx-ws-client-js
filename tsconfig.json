@@ -1,0 +1,48 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "commonjs",
+		"lib": [
+			"es6"
+		],
+		"allowJs": true,
+		"outDir": "build",
+		"rootDir": "src",
+		"strict": true,
+		"noImplicitAny": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"sourceMap": true,
+		"composite": true,
+		"tsBuildInfoFile": ".build.json",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"strictPropertyInitialization": false,
+		"removeComments": false
+	},
+	"exclude": [
+		"logs",
+		"build",
+		"docs",
+		"node_modules"
+	],
+	"include": [
+		"src/**/*"
+	],
+	"watchOptions": {
+		"watchFile": "useFsEvents",
+		"watchDirectory": "useFsEvents",
+		"fallbackPolling": "dynamicPriority",
+		"synchronousWatchDirectory": true,
+		"excludeDirectories": [
+			"**/node_modules",
+			"**/build",
+			"**/logs"
+		],
+		"excludeFiles": [
+			".tsbuildinfo",
+			".build.json"
+		]
+	}
+}
