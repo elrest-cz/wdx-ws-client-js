@@ -1,6 +1,6 @@
 {
-	"name": "@wago/wdx-client",
-	"description": "WAGO - WDX - Client",
+	"name": "@wago/wdx-client-ws",
+	"description": "WAGO - WDX - Client - WS",
 	"keywords": [
 		"WAGO",
 		"WDX",

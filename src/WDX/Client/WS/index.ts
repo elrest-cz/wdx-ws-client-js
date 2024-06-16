@@ -6,8 +6,8 @@
 
 'use strict';
 
-import * as WS from './WS';
+import * as Service from './Service';
 
 export {
-  WS,
+  Service,
 };
