@@ -1,0 +1,67 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build-master-job:
+  image: node:latest
+  stage: build
+  variables:
+  #  GIT_SUBMODULE_STRATEGY: recursive
+  #  GIT_SUBMODULE_UPDATE_FLAGS: --jobs 4
+    GIT_STRATEGY : clone
+  only:
+  - master
+  before_script: 
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git remote remove gitlab || true
+    - git remote add gitlab "http://gitlab:${ROBOT_ACCESS_TOKEN}@${CI_REPOSITORY_URL#*@}"
+  script:
+    - |
+      {
+        echo "registry=${NPM_RPOSITORY}"
+        echo "${NPM_RPOSITORY#http*:}:_auth=${NPM_TOKEN}"
+        echo "${NPM_RELEASES_REPOSITORY#http*:}:_auth=${NPM_TOKEN}"
+      } > .npmrc
+    - cat .npmrc
+    - npm install --save
+    - npm run build
+    - git add --all
+    - git commit -m "CI Build" || true
+    - npm version minor
+    - git push gitlab HEAD:$CI_COMMIT_REF_NAME -o ci.skip
+    - git push gitlab --tags -f -o ci.skip
+    - npm publish --patch --registry $NPM_RELEASES_REPOSITORY
+
+build-develop-job:
+  image: node:latest
+  stage: build
+  variables:
+  #  GIT_SUBMODULE_STRATEGY: recursive
+  #  GIT_SUBMODULE_UPDATE_FLAGS: --jobs 4
+    GIT_STRATEGY : clone
+  only:
+  - develop
+  before_script: 
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git remote remove gitlab || true
+    - git remote add gitlab "http://gitlab:${ROBOT_ACCESS_TOKEN}@${CI_REPOSITORY_URL#*@}"
+  script:
+    - |
+      {
+        echo "registry=${NPM_RPOSITORY}"
+        echo "${NPM_RPOSITORY#http*:}:_auth=${NPM_TOKEN}"
+        echo "${NPM_SNAPSHOTS_REPOSITORY#http*:}:_auth=${NPM_TOKEN}"
+      } > .npmrc
+    - cat .npmrc
+    - npm install --save
+    - npm run build
+    - git add --all
+    - git commit -m "CI Build" || true
+    - npm version patch
+    - git push gitlab HEAD:$CI_COMMIT_REF_NAME -o ci.skip
+    - git push gitlab --tags -f -o ci.skip
+    - npm publish --patch --registry $NPM_SNAPSHOTS_REPOSITORY
+
