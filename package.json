@@ -21,6 +21,9 @@
 	"version": "1.7.2",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
+	"directories": {
+		"test": "tests"
+	},
 	"scripts": {
 		"prebuild": "",
 		"postbuild": "./scripts/postbuild.sh",
@@ -28,6 +31,7 @@
 		"build:dev": "npm run build-tsc",
 		"build:prod": "npm run npm run build-tsc",
 		"build-tsc": "npx tsc",
+		"test": "jest",
 		"docs": "npx typedoc --options ./typedoc.json",
 		"docs:json": "npx typedoc --json ./docs/docs.json --pretty --options ./typedoc.json",
 		"docs-readme": "npx typedoc --plugin typedoc-plugin-markdown --theme markdown --out docs/readme && npx concat-md --toc --decrease-title-levels --dir-name-as-title temp-docs > README.md && npx showdown makehtml -i README.md -o README.html && npx rimraf temp-docs",
@@ -43,13 +47,19 @@
 	"dependencies": {
 		"@wago/wdx-schema": "^x.x.x",
 		"rxjs": "^7.8.1",
-		"uuid": "^9.0.x"
+		"uuid": "^9.0.x",
+		"websocket": "^1.0.35"
 	},
 	"devDependencies": {
+		"@babel/preset-typescript": "^7.24.7",
+		"@types/jest": "^29.5.12",
 		"@types/node": "^20.10.1",
 		"@types/uuid": "^9.0.7",
+		"@types/websocket": "^1.0.10",
+		"jest": "^29.7.0",
 		"nodemon": "^3.0.1",
 		"rimraf": "^5.0.5",
+		"ts-jest": "^29.2.3",
 		"ts-node": "^10.9.2",
 		"typedoc": "^0.25.7",
 		"typescript": "^5.3.3"
