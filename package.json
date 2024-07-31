@@ -18,7 +18,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "1.7.2",
+	"version": "1.9.0",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
 	"directories": {
