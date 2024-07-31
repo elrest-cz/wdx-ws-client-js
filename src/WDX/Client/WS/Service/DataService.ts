@@ -235,13 +235,13 @@ export class DataService extends AbstractAPIService {
   }
 
   public setValue(path: string, value: any):
-      Observable<WDXSchema.WDX.Schema.Model.Data.Data|null> {
+      Observable<WDXSchema.WDX.Schema.Model.Data.DataValue|null> {
     const request: WDXSchema.WDX.Schema.Message.Data.SetValueRequest =
         new WDXSchema.WDX.Schema.Message.Data.SetValueRequest(
             new WDXSchema.WDX.Schema.Model.Data.DataValue(path, value));
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Data.Data|null> =
-        new Subject<WDXSchema.WDX.Schema.Model.Data.Data|null>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Data.DataValue|null> =
+        new Subject<WDXSchema.WDX.Schema.Model.Data.DataValue|null>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
