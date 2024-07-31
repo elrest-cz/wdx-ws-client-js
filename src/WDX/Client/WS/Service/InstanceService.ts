@@ -8,7 +8,6 @@
 
 import {Observable, Subject, Subscription} from 'rxjs';
 import {AbstractAPIService} from '.';
-import {ClientService} from './ClientService';
 import * as WDXSchema from '@wago/wdx-schema';
 
 export class InstanceService extends AbstractAPIService {
