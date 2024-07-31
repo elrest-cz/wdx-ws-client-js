@@ -9,3 +9,4 @@ typedoc.json
 .gitlab-ci.yml
 .project
 .settings
+scripts

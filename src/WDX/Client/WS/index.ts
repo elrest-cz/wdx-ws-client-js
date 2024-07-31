@@ -6,8 +6,10 @@
 
 'use strict';
 
+import * as Configuration from './Configuration';
 import * as Service from './Service';
 
 export {
+  Configuration,
   Service,
 };
