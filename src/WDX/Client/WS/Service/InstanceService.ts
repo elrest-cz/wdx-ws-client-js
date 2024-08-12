@@ -8,17 +8,16 @@
 
 import {Observable, Subject, Subscription} from 'rxjs';
 import {AbstractAPIService} from '.';
-import {ClientService} from './ClientService';
 import * as WDXSchema from '@wago/wdx-schema';
 
 export class InstanceService extends AbstractAPIService {
   /**
    * Starts eDesign Instance instance
    */
-  public delete(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
+  public delete(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request =
-        new WDXSchema.WDX.Schema.Message.Instance.DeleteRequest(instance.uuid);
+        new WDXSchema.WDX.Schema.Message.Instance.DeleteRequest(uuid);
 
     const response = new Subject<WDXSchema.WDX.Schema.Model.Instance.Instance>;
 
@@ -40,12 +39,12 @@ export class InstanceService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public logSubscribe(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
+  public logSubscribe(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.LogMessageBody> {
     const request:
         WDXSchema.WDX.Schema.Message.Instance.LogSubscribeRequestMessage =
         new WDXSchema.WDX.Schema.Message.Instance.LogSubscribeRequestMessage(
-            instance.uuid,
+            uuid,
         );
 
     const response:
@@ -53,7 +52,7 @@ export class InstanceService extends AbstractAPIService {
             new Subject<WDXSchema.WDX.Schema.Model.Instance.LogMessageBody>();
 
     const topic: string =
-        `${WDXSchema.WDX.Schema.Message.Type.InstanceLog}-${instance.uuid}`;
+        `${WDXSchema.WDX.Schema.Message.Type.InstanceLog}-${uuid}`;
 
     this._clientService.incommingMessages.subscribe(
 
@@ -79,12 +78,11 @@ export class InstanceService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public logUnsubscribe(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
-      Observable<null> {
+  public logUnsubscribe(uuid: string): Observable<null> {
     const request:
         WDXSchema.WDX.Schema.Message.Instance.LogUnsubscribeRequestMessage =
         new WDXSchema.WDX.Schema.Message.Instance.LogUnsubscribeRequestMessage(
-            instance.uuid,
+            uuid,
         );
 
     const response: Subject<null> = new Subject<null>;
@@ -146,10 +144,10 @@ export class InstanceService extends AbstractAPIService {
   /**
    * Starts eDesign Instance instance
    */
-  public start(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
+  public start(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request: WDXSchema.WDX.Schema.Message.Instance.StartRequest =
-        new WDXSchema.WDX.Schema.Message.Instance.StartRequest(instance.uuid);
+        new WDXSchema.WDX.Schema.Message.Instance.StartRequest(uuid);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Instance.Instance> =
         new Subject<WDXSchema.WDX.Schema.Model.Instance.Instance>;
@@ -177,10 +175,10 @@ export class InstanceService extends AbstractAPIService {
    *
    * @param id number WDXSchema.WDX.Schema.Model.Instance.Instance id number
    */
-  public info(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
+  public info(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request: WDXSchema.WDX.Schema.Message.Instance.InfoRequest =
-        new WDXSchema.WDX.Schema.Message.Instance.InfoRequest(instance.uuid);
+        new WDXSchema.WDX.Schema.Message.Instance.InfoRequest(uuid);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Instance.Instance> =
         new Subject<WDXSchema.WDX.Schema.Model.Instance.Instance>();
@@ -206,11 +204,11 @@ export class InstanceService extends AbstractAPIService {
   /**
    * Stops eDesign Runtime Instance
    */
-  public stop(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
+  public stop(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request: WDXSchema.WDX.Schema.Message.Instance.StopRequest =
         new WDXSchema.WDX.Schema.Message.Instance.StopRequest(
-            instance.uuid,
+            uuid,
         );
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Instance.Instance> =
@@ -238,11 +236,11 @@ export class InstanceService extends AbstractAPIService {
   /**
    * Restart eDesign Instance instance
    */
-  public restart(instance: WDXSchema.WDX.Schema.Model.Instance.Instance):
+  public restart(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request: WDXSchema.WDX.Schema.Message.Instance.RestartRequest =
         new WDXSchema.WDX.Schema.Message.Instance.RestartRequest(
-            instance.uuid,
+            uuid,
         );
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Instance.Instance> =
@@ -255,6 +253,38 @@ export class InstanceService extends AbstractAPIService {
               if (message.type ===
                       WDXSchema.WDX.Schema.Message.Type
                           .InstanceRestartResponse &&
+                  message.uuid === request.uuid) {
+                (message.error) ? response.error(message.error) :
+                                  response.next(message.body);
+
+                response.complete();
+                subscription.unsubscribe();
+              }
+            },
+        );
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
+  /**
+   * Save eDesign Instance
+   */
+  public whois(name: string):
+      Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
+    const request: WDXSchema.WDX.Schema.Message.Instance.WhoIsRequest =
+        new WDXSchema.WDX.Schema.Message.Instance.WhoIsRequest(name);
+
+    const response: Subject<WDXSchema.WDX.Schema.Model.Instance.Instance> =
+        new Subject<WDXSchema.WDX.Schema.Model.Instance.Instance>;
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (message.type ===
+                      WDXSchema.WDX.Schema.Message.Type.InstanceWhoIsResponse &&
                   message.uuid === request.uuid) {
                 (message.error) ? response.error(message.error) :
                                   response.next(message.body);

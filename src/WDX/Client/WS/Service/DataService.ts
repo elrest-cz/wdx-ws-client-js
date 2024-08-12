@@ -6,12 +6,11 @@
 
 'use strict';
 
-import { Observable, Subject, Subscription } from 'rxjs';
+import {Observable, Subject, Subscription} from 'rxjs';
 import {AbstractAPIService} from '.';
 import * as WDXSchema from '@wago/wdx-schema';
 
 export class DataService extends AbstractAPIService {
-
   public deleteSchema(path: string): Observable<string> {
     const request: WDXSchema.WDX.Schema.Message.Data.DeleteSchemaRequest =
         new WDXSchema.WDX.Schema.Message.Data.DeleteSchemaRequest(path);
@@ -21,8 +20,8 @@ export class DataService extends AbstractAPIService {
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
-              if (WDXSchema.WDX.Schema.Message.Type
-                          .DataDeleteSchemaResponse === message.type &&
+              if (WDXSchema.WDX.Schema.Message.Type.DataDeleteSchemaResponse ===
+                      message.type &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -49,8 +48,7 @@ export class DataService extends AbstractAPIService {
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type
-                          .DataSetSchemaResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.DataSetSchemaResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -67,8 +65,8 @@ export class DataService extends AbstractAPIService {
 
   public getSchema(
       path: string,
-      level: number = WDXSchema.WDX.Schema.Model.Data.GetSchemaRequestBody
-                          .DEFAULT_LEVEL,
+      level: number =
+          WDXSchema.WDX.Schema.Model.Data.GetSchemaRequestBody.DEFAULT_LEVEL,
       ): Observable<WDXSchema.WDX.Schema.Model.Data.DataSchema> {
     const request: WDXSchema.WDX.Schema.Message.Data.GetSchemaRequest =
         new WDXSchema.WDX.Schema.Message.Data.GetSchemaRequest(path, level);
@@ -80,8 +78,7 @@ export class DataService extends AbstractAPIService {
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type
-                          .DataGetSchemaResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.DataGetSchemaResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -89,7 +86,8 @@ export class DataService extends AbstractAPIService {
                 response.complete();
                 subscription.unsubscribe();
               }
-            });
+            },
+        );
 
     this._clientService.sendMessage(request);
 
@@ -97,8 +95,7 @@ export class DataService extends AbstractAPIService {
   }
 
   public unregister(path: string): Observable<string> {
-    const request:
-        WDXSchema.WDX.Schema.Message.Data.UnregisterValueRequest =
+    const request: WDXSchema.WDX.Schema.Message.Data.UnregisterValueRequest =
         new WDXSchema.WDX.Schema.Message.Data.UnregisterValueRequest(path);
 
     const response = new Subject<string>();
@@ -135,7 +132,6 @@ export class DataService extends AbstractAPIService {
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
-
               if ((message.type ===
                        WDXSchema.WDX.Schema.Message.Type
                            .DataRegisterValueResponse &&
@@ -143,12 +139,11 @@ export class DataService extends AbstractAPIService {
                   message.type ===
                           WDXSchema.WDX.Schema.Message.Type.DataUpdate &&
                       message.body.path === path) {
-          
-
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
               }
-            });
+            },
+        );
 
     this._clientService.sendMessage(request);
 
@@ -159,8 +154,7 @@ export class DataService extends AbstractAPIService {
       Observable<WDXSchema.WDX.Schema.Model.Data.DataSchema> {
     const request:
         WDXSchema.WDX.Schema.Message.Data.RegisterSchemaChangesRequest =
-        new WDXSchema.WDX.Schema.Message.Data
-            .RegisterSchemaChangesRequest();
+        new WDXSchema.WDX.Schema.Message.Data.RegisterSchemaChangesRequest();
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Data.DataSchema> =
         new Subject<WDXSchema.WDX.Schema.Model.Data.DataSchema>();
@@ -183,8 +177,7 @@ export class DataService extends AbstractAPIService {
   public unregisterDataSchemaChanges(): Observable<null> {
     const request:
         WDXSchema.WDX.Schema.Message.Data.UnregisterSchemaChangesRequest =
-        new WDXSchema.WDX.Schema.Message.Data
-            .UnregisterSchemaChangesRequest();
+        new WDXSchema.WDX.Schema.Message.Data.UnregisterSchemaChangesRequest();
 
     const response = new Subject<null>();
 
@@ -210,16 +203,13 @@ export class DataService extends AbstractAPIService {
 
   public getValue(path: string):
       Observable<WDXSchema.WDX.Schema.Model.Data.DataValue|null> {
-    const request =
-        new WDXSchema.WDX.Schema.Message.Data.GetValueRequest(path);
-    const response =
-        new Subject<WDXSchema.WDX.Schema.Model.Data.DataValue>();
+    const request = new WDXSchema.WDX.Schema.Message.Data.GetValueRequest(path);
+    const response = new Subject<WDXSchema.WDX.Schema.Model.Data.DataValue>();
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type
-                          .DataGetValueResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.DataGetValueResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -235,20 +225,19 @@ export class DataService extends AbstractAPIService {
   }
 
   public setValue(path: string, value: any):
-      Observable<WDXSchema.WDX.Schema.Model.Data.Data|null> {
+      Observable<WDXSchema.WDX.Schema.Model.Data.DataValue|null> {
     const request: WDXSchema.WDX.Schema.Message.Data.SetValueRequest =
         new WDXSchema.WDX.Schema.Message.Data.SetValueRequest(
             new WDXSchema.WDX.Schema.Model.Data.DataValue(path, value));
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Data.Data|null> =
-        new Subject<WDXSchema.WDX.Schema.Model.Data.Data|null>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Data.DataValue|null> =
+        new Subject<WDXSchema.WDX.Schema.Model.Data.DataValue|null>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type
-                          .DataSetValueResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.DataSetValueResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);

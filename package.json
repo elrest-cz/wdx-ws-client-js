@@ -1,10 +1,12 @@
 {
-	"name": "@wago/wdx-client-ws",
-	"description": "WAGO - WDX - Client - WS",
+	"name": "@wago/wdx-ws-client-js",
+	"description": "WAGO - WDX - WS - Client - JavaScript",
 	"keywords": [
 		"WAGO",
 		"WDX",
-		"Runtime"
+		"WS",
+		"Client",
+		"JavaScript"
 	],
 	"license": "(C) Copyright 2024 Elrest Automations Systeme GMBH",
 	"author": "Slavomir Sidor <slavomir.sidor@elrest.cz>",
@@ -18,7 +20,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "1.9.0",
+	"version": "1.9.2",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
 	"directories": {
