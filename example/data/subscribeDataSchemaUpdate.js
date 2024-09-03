@@ -1,4 +1,4 @@
-const WDXJSWSClientConfiguration = require('../../build/WDX//Client//WS/Configuration/Configuration');
+
 const WDXJSWSClient = require('../../build/WDX//Client//WS/Service/ClientService');
 
 

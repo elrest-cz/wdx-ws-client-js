@@ -1,9 +1,6 @@
-const WDXJSWSClientConfiguration = require('../build/WDX//Client//WS/Configuration/Configuration');
-const WDXJSWSClient = require('../build/WDX//Client//WS/Service/ClientService');
-
-
 (async () => {
     try {
+        const WDXJSWSClient = require('../build/WDX/Client/WS/Service/ClientService');
         const c = new WDXJSWSClient.ClientService();
         await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 },);
 

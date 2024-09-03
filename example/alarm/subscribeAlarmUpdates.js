@@ -1,15 +1,18 @@
+
+const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
+
+
 (async () => {
     try {
-        const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
         const c = new WDXJSWSClient.ClientService();
         await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
-
         console.log('Connected successfully');
 
-        c.dataService.setValue('Virtual.store.b', '1').subscribe(
+
+        c.alarmService.register().subscribe(
             {
-                next: (instance) => {
-                    console.log(instance);
+                next: (update) => {
+                    console.log(JSON.stringify(update, null, 2));
                 },
 
                 error: async (error) => {
@@ -28,6 +31,6 @@
 
     } catch (e) {
         console.error('Error: ' + e.message);
-        console.error('Error: ' + e.stack);
+        //console.error('Error: ' + e.stack);
     }
 })();
