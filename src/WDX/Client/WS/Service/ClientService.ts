@@ -10,6 +10,7 @@ import {DataService} from './DataService';
 import {ScriptService} from './ScriptService';
 import {InstanceService} from './InstanceService';
 import {RuntimeService} from './RuntimeService';
+import {AlarmService} from './AlarmService';
 import {Configuration} from '../Configuration/Configuration';
 import * as WDXWS from 'websocket';
 import http = require('http');
@@ -42,6 +43,8 @@ export class ClientService {
   private __instanceService: InstanceService;
 
   private __runtimeService: RuntimeService;
+
+  private __alarmService: AlarmService;
 
   private __incommingMessages:
       Subject<WDXSchema.WDX.Schema.Message.AbstractMessage> =
@@ -182,6 +185,13 @@ export class ClientService {
   public get incommingMessages():
       Subject<WDXSchema.WDX.Schema.Message.AbstractMessage> {
     return this.__incommingMessages;
+  }
+
+  public get alarmService(): AlarmService {
+    if (undefined === this.__alarmService) {
+      this.__alarmService = new AlarmService(this);
+    }
+    return this.__alarmService;
   }
 
   public get dataService(): DataService {

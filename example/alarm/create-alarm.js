@@ -1,15 +1,33 @@
+
 (async () => {
     try {
+
         const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
+        const WDXSchema = require('@wago/wdx-schema');
+
         const c = new WDXJSWSClient.ClientService();
         await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
-
         console.log('Connected successfully');
 
-        c.dataService.setValue('Virtual.store.b', '1').subscribe(
+        const alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
+            undefined,
+            'adds sdds',
+            true,
+            'adds sdds sd',
+            3335,
+        );
+        alarm.conditions.push(
+            new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                'Virtual.store.b',
+                WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.EQUALS,
+                1
+            ),
+        );
+
+        c.alarmService.saveAlarm(alarm).subscribe(
             {
-                next: (instance) => {
-                    console.log(instance);
+                next: (alarm) => {
+                    console.log(JSON.stringify(alarm, null, 2));
                 },
 
                 error: async (error) => {
@@ -28,6 +46,6 @@
 
     } catch (e) {
         console.error('Error: ' + e.message);
-        console.error('Error: ' + e.stack);
+        //console.error('Error: ' + e.stack);
     }
 })();
