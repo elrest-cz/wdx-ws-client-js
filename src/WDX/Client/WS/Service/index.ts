@@ -11,6 +11,7 @@ import {AbstractAPIService} from './AbstractAPIService';
 import {ClientService} from './ClientService';
 import {DataService} from './DataService';
 import {ScriptService} from './ScriptService';
+import {AlarmService} from './AlarmService';
 import {InstanceService} from './InstanceService';
 
 export {
@@ -18,5 +19,6 @@ export {
   ClientService,
   DataService,
   ScriptService,
+  AlarmService,
   InstanceService,
 };

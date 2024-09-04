@@ -1,22 +1,15 @@
+
 (async () => {
     try {
         const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
-        const WDXSchema = require('@wago/wdx-schema');
-
         const c = new WDXJSWSClient.ClientService();
-
         await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
-
         console.log('Connected successfully');
 
-        const instance = new WDXSchema.WDX.Schema.Model.Instance.DataAdapter.VirtualDataAdapterInstance(
-            '1d64e8c4-53d7-11ef-b262-088fc37eff34',
-            'test-virtual',
-        );
-        c.instanceService.save(instance).subscribe(
+        c.alarmService.listAlarms(true).subscribe(
             {
-                next: (instance) => {
-                    console.log(instance);
+                next: (update) => {
+                    console.log(JSON.stringify(update, null, 2));
                 },
 
                 error: async (error) => {
@@ -35,6 +28,6 @@
 
     } catch (e) {
         console.error('Error: ' + e.message);
-        console.error('Error: ' + e.stack);
+        //console.error('Error: ' + e.stack);
     }
 })();

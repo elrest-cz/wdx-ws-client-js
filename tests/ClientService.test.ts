@@ -1,19 +1,23 @@
-import {describe, expect, jest, test} from '@jest/globals';
+import {describe, expect, test, } from '@jest/globals';
 
-describe('isEven', () => {
-  test('returns true if number is even', () => {
-    expect(true).toBe(true);
+import {Configuration} from '../src/WDX/Client/WS/Configuration/Configuration';
+import {ClientService} from '../src/WDX/Client/WS/Service/ClientService';
+
+import {configuration} from './Configuration';
+
+describe('ClientService', () => {
+  test('Test connect', async () => {
+    try {
+      const clientService = new ClientService();
+      await clientService.connect(configuration);
+
+      return expect(true).toBe(true);
+    } catch (error: any) {
+      return expect(error).toBe(true);
+    }
   });
 
   test('returns false if number is odd', () => {
     expect(true).toBe(true);
-  });
-
-  test('throws an error if number is negative', () => {
-    expect(true).toThrow();
-  });
-
-  test('throws an error if number is not a number', () => {
-    expect(true).toThrow();
   });
 });

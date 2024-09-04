@@ -9,7 +9,6 @@ const WDXJSWSClient = require('../build/WDX//Client//WS/Service/ClientService');
 
         console.log('Connected successfully');
 
-        await c.disconnect();
 
 
         /**
@@ -18,6 +17,7 @@ const WDXJSWSClient = require('../build/WDX//Client//WS/Service/ClientService');
         },);
          */
 
+        await c.disconnect();
 
     } catch (e) {
         console.error('Error: ' + e.message);

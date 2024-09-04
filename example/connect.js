@@ -1,17 +1,19 @@
-const WDXJSWSClientConfiguration = require('../build/WDX//Client//WS/Configuration/Configuration');
-const WDXJSWSClient = require('../build/WDX//Client//WS/Service/ClientService');
-
-
 (async () => {
     try {
+        const WDXJSWSClient = require('../build/WDX/Client/WS/Service/ClientService');
         const c = new WDXJSWSClient.ClientService();
         await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 },);
 
         console.log('Connected successfully');
 
+        await c.disconnect();
+
+
+        /**
         c.dataService.getSchema('').subscribe((data) => {
             console.log(data);
         },);
+         */
 
 
     } catch (e) {
@@ -20,5 +22,4 @@ const WDXJSWSClient = require('../build/WDX//Client//WS/Service/ClientService');
 
 
 
-    //await c.disconnect();
 })();
