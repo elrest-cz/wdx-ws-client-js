@@ -16,6 +16,7 @@ import * as WDXWS from 'websocket';
 import http = require('http');
 import * as WDXSchema from '@wago/wdx-schema';
 import {BehaviorSubject, Subject} from 'rxjs';
+import {TrendService} from './TrendService';
 
 export enum Status {
   CONNECTED = 'CONNECTED',
@@ -45,6 +46,8 @@ export class ClientService {
   private __runtimeService: RuntimeService;
 
   private __alarmService: AlarmService;
+
+  private __trendService: TrendService;
 
   private __incommingMessages:
       Subject<WDXSchema.WDX.Schema.Message.AbstractMessage> =
@@ -101,11 +104,6 @@ export class ClientService {
     this.__connection.on(
         'close',
         (code: number, desc: string) => {
-          console.error(
-              `Connection Closed - Code: ${code} - Description: ${desc}`,
-              this.__connection?.state,
-          );
-
           if (1000 !== code) {
             this.__reconnect();
           }
@@ -146,7 +144,8 @@ export class ClientService {
 
   private __onMessage(message: WDXWS.Message): void {
     this.__incommingMessages.next(
-        JSON.parse((message as WDXWS.IUtf8Message).utf8Data));
+        JSON.parse((message as WDXWS.IUtf8Message).utf8Data),
+    );
   }
 
   public async sendMessage(
@@ -194,6 +193,13 @@ export class ClientService {
     return this.__alarmService;
   }
 
+  public get trendService(): TrendService {
+    if (undefined === this.__trendService) {
+      this.__trendService = new TrendService(this);
+    }
+    return this.__trendService;
+  }
+
   public get dataService(): DataService {
     if (undefined === this.__dataService) {
       this.__dataService = new DataService(this);
@@ -214,7 +220,6 @@ export class ClientService {
     }
     return this.__instanceService;
   }
-
 
   public get runtimeService(): RuntimeService {
     if (undefined === this.__runtimeService) {
