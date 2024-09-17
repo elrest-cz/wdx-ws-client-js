@@ -15,8 +15,8 @@ module.exports.colors = [
     'f6dd38',
 ];
 
-module.exports.floors = 15;
-module.exports.rooms = 12;
+module.exports.floors = 1;
+module.exports.rooms = 3;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;

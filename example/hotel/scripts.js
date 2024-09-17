@@ -128,12 +128,12 @@ module.exports.scripts = async () => {
 
 module.exports.initCurrent = () => {
     console.clear();
-    console.log('6. Running calculations current color count: ' );
+    console.log('6.1. Running calculations current color count: ' );
 };
 
 module.exports.initTotal = () => {
     console.clear();
-    console.log('6. Running calculations total color count: ' );
+    console.log('6.2. Running calculations total color count: ' );
 };
 
 
