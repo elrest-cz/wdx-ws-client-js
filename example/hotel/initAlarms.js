@@ -1,47 +1,78 @@
-(async () => {
+
+const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
+const WDXSchema = require('@wago/wdx-schema');
+const WDXSettings = require('./settings');
+const WDXContinue = require('./continue');
+
+module.exports.initAlarms = async () => {
     try {
-        const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
-        const WDXSchema = require('@wago/wdx-schema');
-        const floors = 15;
-        const rooms = 12;
-        let alarmNumber=1000;
+
+        WDXSettings.title();
+        WDXSettings.copyright();
+
 
         const c = new WDXJSWSClient.ClientService();
+        await c.connect(WDXSettings.wsConfiguration);
+        WDXSettings.lineSeparator();
+        console.log(`${WDXSettings.indentation()}WDX WS Client - Connected successfully`);
 
-        await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
+        WDXSettings.lineSeparator();
 
-        console.log('Connected successfully');
+        module.exports.subtitle();
+        module.exports.content();
 
-        for (let floor = 1; floor <= floors; floor++) {
-            for (let room = 1; room <= rooms; room++) {
 
-                const name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty`;
+        WDXSettings.lineSeparator();
 
-                let alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-                    undefined,
-                    name,
-                    true,
-                    'alarm-hotel-light-floor-${floor}-room-${room}-no-empty color changed',
-                    'alarm-hotel-light-floor-${floor}-room-${room}-no-empty color reseted',
-                    ++alarmNumber,
-                    WDXSchema.WDX.Schema.Model.Alarm.AlarmType.INFO_WITHOUT_ACK,
-                );
+        await WDXContinue.continue();
 
-                alarm.conditions.push(
-                    new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                        `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                        WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY
-                    ));
+        const alarms = WDXSettings.getAlarms();
 
-                alarm = await c.alarmService.saveAlarm(alarm).toPromise();
+        console.log(`\n${WDXSettings.indentation()}Storing Alarms - Total count ${alarms.length}`);
+        console.log(`\n${WDXSettings.indentation()}Please wait ...`);
 
-                console.log('Alarm for room for floor ' + floor + ' at ' + room, alarm.id);
+
+        const position = await WDXSettings.getCursorPos();
+        position.rows -= 1;
+
+        const totalCount = alarms.length;
+        let currentCount = 0;
+        let errorCount = 0;
+
+        for (const alarm of alarms) {
+            try {
+                await c.alarmService.saveAlarm(alarm).toPromise();
+
+                process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K    Alarm ${alarm.name} save successfully ${currentCount + 1} / ${totalCount}.`);
+                currentCount += 1;
+            } catch (e) {
+                //console.error(e);
+                errorCount += 1;
             }
         }
+
+        console.log(`\n${WDXSettings.indentation()}Storing alarms - Done ${currentCount} / ${totalCount} Succeeded,  ${errorCount} Failed,`);
+        console.log(`\n${WDXSettings.indentation()}WDX Alarm list: ${WDXSettings.wdxUrlPrefix()}/alarms/list\n`);
+
+        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual\n`);
+
         await c.disconnect();
+        WDXSettings.lineSeparator();
+        await WDXContinue.continue();
+
 
     } catch (e) {
         console.error('Error: ' + e.message);
         console.error('Error: ' + e.stack);
+
+        process.exit(1);
     }
-})();
+};
+
+module.exports.subtitle = () => {
+    console.log(`${WDXSettings.indentation()}Step 3. Hotel rooms lights color alarm.`);
+};
+
+module.exports.content = () => {
+    console.log(`\n${WDXSettings.indentation()}In this step we will initialize alarms for all hotel rooms light color data schemas on Virtual Data Adapters. Alarm will contain condition for light color is not empty.`);
+};
