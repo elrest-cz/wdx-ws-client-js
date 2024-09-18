@@ -7,3 +7,4 @@
 package-lock.json
 .npmrc
 docs
+example/hotel/.data

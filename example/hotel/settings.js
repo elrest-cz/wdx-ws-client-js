@@ -15,8 +15,8 @@ module.exports.colors = [
     'f6dd38',
 ];
 
-module.exports.floors = 1;
-module.exports.rooms = 3;
+module.exports.floors = 3;
+module.exports.rooms = 2;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;
@@ -244,6 +244,7 @@ module.exports.getTrends = () => {
             dataSet.label = dataSet.color;
             dataSet.name = dataSet.color;
             dataSet.visible = true;
+            dataSet.enabled = true;
             dataSet.yAxis = trend.yAxis[0].uuid;
             dataSet.dataSchemaPath = `Virtual.stats.current.${color}`;
             trend.dataSet.push(dataSet);
