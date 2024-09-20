@@ -17,7 +17,7 @@
         await require('./initLights').initLights();
         await require('./initAlarms').initAlarms();
         await require('./initTrends').initTrends();
-        await require('./review').review();
+        //await require('./review').review();
         //await require('./scripts').scripts();
 
         process.exit(0);
