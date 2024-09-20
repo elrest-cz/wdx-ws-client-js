@@ -3,8 +3,6 @@ const fs = require('fs');
 const WDXUUID = require('uuid');
 const WDXSchema = require('@wago/wdx-schema');
 
-module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282 };
-
 module.exports.colors = [
     'f7d42e',
     '31a8fa',
@@ -15,8 +13,10 @@ module.exports.colors = [
     'f6dd38',
 ];
 
-module.exports.floors = 1;
-module.exports.rooms = 3;
+module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282, };
+
+module.exports.floors = 2;
+module.exports.rooms = 2;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;
@@ -136,7 +136,7 @@ module.exports.title = () => {
 
 };
 
-module.exports.indentation=()=>{
+module.exports.indentation = () => {
     return '    ';
 }
 
@@ -181,30 +181,39 @@ module.exports.getAlarms = () => {
 
         const alarms = [];
         let alarmNumber = 10000;
+        const types = Object.values(WDXSchema.WDX.Schema.Model.Alarm.AlarmType);
+
+        console.log(types);
 
         for (let floor = 1; floor <= module.exports.floors; floor++) {
             for (let room = 1; room <= module.exports.rooms; room++) {
 
-                const name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty`;
+                for (let typeId = 0; typeId < types.length; typeId++) {
 
-                let alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-                    undefined,
-                    name,
-                    true,
-                    `alarm-hotel-light-floor-${floor}-room-${room}-no-empty color changed`,
-                    `alarm-hotel-light-floor-${floor}-room-${room}-no-empty color reseted`,
-                    ++alarmNumber,
-                    WDXSchema.WDX.Schema.Model.Alarm.AlarmType.INFO_WITHOUT_ACK,
-                );
+                    const type = types[typeId];
 
-                alarm.conditions.push(
-                    new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                    const name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type}`;
+
+                    let alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
                         undefined,
-                        `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                        WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY
-                    ));
+                        name,
+                        true,
+                        `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} color changed`,
+                        `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} color reseted`,
+                        ++alarmNumber,
+                        type,
+                    );
 
-                alarms.push(alarm);
+                    alarm.conditions.push(
+                        new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                            undefined,
+                            `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
+                            WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY
+                        ));
+
+                    alarms.push(alarm);
+
+                }
             }
         }
 
@@ -244,6 +253,7 @@ module.exports.getTrends = () => {
             dataSet.label = dataSet.color;
             dataSet.name = dataSet.color;
             dataSet.visible = true;
+            dataSet.enabled = true;
             dataSet.yAxis = trend.yAxis[0].uuid;
             dataSet.dataSchemaPath = `Virtual.stats.current.${color}`;
             trend.dataSet.push(dataSet);
