@@ -21,6 +21,9 @@ module.exports.review = async () => {
         module.exports.content();
 
         WDXSettings.lineSeparator();
+        await c.disconnect();
+        console.log(`${WDXSettings.indentation()}WDX WS Client - Disconnected successfully`);
+        WDXSettings.lineSeparator();
 
         await WDXContinue.continue();
 
@@ -37,6 +40,25 @@ module.exports.subtitle = () => {
 };
 
 module.exports.content = () => {
-    console.log(`${WDXSettings.indentation()}All done`);
+    console.log(`\n${WDXSettings.indentation()}1. Hotel lights instances created (${WDXSettings.getInstances().length})`);
+    console.log(`${WDXSettings.indentation()}WDX Instances list: ${WDXSettings.wdxUrlPrefix()}/instance/list`);
+
+    console.log(`\n${WDXSettings.indentation()}2. Hotel lights data schemas created (${WDXSettings.getDataSchemas().length})`);
+    console.log(`${WDXSettings.indentation()}WDX Schemas tree: ${WDXSettings.wdxUrlPrefix()}/data/tree`);
+
+    console.log(`\n${WDXSettings.indentation()}2. Hotel lights data alarm created (${WDXSettings.getAlarms().length})`);
+    console.log(`${WDXSettings.indentation()}WDX Alarms list: ${WDXSettings.wdxUrlPrefix()}/alarms/list`);
+
+
+    console.log(`\n${WDXSettings.indentation()}2. Hotel lights trendings created (${WDXSettings.getTrends().length})`);
+    console.log(`${WDXSettings.indentation()}WDX Trends list: ${WDXSettings.wdxUrlPrefix()}/trends`);
+
+
+
+    console.log(`\n${WDXSettings.indentation()}2. Hotel lights game is prepared`);
+    console.log(`${WDXSettings.indentation()}WDX Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual?width=${WDXSettings.rooms}&height=${WDXSettings.floors}`);
+
+
+    console.log(`\n${WDXSettings.indentation()}All done`);
 
 };

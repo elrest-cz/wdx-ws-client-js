@@ -54,7 +54,7 @@ module.exports.initAlarms = async () => {
         console.log(`\n${WDXSettings.indentation()}Storing alarms - Done ${currentCount} / ${totalCount} Succeeded,  ${errorCount} Failed,`);
         console.log(`\n${WDXSettings.indentation()}WDX Alarm list: ${WDXSettings.wdxUrlPrefix()}/alarms/list\n`);
 
-        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual\n`);
+        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual?width=${WDXSettings.rooms}&height=${WDXSettings.floors}\n`);
 
         await c.disconnect();
         WDXSettings.lineSeparator();

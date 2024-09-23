@@ -15,8 +15,8 @@ module.exports.colors = [
 
 module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282, };
 
-module.exports.floors = 2;
-module.exports.rooms = 2;
+module.exports.floors = 1;
+module.exports.rooms = 1;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;
@@ -182,8 +182,6 @@ module.exports.getAlarms = () => {
         const alarms = [];
         let alarmNumber = 10000;
         const types = Object.values(WDXSchema.WDX.Schema.Model.Alarm.AlarmType);
-
-        console.log(types);
 
         for (let floor = 1; floor <= module.exports.floors; floor++) {
             for (let room = 1; room <= module.exports.rooms; room++) {

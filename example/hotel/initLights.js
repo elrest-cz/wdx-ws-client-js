@@ -51,7 +51,7 @@ module.exports.initLights = async () => {
         console.log(`\n${WDXSettings.indentation()}Storing schemas - Done`);
 
         console.log(`\n${WDXSettings.indentation()}WDX Schema tree: ${WDXSettings.wdxUrlPrefix()}/data/tree`);
-        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual`);
+        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual?width=${WDXSettings.rooms}&height=${WDXSettings.floors}`);
 
 
         await c.disconnect();
