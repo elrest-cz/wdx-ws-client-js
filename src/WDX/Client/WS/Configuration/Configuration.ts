@@ -21,4 +21,6 @@ export interface Configuration {
   path?: string;
 
   reconnectTimeout?: number;
+
+  debug?: boolean;
 }

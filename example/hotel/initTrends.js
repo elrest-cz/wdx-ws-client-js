@@ -10,8 +10,9 @@ module.exports.initTrends = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect(WDXSettings.wsConfiguration);
+        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
+        await c.connect();
+        
         WDXSettings.lineSeparator();
         console.log(`${WDXSettings.indentation()}WDX WS Client - Connected successfully`);
 
