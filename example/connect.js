@@ -6,17 +6,16 @@
 
         console.log('Connected successfully');
 
-
         c.status.subscribe({
-            next:(status) => {
+            next: async (status) => {
                 console.log('Client status  is: ' + status);
             },
-            error:(error) => {
+            error: (error) => {
                 console.error('Client status  error: ' + error);
             },
         });
 
-        await c.disconnect();
+        //await c.disconnect();
 
 
         /**

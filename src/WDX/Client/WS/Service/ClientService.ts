@@ -88,6 +88,7 @@ export class ClientService {
             }
 
             this.__status.next(Status.CONNECTING);
+
             this.__wsClient = new WDXWS.client();
             this.__wsClient.on(
                 'connect',
