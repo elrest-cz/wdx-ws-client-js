@@ -15,8 +15,8 @@ module.exports.colors = [
 
 module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282, };
 
-module.exports.floors = 1;
-module.exports.rooms = 1;
+module.exports.floors = 2;
+module.exports.rooms = 2;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;
@@ -188,10 +188,9 @@ module.exports.getAlarms = () => {
 
                 for (let typeId = 0; typeId < types.length; typeId++) {
 
-                    const type = types[typeId];
-
-                    const name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type}`;
-
+                    // No Empty
+                    let type = types[typeId];
+                    let name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type}`;
                     let alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
                         undefined,
                         name,
@@ -201,12 +200,34 @@ module.exports.getAlarms = () => {
                         ++alarmNumber,
                         type,
                     );
-
                     alarm.conditions.push(
                         new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
                             undefined,
                             `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
                             WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY
+                        ));
+                    alarms.push(alarm);
+
+                    // Empty
+                    type = types[typeId];
+
+                    name = `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type}`;
+
+                    alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
+                        undefined,
+                        name,
+                        true,
+                        `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} color changed`,
+                        `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} color reseted`,
+                        ++alarmNumber,
+                        type,
+                    );
+
+                    alarm.conditions.push(
+                        new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                            undefined,
+                            `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
+                            WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY
                         ));
 
                     alarms.push(alarm);

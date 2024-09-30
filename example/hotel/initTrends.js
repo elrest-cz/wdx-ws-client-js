@@ -49,7 +49,7 @@ module.exports.initTrends = async () => {
             try {
                 await c.dataService.setSchema(schema).toPromise();
 
-                process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K    Schema ${schema.name} saved successfully ${currentCount} / ${totalCount}.`);
+                process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K${WDXSettings.indentation()}Schema ${schema.name} saved successfully ${currentCount} / ${totalCount}.`);
                 currentCount += 1;
             } catch (e) {
                 console.error(e);
@@ -73,7 +73,7 @@ module.exports.initTrends = async () => {
         for (const trend of trends) {
             try {
                 const result = await c.trendService.save(trend).toPromise();
-                process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K    Trend ${trend.name} saved successfully ${currentCount} / ${totalCount}.`);
+                process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K${WDXSettings.indentation()}Trend ${trend.name} saved successfully ${currentCount} / ${totalCount}.`);
                 currentCount=currentCount+1;
             } catch (e) {
                 console.error(e);

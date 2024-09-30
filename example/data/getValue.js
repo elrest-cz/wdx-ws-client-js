@@ -7,7 +7,9 @@ const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService')
 
         console.log('Connected successfully');
 
-        c.dataService.getValue('Virtual.store.asdasdasd', 'asd').subscribe(
+        c.dataService.setValue('Virtual.store.asdasdasd', 'asd');
+
+        c.dataService.setValue('Virtual.store.asdasdasd', 'asd').subscribe(
             {
                 next: (instance) => {
                     console.log(instance);

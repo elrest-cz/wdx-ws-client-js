@@ -125,8 +125,8 @@ export class AlarmService extends AbstractAPIService {
   }
 
   public unregister(): Observable<undefined> {
-    const request: WDXSchema.WDX.Schema.Message.Alarm.SubscribeRequest =
-        new WDXSchema.WDX.Schema.Message.Alarm.SubscribeRequest();
+    const request: WDXSchema.WDX.Schema.Message.Alarm.UnsubscribeRequest =
+        new WDXSchema.WDX.Schema.Message.Alarm.UnsubscribeRequest();
 
     const response = new Subject<undefined>();
     const subscription: Subscription =
@@ -134,7 +134,7 @@ export class AlarmService extends AbstractAPIService {
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
                       WDXSchema.WDX.Schema.Message.Type
-                          .AlarmingSubscribeResponse &&
+                          .AlarmingUnsubscribeResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(undefined);

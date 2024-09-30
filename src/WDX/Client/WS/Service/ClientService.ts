@@ -134,7 +134,8 @@ export class ClientService {
             this.__reconnect();
           }
         },
-        this.__RECONNECT_TIMEOUT,
+        this.__wsClientConfiguration?.reconnectTimeout ??
+            this.__RECONNECT_TIMEOUT,
     );
   }
 

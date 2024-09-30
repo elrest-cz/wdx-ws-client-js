@@ -19,4 +19,6 @@ export interface Configuration {
   port: number;
 
   path?: string;
+
+  reconnectTimeout?: number;
 }
