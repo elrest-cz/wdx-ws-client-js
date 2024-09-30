@@ -16,7 +16,7 @@
             },
         });
 
-        //await c.disconnect();
+        await c.disconnect();
 
 
         /**

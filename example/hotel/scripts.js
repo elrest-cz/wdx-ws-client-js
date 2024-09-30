@@ -27,8 +27,9 @@ module.exports.scripts = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect(WDXSettings.wsConfiguration);
+        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
+        await c.connect();
+
         console.log(`${WDXSettings.indentation()}Connected successfully`);
         WDXSettings.lineSeparator();
 

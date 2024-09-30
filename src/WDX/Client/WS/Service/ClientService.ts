@@ -66,9 +66,24 @@ export class ClientService {
     return new Promise<void>(
         (resolve, reject) => {
           try {
-            if (Status.CONNECTED === this.status.getValue() ||
-                Status.CONNECTING === this.status.getValue()) {
+            if (Status.CONNECTED === this.status.getValue()) {
               resolve();
+              return;
+            } else if (Status.CONNECTING === this.status.getValue()) {
+              this.status.subscribe(
+                  {
+                    next: (status: Status) => {
+                      if (Status.CONNECTED === status) {
+                        resolve();
+                      } else if (Status.DISCONNECTED === status) {
+                        reject('Not connected');
+                      }
+                    },
+                    error: (error: any) => {
+                      reject(error);
+                    }
+                  },
+              );
               return;
             }
 
@@ -113,6 +128,8 @@ export class ClientService {
     this.__connection.on(
         'close',
         (code: number, desc: string) => {
+          this.__status.next(Status.DISCONNECTED);
+
           if (1000 !== code) {
             this.__reconnect();
           }
@@ -145,6 +162,7 @@ export class ClientService {
   }
 
   private __onError(error: any) {
+    this.__status.next(Status.DISCONNECTED);
     console.error('Client error ' + error.message);
   }
 
@@ -180,7 +198,6 @@ export class ClientService {
     this.__connection?.close();
     this.__connection = undefined;
     this.__wsClient = undefined;
-    this.status.next(Status.DISCONNECTED);
   }
 
   public get status(): BehaviorSubject<Status> {
