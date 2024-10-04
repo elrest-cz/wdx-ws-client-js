@@ -2,12 +2,17 @@ const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService')
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        await c.connect();
 
         console.log('Connected successfully');
 
-        c.dataService.getSchema('Virtual', 10).subscribe(
+
+        //const path = 'Virtual.store.aaaaa';
+        //const path = 'Virtual.store.bbbbb';
+        const path = 'Virtual.storeaa.bbbbb';
+
+        c.dataService.getSchema(path, 1).subscribe(
             {
                 next: (schema) => {
                     console.log(JSON.stringify(schema, null, 2));

@@ -96,8 +96,8 @@ export class TrendService extends AbstractAPIService {
   }
 
   public unregister(id: number): Observable<undefined> {
-    const request: WDXSchema.WDX.Schema.Message.Alarm.SubscribeRequest =
-        new WDXSchema.WDX.Schema.Message.Alarm.SubscribeRequest();
+    const request: WDXSchema.WDX.Schema.Message.Trend.UnsubscribeRequest =
+        new WDXSchema.WDX.Schema.Message.Trend.UnsubscribeRequest(id);
 
     const response = new Subject<undefined>();
     const subscription: Subscription =
@@ -105,7 +105,7 @@ export class TrendService extends AbstractAPIService {
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
                       WDXSchema.WDX.Schema.Message.Type
-                          .AlarmingSubscribeResponse &&
+                          .TrendingUnsubscribeResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(undefined);
@@ -113,7 +113,8 @@ export class TrendService extends AbstractAPIService {
                 response.complete();
                 subscription.unsubscribe();
               }
-            });
+            },
+        );
 
     this._clientService.sendMessage(request);
 
@@ -121,22 +122,23 @@ export class TrendService extends AbstractAPIService {
   }
 
   public register(id: number):
-      Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm|undefined> {
-    const request: WDXSchema.WDX.Schema.Message.Alarm.SubscribeRequest =
-        new WDXSchema.WDX.Schema.Message.Alarm.SubscribeRequest();
+      Observable<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData> {
+    const request: WDXSchema.WDX.Schema.Message.Trend.SubscribeRequest =
+        new WDXSchema.WDX.Schema.Message.Trend.SubscribeRequest(id);
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm|undefined> =
-        new Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm|undefined>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData> =
+        new Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if ((message.type ===
                        WDXSchema.WDX.Schema.Message.Type
-                           .AlarmingSubscribeResponse &&
+                           .TrendingSubscribeResponse &&
                    message.uuid === request.uuid) ||
-                  message.type ===
-                      WDXSchema.WDX.Schema.Message.Type.AlarmingUpdate) {
+                  (id === message.body.trendId &&
+                   message.type ===
+                       WDXSchema.WDX.Schema.Message.Type.TrendingUpdate)) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
               }

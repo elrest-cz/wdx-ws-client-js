@@ -4,11 +4,14 @@ const WDXJSWSClient = require('../../build/WDX//Client//WS/Service/ClientService
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        await c.connect();
         console.log('Connected successfully');
 
-        c.dataService.register('Virtual.store.aaaaa').subscribe(
+        //const path = 'Virtual.store.aaaaa';
+        //const path = 'Virtual.store.bbbbb';
+        const path = 'Virtual.storeaa.bbbbb';
+        c.dataService.register(path).subscribe(
             {
                 next: (dataValue) => {
                     console.log(JSON.stringify(dataValue, null, 2));
