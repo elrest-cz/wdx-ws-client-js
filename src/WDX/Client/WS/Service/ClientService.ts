@@ -18,6 +18,9 @@ import * as WDXSchema from '@wago/wdx-schema';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {TrendService} from './TrendService';
 
+/**
+ * @todo Multiple connect create isolated subscription on status,
+ */
 export enum Status {
   CONNECTED = 'CONNECTED',
   CONNECTING = 'CONNECTING',
@@ -31,7 +34,7 @@ export class ClientService {
   private readonly __status: BehaviorSubject<Status> =
       new BehaviorSubject<Status>(Status.DISCONNECTED);
 
-  private __wsClientConfiguration?: Configuration;
+  private __wsClientConfiguration: Configuration;
 
   private __wsClient: WDXWS.client|undefined;
 
@@ -53,18 +56,39 @@ export class ClientService {
       Subject<WDXSchema.WDX.Schema.Message.AbstractMessage> =
           new Subject<WDXSchema.WDX.Schema.Message.AbstractMessage>();
 
-  constructor(debug: boolean = false) {
-    this.__debug = debug;
+  constructor(
+      wsClientConfiguration: Configuration,
+  ) {
+    this.__wsClientConfiguration = wsClientConfiguration;
   }
 
-  public async connect(
-      configuration: Configuration,
-      ): Promise<void> {
+  public async connect(): Promise<void> {
     return new Promise<void>(
         (resolve, reject) => {
           try {
+            if (Status.CONNECTED === this.status.getValue()) {
+              resolve();
+              return;
+            } else if (Status.CONNECTING === this.status.getValue()) {
+              this.status.subscribe(
+                  {
+                    next: (status: Status) => {
+                      if (Status.CONNECTED === status) {
+                        resolve();
+                      } else if (Status.DISCONNECTED === status) {
+                        reject('Not connected');
+                      }
+                    },
+                    error: (error: any) => {
+                      reject(error);
+                    }
+                  },
+              );
+              return;
+            }
+
             this.__status.next(Status.CONNECTING);
-            this.__wsClientConfiguration = configuration;
+
             this.__wsClient = new WDXWS.client();
             this.__wsClient.on(
                 'connect',
@@ -73,6 +97,7 @@ export class ClientService {
                   resolve();
                 },
             );
+
             this.__wsClient.on(
                 'connectFailed',
                 (error: any) => {
@@ -104,6 +129,8 @@ export class ClientService {
     this.__connection.on(
         'close',
         (code: number, desc: string) => {
+          this.__status.next(Status.DISCONNECTED);
+
           if (1000 !== code) {
             this.__reconnect();
           }
@@ -125,20 +152,18 @@ export class ClientService {
     setTimeout(
         async () => {
           try {
-            if (undefined !== this.__wsClientConfiguration) {
-              await this.connect(this.__wsClientConfiguration);
-            } else {
-              throw 'Client configuration is missing';
-            }
+            await this.connect();
           } catch (error: any) {
             this.__reconnect();
           }
         },
-        this.__RECONNECT_TIMEOUT,
+        this.__wsClientConfiguration?.reconnectTimeout ??
+            this.__RECONNECT_TIMEOUT,
     );
   }
 
   private __onError(error: any) {
+    this.__status.next(Status.DISCONNECTED);
     console.error('Client error ' + error.message);
   }
 
@@ -174,7 +199,6 @@ export class ClientService {
     this.__connection?.close();
     this.__connection = undefined;
     this.__wsClient = undefined;
-    this.status.next(Status.DISCONNECTED);
   }
 
   public get status(): BehaviorSubject<Status> {

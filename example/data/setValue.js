@@ -1,15 +1,20 @@
 (async () => {
     try {
         const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
+
+        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        await c.connect();
 
         console.log('Connected successfully');
 
-        c.dataService.setValue('Virtual.store.b', '1').subscribe(
+        //const path = 'Virtual.store.aaaaa';
+        const path = 'Virtual.store.bbbbb';
+        //const path = 'Virtual.storeaa.bbbbb';
+
+        c.dataService.setValue(path, 123).subscribe(
             {
-                next: (instance) => {
-                    console.log(instance);
+                next: (response) => {
+                    console.log(response);
                 },
 
                 error: async (error) => {

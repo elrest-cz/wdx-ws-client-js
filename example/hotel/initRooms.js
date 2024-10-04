@@ -10,8 +10,9 @@ module.exports.initRooms = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect(WDXSettings.wsConfiguration);
+        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
+        await c.connect();
+
         WDXSettings.lineSeparator();
         console.log(`${WDXSettings.indentation()}WDX WS Client - Connected successfully`);
 
@@ -32,7 +33,7 @@ module.exports.initRooms = async () => {
         const position = await WDXSettings.getCursorPos();
         position.rows -= 1;
 
-        const totalCount = instances.length ;
+        const totalCount = instances.length;
         let currentCount = 1;
         for (const instance of instances) {
             try {

@@ -10,8 +10,9 @@ module.exports.initLights = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect(WDXSettings.wsConfiguration);
+        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
+        await c.connect();
+
         WDXSettings.lineSeparator();
         console.log(`${WDXSettings.indentation()}WDX WS Client - Connected successfully`);
 
@@ -51,7 +52,7 @@ module.exports.initLights = async () => {
         console.log(`\n${WDXSettings.indentation()}Storing schemas - Done`);
 
         console.log(`\n${WDXSettings.indentation()}WDX Schema tree: ${WDXSettings.wdxUrlPrefix()}/data/tree`);
-        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual`);
+        console.log(`${WDXSettings.indentation()}WDX Exmple Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual?width=${WDXSettings.rooms}&height=${WDXSettings.floors}`);
 
 
         await c.disconnect();

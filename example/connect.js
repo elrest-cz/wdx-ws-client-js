@@ -1,12 +1,21 @@
 (async () => {
     try {
         const WDXJSWSClient = require('../build/WDX/Client/WS/Service/ClientService');
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 },);
+        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        await c.connect();
 
         console.log('Connected successfully');
 
-        await c.disconnect();
+        c.status.subscribe({
+            next: async (status) => {
+                console.log('Client status  is: ' + status);
+            },
+            error: (error) => {
+                console.error('Client status  error: ' + error);
+            },
+        });
+
+        //await c.disconnect();
 
 
         /**

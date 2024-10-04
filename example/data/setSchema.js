@@ -3,15 +3,15 @@ const WDXSchema = require('@wago/wdx-schema');
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService();
-        await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        await c.connect();
 
         console.log('Connected successfully');
 
         const schema = new WDXSchema.WDX.Schema.Model.Data.DataSchema(
-            'Virtual.store.b',
-            'b',
-            'b',
+            'Virtual.storesss.ccccc',
+            'ccccc',
+            'ccccc',
             undefined,
             new WDXSchema.WDX.Schema.Model.Data.MetaData.MetaDataVirtual(),
             false,

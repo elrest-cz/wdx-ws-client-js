@@ -1,18 +1,17 @@
 
 const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
 
-
 (async () => {
     try {
         const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
+
         console.log('Connected successfully');
 
-
-        c.alarmService.listAlarmHistory(1).subscribe(
+        c.trendService.register(1).subscribe(
             {
-                next: (update) => {
-                    console.log(JSON.stringify(update, null, 2));
+                next: (graphData) => {
+                    console.log(JSON.stringify(graphData, null, 2));
                 },
 
                 error: async (error) => {
