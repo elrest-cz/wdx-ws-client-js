@@ -7,7 +7,12 @@ const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService')
 
         console.log('Connected successfully');
 
-        c.dataService.getSchema('Virtual', 10).subscribe(
+
+        //const path = 'Virtual.store.aaaaa';
+        //const path = 'Virtual.store.bbbbb';
+        const path = 'Virtual.storeaa.bbbbb';
+
+        c.dataService.getSchema(path, 1).subscribe(
             {
                 next: (schema) => {
                     console.log(JSON.stringify(schema, null, 2));

@@ -8,7 +8,10 @@ const WDXJSWSClient = require('../../build/WDX//Client//WS/Service/ClientService
         await c.connect();
         console.log('Connected successfully');
 
-        c.dataService.register('Virtual.store.aaaaa').subscribe(
+        //const path = 'Virtual.store.aaaaa';
+        //const path = 'Virtual.store.bbbbb';
+        const path = 'Virtual.storeaa.bbbbb';
+        c.dataService.register(path).subscribe(
             {
                 next: (dataValue) => {
                     console.log(JSON.stringify(dataValue, null, 2));

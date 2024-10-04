@@ -1,6 +1,5 @@
 
-const WDXJSWSClient = require('../../build/WDX//Client//WS/Service/ClientService');
-
+const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
 
 (async () => {
     try {
@@ -9,11 +8,10 @@ const WDXJSWSClient = require('../../build/WDX//Client//WS/Service/ClientService
 
         console.log('Connected successfully');
 
-
-        c.dataService.registerDataSchemaChanges().subscribe(
+        c.trendService.register(1).subscribe(
             {
-                next: (dataValue) => {
-                    console.log(JSON.stringify(dataValue, null, 2));
+                next: (graphData) => {
+                    console.log(JSON.stringify(graphData, null, 2));
                 },
 
                 error: async (error) => {

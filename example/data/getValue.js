@@ -7,12 +7,14 @@ const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService')
 
         console.log('Connected successfully');
 
-        c.dataService.setValue('Virtual.store.asdasdasd', 'asd');
+        //const path = 'Virtual.store.aaaaa';
+        //const path = 'Virtual.store.bbbbb';
+        const path = 'Virtual.storeaa.bbbbb';
 
-        c.dataService.setValue('Virtual.store.asdasdasd', 'asd').subscribe(
+        c.dataService.getValue(path).subscribe(
             {
-                next: (instance) => {
-                    console.log(instance);
+                next: (response) => {
+                    console.log(response);
                 },
 
                 error: async (error) => {

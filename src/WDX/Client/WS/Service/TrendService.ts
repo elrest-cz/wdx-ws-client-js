@@ -122,13 +122,12 @@ export class TrendService extends AbstractAPIService {
   }
 
   public register(id: number):
-      Observable<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData|null> {
+      Observable<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData> {
     const request: WDXSchema.WDX.Schema.Message.Trend.SubscribeRequest =
         new WDXSchema.WDX.Schema.Message.Trend.SubscribeRequest(id);
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData|
-                            null> =
-        new Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData|null>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData> =
+        new Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(

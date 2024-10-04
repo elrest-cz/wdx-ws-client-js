@@ -9,9 +9,9 @@ const WDXSchema = require('@wago/wdx-schema');
         console.log('Connected successfully');
 
         const schema = new WDXSchema.WDX.Schema.Model.Data.DataSchema(
-            'Virtual.store.b',
-            'b',
-            'b',
+            'Virtual.storesss.ccccc',
+            'ccccc',
+            'ccccc',
             undefined,
             new WDXSchema.WDX.Schema.Model.Data.MetaData.MetaDataVirtual(),
             false,
