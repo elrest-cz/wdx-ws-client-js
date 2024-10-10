@@ -38,6 +38,33 @@ export class AlarmService extends AbstractAPIService {
     return response.asObservable();
   }
 
+  public detailAlarm(id: number):
+      Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm> {
+    const request: WDXSchema.WDX.Schema.Message.Alarm.DetailRequest =
+        new WDXSchema.WDX.Schema.Message.Alarm.DetailRequest(id);
+
+    const response: Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm> =
+        new Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (WDXSchema.WDX.Schema.Message.Type.AlarmingDetailResponse ===
+                      message.type &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+
+                response.complete();
+                subscription.unsubscribe();
+              }
+            });
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
   public saveAlarm(alarm: WDXSchema.WDX.Schema.Model.Alarm.Alarm):
       Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.SetRequest =

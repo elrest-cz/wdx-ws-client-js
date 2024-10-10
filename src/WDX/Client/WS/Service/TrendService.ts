@@ -39,6 +39,35 @@ export class TrendService extends AbstractAPIService {
     return response.asObservable();
   }
 
+  public detail(id: number):
+      Observable<WDXSchema.WDX.Schema.Model.Trend.Trend> {
+    const request: WDXSchema.WDX.Schema.Message.Trend.DetailRequest =
+        new WDXSchema.WDX.Schema.Message.Trend.DetailRequest(id);
+
+    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Trend> =
+        new Subject<WDXSchema.WDX.Schema.Model.Trend.Trend>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (WDXSchema.WDX.Schema.Message.Type.TrendingDetailResponse ===
+                      message.type &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+
+                response.complete();
+                subscription.unsubscribe();
+              }
+            },
+        );
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
+
   public save(alarm: WDXSchema.WDX.Schema.Model.Trend.Trend):
       Observable<WDXSchema.WDX.Schema.Model.Trend.Trend> {
     const request: WDXSchema.WDX.Schema.Message.Trend.SetRequest =
