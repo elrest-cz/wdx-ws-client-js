@@ -15,8 +15,8 @@ module.exports.colors = [
 
 module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282, };
 
-module.exports.floors = 10;
-module.exports.rooms = 7;
+module.exports.floors = 2;
+module.exports.rooms = 2;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;
@@ -256,7 +256,10 @@ module.exports.getTrends = () => {
         trend.name = 'Hotel Lights - Current colors counts';
         trend.active = true;
         trend.legend = true;
-        trend.exportCurrentViewButton = true;
+        trend.intervalPicker = true;
+        trend.exportCurrentViewButton=true;
+        trend.exportFullDataButton=true;
+        trend.resetButton=true;
         trend.dataPoolInterval = 1000;
         trend.xAxis.label = 'Time';
 
