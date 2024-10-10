@@ -175,10 +175,10 @@ export class InstanceService extends AbstractAPIService {
    *
    * @param id number WDXSchema.WDX.Schema.Model.Instance.Instance id number
    */
-  public info(uuid: string):
+  public detail(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
-    const request: WDXSchema.WDX.Schema.Message.Instance.InfoRequest =
-        new WDXSchema.WDX.Schema.Message.Instance.InfoRequest(uuid);
+    const request: WDXSchema.WDX.Schema.Message.Instance.DetailRequest =
+        new WDXSchema.WDX.Schema.Message.Instance.DetailRequest(uuid);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Instance.Instance> =
         new Subject<WDXSchema.WDX.Schema.Model.Instance.Instance>();
@@ -187,7 +187,7 @@ export class InstanceService extends AbstractAPIService {
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type.InstanceInfoResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.InstanceDetailResponse &&
                   message.uuid === request.uuid) {
                 (message.error) ? response.error(message.error) :
                                   response.next(message.body);

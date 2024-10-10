@@ -38,6 +38,10 @@ module.exports.scripts = async () => {
         module.exports.content();
         WDXSettings.lineSeparator();
 
+        console.log(`\n${WDXSettings.indentation()}2. Hotel lights game is prepared`);
+        console.log(`${WDXSettings.indentation()}WDX Hotel Lights: ${WDXSettings.wdxUrlPrefix()}/showooms/hotel-virtual?width=${WDXSettings.rooms}&height=${WDXSettings.floors}`);
+
+
         await WDXContinue.continue();
 
         async function onLightUpdate(dataValue) {
