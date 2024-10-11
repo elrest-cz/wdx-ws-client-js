@@ -29,9 +29,9 @@ export enum Status {
 export class ClientService {
   private __keepAliveTimeout: NodeJS.Timeout|undefined;
 
-  private readonly __KEEPALIVE_INTERVAL: number = 100;
+  private readonly __KEEPALIVE_INTERVAL: number = 60000;
 
-  private readonly __RECONNECT_TIMEOUT: number = 5000;
+  private readonly __RECONNECT_TIMEOUT: number = 1000;
 
   private readonly __status: BehaviorSubject<Status> =
       new BehaviorSubject<Status>(Status.DISCONNECTED);

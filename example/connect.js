@@ -15,9 +15,6 @@
             },
         });
 
-        while(true) {
-            
-        }
         //await c.disconnect();
 
 
