@@ -13,7 +13,7 @@ module.exports.colors = [
     'f6dd38',
 ];
 
-module.exports.wsConfiguration = { protocol: 'ws', host: 'plc', port: 82, };
+module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282, };
 
 module.exports.floors = 2;
 module.exports.rooms = 2;
@@ -24,8 +24,8 @@ module.exports.roomCount = () => {
 
 module.exports.wdx = {
     protocol: 'http',
-    host: 'plc',
-    port: '80',
+    host: 'localhost',
+    port: '4285',
     path: '/wdx',
 };
 

@@ -36,6 +36,31 @@ export class DataService extends AbstractAPIService {
     return response.asObservable();
   }
 
+  public refreshSchema(path: string): Observable<string> {
+    const request: WDXSchema.WDX.Schema.Message.Data.RefreshSchemaRequest =
+        new WDXSchema.WDX.Schema.Message.Data.RefreshSchemaRequest(path);
+
+    const response: Subject<string> = new Subject<string>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (WDXSchema.WDX.Schema.Message.Type.DataRefreshSchemaResponse ===
+                      message.type &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+
+                response.complete();
+                subscription.unsubscribe();
+              }
+            });
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
   public setSchema(schema: WDXSchema.WDX.Schema.Model.Data.DataSchema):
       Observable<WDXSchema.WDX.Schema.Model.Data.DataSchema> {
     const request: WDXSchema.WDX.Schema.Message.Data.SetSchemaRequest =
