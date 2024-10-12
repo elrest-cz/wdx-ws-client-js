@@ -27,9 +27,11 @@ export enum Status {
   DISCONNECTED = 'DISCONNECTED',
 }
 export class ClientService {
-  private __debug: boolean;
+  private __keepAliveTimeout: NodeJS.Timeout|undefined;
 
-  private readonly __RECONNECT_TIMEOUT: number = 5000;
+  private readonly __KEEPALIVE_INTERVAL: number = 60000;
+
+  private readonly __RECONNECT_TIMEOUT: number = 1000;
 
   private readonly __status: BehaviorSubject<Status> =
       new BehaviorSubject<Status>(Status.DISCONNECTED);
@@ -122,6 +124,31 @@ export class ClientService {
         this.__wsClientConfiguration?.path ?? ''}`;
   }
 
+  private async __sendKeepAlive() {
+    await this.sendMessage(new WDXSchema.WDX.Schema.Message.KeepAlive());
+  }
+
+  private __startKeepAlive() {
+    if (undefined === this.__keepAliveTimeout) {
+
+      this.__keepAliveTimeout = setInterval(
+          async () => {
+            await this.__sendKeepAlive();
+          },
+          this.__KEEPALIVE_INTERVAL,
+      );
+
+      this.__keepAliveTimeout.unref();
+    }
+  }
+
+  private __stopKeepAlive() {
+    if (undefined !== this.__keepAliveTimeout) {
+      clearTimeout(this.__keepAliveTimeout);
+      this.__keepAliveTimeout = undefined;
+    }
+  }
+
   private __onOpen(connection: WDXWS.connection): void {
     this.__connection = connection;
     this.__connection.on('error', (error) => {});
@@ -130,7 +157,7 @@ export class ClientService {
         'close',
         (code: number, desc: string) => {
           this.__status.next(Status.DISCONNECTED);
-
+          this.__stopKeepAlive();
           if (1000 !== code) {
             this.__reconnect();
           }
@@ -143,8 +170,13 @@ export class ClientService {
           this.__onMessage(message);
         },
     );
+
     this.__status.next(Status.CONNECTED);
+
+    this.__startKeepAlive();
   }
+
+
 
   private __reconnect(): void {
     console.error(`Reconnecting after ${this.__RECONNECT_TIMEOUT}ms`);
