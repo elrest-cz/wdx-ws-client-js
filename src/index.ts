@@ -1,5 +1,5 @@
 /**
- * Elrest eDesign - Package
+ * Elrest - Package
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */

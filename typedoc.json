@@ -3,7 +3,7 @@
 	"entryPoints": [
 		"src/index.ts"
 	],
-	"cleanOutputDir": true,
+	"cleanOutputDir": false,
 	"out": "./docs",
 	"exclude": [
 		"./build/**"

@@ -1,37 +1,10 @@
-# WDX - WS - Client - JS
-
-A TypeScript Web Socket Library providing services for Managing WDX instance.
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Using Client](#using-client)
-- [API](docs/modules.md)
-- [Requirements](#Requirements)
-- [License](#license)
-
-## Installation
-
-To install the library, use npm or yarn:
-
-```bash
-npm install @wago/wdx-ws-client-js
-```
-
-or
-
-```bash
-yarn add @wago/wdx-ws-client-js
-```
-
-## Usage
-
-### Using Client
-
-Here's an example:
-
-```typescript
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Data Get Schema
+ * 
+ * Retrieves Data Schema for given path with childrens to given level from WDX with WS client.
+ *
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
 
@@ -71,15 +44,3 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
         console.error('Error: ' + e.stack);
     }
 })();
-```
-
-
-For more examples, see github repository example [directory](examples).
-
-## License
-
-This library is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [LICENSE.md](LICENSE.md) file for more details.
-
-© 2024 
-
-This `README.md` provides a clear introduction to the TypeScript model schema library, with examples of how to use it, and includes the required copyright and licensing information under the MIT License.
