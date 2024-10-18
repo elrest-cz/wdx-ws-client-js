@@ -7,8 +7,7 @@ A TypeScript Web Socket Library providing services for Managing WDX instance.
 - [Installation](#installation)
 - [Usage](#usage)
   - [Using Client](#using-client)
-- [API](docs/modules.md)
-- [Requirements](#Requirements)
+- [API](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/docs/modules.md)
 - [License](#license)
 
 ## Installation
@@ -74,11 +73,11 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
 ```
 
 
-For more examples, see github repository example [directory](examples).
+For more examples, see github repository example [directory](https://github.com/elrest-cz/wdx-ws-client-js/tree/master/examples).
 
 ## License
 
-This library is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [LICENSE.md](LICENSE.md) file for more details.
+This library is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [LICENSE.md](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/LICENSE.md) file for more details.
 
 © 2024 
 

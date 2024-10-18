@@ -8,7 +8,7 @@
 		"Client",
 		"JavaScript"
 	],
-	"license": "(C) Copyright 2024 Elrest Automations Systeme GMBH",
+	"license": "MIT",
 	"author": "Slavomir Sidor <slavomir.sidor@elrest.cz>",
 	"contributors": [
 		{
@@ -20,11 +20,15 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "9.1.0",
+	"version": "9.1.2",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
 	"directories": {
 		"test": "tests"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com:elrest-cz/wdx-ws-client-js.git"
 	},
 	"scripts": {
 		"postbuild": "./scripts/postbuild.sh",
