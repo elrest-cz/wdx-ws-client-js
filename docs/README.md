@@ -1,3 +1,5 @@
+@wago/wdx-ws-client-js / [Exports](modules.md)
+
 # WDX - WS - Client - JS
 
 A TypeScript model Library library for handling class models as schema library distributed with exported classes, interfaces, and enumerations. This library allows you to use WDX Schema models using TypeScript classes and reference models in a structured manner.
@@ -72,7 +74,6 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
     }
 })();
 ```
-
 
 For more examples, see github repository example [directory](examples).
 

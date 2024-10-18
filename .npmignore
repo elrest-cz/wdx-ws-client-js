@@ -1,6 +1,5 @@
 src/
 .logs/
-docs/
 nodemon.json
 tsconfig.json
 .build.json

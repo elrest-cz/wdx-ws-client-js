@@ -1,0 +1,6057 @@
+{
+	"id": 0,
+	"name": "@wago/wdx-ws-client-js",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "WDX",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "WS",
+					"variant": "declaration",
+					"kind": 4,
+					"flags": {},
+					"children": [
+						{
+							"id": 3,
+							"name": "Client",
+							"variant": "declaration",
+							"kind": 4,
+							"flags": {},
+							"children": [
+								{
+									"id": 4,
+									"name": "JS",
+									"variant": "declaration",
+									"kind": 4,
+									"flags": {},
+									"children": [
+										{
+											"id": 5,
+											"name": "Configuration",
+											"variant": "declaration",
+											"kind": 4,
+											"flags": {},
+											"children": [
+												{
+													"id": 6,
+													"name": "Protocol",
+													"variant": "declaration",
+													"kind": 8,
+													"flags": {},
+													"children": [
+														{
+															"id": 7,
+															"name": "ws",
+															"variant": "declaration",
+															"kind": 16,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 10,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "literal",
+																"value": "ws"
+															}
+														},
+														{
+															"id": 8,
+															"name": "wss",
+															"variant": "declaration",
+															"kind": 16,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 11,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "literal",
+																"value": "wss"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Enumeration Members",
+															"children": [
+																7,
+																8
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+															"line": 9,
+															"character": 12
+														}
+													]
+												},
+												{
+													"id": 9,
+													"name": "Configuration",
+													"variant": "declaration",
+													"kind": 256,
+													"flags": {},
+													"children": [
+														{
+															"id": 12,
+															"name": "host",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 19,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														},
+														{
+															"id": 14,
+															"name": "path",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 23,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														},
+														{
+															"id": 13,
+															"name": "port",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 21,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 11,
+															"name": "protocol",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 17,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 6,
+																"name": "Protocol",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 15,
+															"name": "reconnectTimeout",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 25,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 10,
+															"name": "url",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"children": [
+																12,
+																14,
+																13,
+																11,
+																15,
+																10
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Configuration/Configuration.ts",
+															"line": 14,
+															"character": 17
+														}
+													]
+												}
+											],
+											"groups": [
+												{
+													"title": "Enumerations",
+													"children": [
+														6
+													]
+												},
+												{
+													"title": "Interfaces",
+													"children": [
+														9
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "WDX/WS/Client/JS/Configuration/index.ts",
+													"line": 1,
+													"character": 0
+												}
+											]
+										},
+										{
+											"id": 16,
+											"name": "Service",
+											"variant": "declaration",
+											"kind": 4,
+											"flags": {},
+											"children": [
+												{
+													"id": 22,
+													"name": "Status",
+													"variant": "declaration",
+													"kind": 8,
+													"flags": {},
+													"comment": {
+														"summary": [],
+														"blockTags": [
+															{
+																"tag": "@todo",
+																"content": [
+																	{
+																		"kind": "text",
+																		"text": "Multiple connect create isolated subscription on status,"
+																	}
+																]
+															}
+														]
+													},
+													"children": [
+														{
+															"id": 23,
+															"name": "CONNECTED",
+															"variant": "declaration",
+															"kind": 16,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 25,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "literal",
+																"value": "CONNECTED"
+															}
+														},
+														{
+															"id": 24,
+															"name": "CONNECTING",
+															"variant": "declaration",
+															"kind": 16,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 26,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "literal",
+																"value": "CONNECTING"
+															}
+														},
+														{
+															"id": 25,
+															"name": "DISCONNECTED",
+															"variant": "declaration",
+															"kind": 16,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 27,
+																	"character": 2
+																}
+															],
+															"type": {
+																"type": "literal",
+																"value": "DISCONNECTED"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Enumeration Members",
+															"children": [
+																23,
+																24,
+																25
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+															"line": 24,
+															"character": 12
+														}
+													]
+												},
+												{
+													"id": 17,
+													"name": "AbstractAPIService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {
+														"isAbstract": true
+													},
+													"children": [
+														{
+															"id": 18,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 19,
+																	"name": "new AbstractAPIService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																			"line": 15,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 20,
+																			"name": "clientService",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 26,
+																				"name": "ClientService",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 17,
+																		"name": "AbstractAPIService",
+																		"package": "@wago/wdx-ws-client-js"
+																	}
+																}
+															]
+														},
+														{
+															"id": 21,
+															"name": "_clientService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isProtected": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 13,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 26,
+																"name": "ClientService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																18
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																21
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+															"line": 12,
+															"character": 22
+														}
+													],
+													"extendedBy": [
+														{
+															"type": "reference",
+															"target": 86,
+															"name": "DataService"
+														},
+														{
+															"type": "reference",
+															"target": 124,
+															"name": "ScriptService"
+														},
+														{
+															"type": "reference",
+															"target": 139,
+															"name": "AlarmService"
+														},
+														{
+															"type": "reference",
+															"target": 163,
+															"name": "TrendService"
+														},
+														{
+															"type": "reference",
+															"target": 186,
+															"name": "InstanceService"
+														}
+													]
+												},
+												{
+													"id": 139,
+													"name": "AlarmService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {},
+													"children": [
+														{
+															"id": 140,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 141,
+																	"name": "new AlarmService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																			"line": 15,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 142,
+																			"name": "clientService",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 26,
+																				"name": "ClientService",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 139,
+																		"name": "AlarmService",
+																		"package": "@wago/wdx-ws-client-js"
+																	},
+																	"inheritedFrom": {
+																		"type": "reference",
+																		"target": 19,
+																		"name": "AbstractAPIService.constructor"
+																	}
+																}
+															],
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 18,
+																"name": "AbstractAPIService.constructor"
+															}
+														},
+														{
+															"id": 162,
+															"name": "_clientService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isProtected": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 13,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 26,
+																"name": "ClientService",
+																"package": "@wago/wdx-ws-client-js"
+															},
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 21,
+																"name": "AbstractAPIService._clientService"
+															}
+														},
+														{
+															"id": 143,
+															"name": "deleteAlarm",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 20,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 144,
+																	"name": "deleteAlarm",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [],
+																		"blockTags": [
+																			{
+																				"tag": "@returns",
+																				"content": []
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 20,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 145,
+																			"name": "id",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/Alarm.d.ts",
+																					"qualifiedName": "Alarm"
+																				},
+																				"name": "Alarm",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 146,
+															"name": "detailAlarm",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 47,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 147,
+																	"name": "detailAlarm",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 47,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 148,
+																			"name": "id",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/Alarm.d.ts",
+																					"qualifiedName": "Alarm"
+																				},
+																				"name": "Alarm",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 155,
+															"name": "listAlarmHistory",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 130,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 156,
+																	"name": "listAlarmHistory",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 130,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 157,
+																			"name": "alarmId",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "array",
+																				"elementType": {
+																					"type": "reference",
+																					"target": {
+																						"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/AlarmHistory.d.ts",
+																						"qualifiedName": "AlarmHistory"
+																					},
+																					"name": "AlarmHistory",
+																					"package": "@wago/wdx-schema"
+																				}
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 152,
+															"name": "listAlarms",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 101,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 153,
+																	"name": "listAlarms",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 101,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 154,
+																			"name": "active",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "boolean"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "array",
+																				"elementType": {
+																					"type": "reference",
+																					"target": {
+																						"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/Alarm.d.ts",
+																						"qualifiedName": "Alarm"
+																					},
+																					"name": "Alarm",
+																					"package": "@wago/wdx-schema"
+																				}
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 160,
+															"name": "register",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 185,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 161,
+																	"name": "register",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 185,
+																			"character": 9
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "intrinsic",
+																						"name": "undefined"
+																					},
+																					{
+																						"type": "reference",
+																						"target": {
+																							"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/Alarm.d.ts",
+																							"qualifiedName": "Alarm"
+																						},
+																						"name": "Alarm",
+																						"package": "@wago/wdx-schema"
+																					}
+																				]
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 149,
+															"name": "saveAlarm",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 74,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 150,
+																	"name": "saveAlarm",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 74,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 151,
+																			"name": "alarm",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/Alarm.d.ts",
+																					"qualifiedName": "Alarm"
+																				},
+																				"name": "Alarm",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Alarm/Alarm.d.ts",
+																					"qualifiedName": "Alarm"
+																				},
+																				"name": "Alarm",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 158,
+															"name": "unregister",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																	"line": 160,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 159,
+																	"name": "unregister",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+																			"line": 160,
+																			"character": 9
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "undefined"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																140
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																162
+															]
+														},
+														{
+															"title": "Methods",
+															"children": [
+																143,
+																146,
+																155,
+																152,
+																160,
+																149,
+																158
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/AlarmService.ts",
+															"line": 13,
+															"character": 13
+														}
+													],
+													"extendedTypes": [
+														{
+															"type": "reference",
+															"target": 17,
+															"name": "AbstractAPIService",
+															"package": "@wago/wdx-ws-client-js"
+														}
+													]
+												},
+												{
+													"id": 26,
+													"name": "ClientService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {},
+													"children": [
+														{
+															"id": 27,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 61,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 28,
+																	"name": "new ClientService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 61,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 29,
+																			"name": "wsClientConfiguration",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 9,
+																				"name": "Configuration",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 26,
+																		"name": "ClientService",
+																		"package": "@wago/wdx-ws-client-js"
+																	}
+																}
+															]
+														},
+														{
+															"id": 31,
+															"name": "__KEEPALIVE_INTERVAL",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true,
+																"isReadonly": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 32,
+																	"character": 19
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															},
+															"defaultValue": "60000"
+														},
+														{
+															"id": 32,
+															"name": "__RECONNECT_TIMEOUT",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true,
+																"isReadonly": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 34,
+																	"character": 19
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															},
+															"defaultValue": "1000"
+														},
+														{
+															"id": 41,
+															"name": "__alarmService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 53,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 139,
+																"name": "AlarmService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 36,
+															"name": "__connection",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 43,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/@types/websocket/index.d.ts",
+																			"qualifiedName": "connection"
+																		},
+																		"name": "connection",
+																		"package": "@types/websocket"
+																	}
+																]
+															}
+														},
+														{
+															"id": 37,
+															"name": "__dataService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 45,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 86,
+																"name": "DataService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 43,
+															"name": "__incommingMessages",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 57,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": {
+																	"sourceFileName": "../../node_modules/rxjs/src/internal/Subject.ts",
+																	"qualifiedName": "Subject"
+																},
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../wdx-schema/build/WDX/Schema/Message/AbstractMessage.d.ts",
+																			"qualifiedName": "AbstractMessage"
+																		},
+																		"name": "AbstractMessage",
+																		"package": "@wago/wdx-schema"
+																	}
+																],
+																"name": "Subject",
+																"package": "rxjs"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 39,
+															"name": "__instanceService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 49,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 186,
+																"name": "InstanceService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 30,
+															"name": "__keepAliveTimeout",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 30,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "node_modules/@types/node/timers.d.ts",
+																			"qualifiedName": "__global.NodeJS.Timeout"
+																		},
+																		"name": "Timeout",
+																		"package": "@types/node",
+																		"qualifiedName": "__global.NodeJS.Timeout"
+																	}
+																]
+															}
+														},
+														{
+															"id": 40,
+															"name": "__runtimeService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 51,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": {
+																	"sourceFileName": "src/WDX/WS/Client/JS/Service/RuntimeService.ts",
+																	"qualifiedName": "RuntimeService"
+																},
+																"name": "RuntimeService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 38,
+															"name": "__scriptService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 47,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 124,
+																"name": "ScriptService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 33,
+															"name": "__status",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true,
+																"isReadonly": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 36,
+																	"character": 19
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": {
+																	"sourceFileName": "../../node_modules/rxjs/src/internal/BehaviorSubject.ts",
+																	"qualifiedName": "BehaviorSubject"
+																},
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"target": 22,
+																		"name": "Status",
+																		"package": "@wago/wdx-ws-client-js"
+																	}
+																],
+																"name": "BehaviorSubject",
+																"package": "rxjs"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 42,
+															"name": "__trendService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 55,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 163,
+																"name": "TrendService",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 35,
+															"name": "__wsClient",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 41,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/@types/websocket/index.d.ts",
+																			"qualifiedName": "client"
+																		},
+																		"name": "client",
+																		"package": "@types/websocket"
+																	}
+																]
+															}
+														},
+														{
+															"id": 34,
+															"name": "__wsClientConfiguration",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 39,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 9,
+																"name": "Configuration",
+																"package": "@wago/wdx-ws-client-js"
+															}
+														},
+														{
+															"id": 74,
+															"name": "alarmService",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 246,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 75,
+																"name": "alarmService",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 246,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": 139,
+																	"name": "AlarmService",
+																	"package": "@wago/wdx-ws-client-js"
+																}
+															}
+														},
+														{
+															"id": 78,
+															"name": "dataService",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 260,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 79,
+																"name": "dataService",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 260,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": 86,
+																	"name": "DataService",
+																	"package": "@wago/wdx-ws-client-js"
+																}
+															}
+														},
+														{
+															"id": 72,
+															"name": "incommingMessages",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 241,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 73,
+																"name": "incommingMessages",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 241,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": {
+																		"sourceFileName": "../../node_modules/rxjs/src/internal/Subject.ts",
+																		"qualifiedName": "Subject"
+																	},
+																	"typeArguments": [
+																		{
+																			"type": "reference",
+																			"target": {
+																				"sourceFileName": "../wdx-schema/build/WDX/Schema/Message/AbstractMessage.d.ts",
+																				"qualifiedName": "AbstractMessage"
+																			},
+																			"name": "AbstractMessage",
+																			"package": "@wago/wdx-schema"
+																		}
+																	],
+																	"name": "Subject",
+																	"package": "rxjs"
+																}
+															}
+														},
+														{
+															"id": 82,
+															"name": "instanceService",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 274,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 83,
+																"name": "instanceService",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 274,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": 186,
+																	"name": "InstanceService",
+																	"package": "@wago/wdx-ws-client-js"
+																}
+															}
+														},
+														{
+															"id": 84,
+															"name": "runtimeService",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 281,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 85,
+																"name": "runtimeService",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 281,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": {
+																		"sourceFileName": "src/WDX/WS/Client/JS/Service/RuntimeService.ts",
+																		"qualifiedName": "RuntimeService"
+																	},
+																	"name": "RuntimeService",
+																	"package": "@wago/wdx-ws-client-js"
+																}
+															}
+														},
+														{
+															"id": 80,
+															"name": "scriptService",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 267,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 81,
+																"name": "scriptService",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 267,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": 124,
+																	"name": "ScriptService",
+																	"package": "@wago/wdx-ws-client-js"
+																}
+															}
+														},
+														{
+															"id": 70,
+															"name": "status",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 237,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 71,
+																"name": "status",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 237,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": {
+																		"sourceFileName": "../../node_modules/rxjs/src/internal/BehaviorSubject.ts",
+																		"qualifiedName": "BehaviorSubject"
+																	},
+																	"typeArguments": [
+																		{
+																			"type": "reference",
+																			"target": 22,
+																			"name": "Status",
+																			"package": "@wago/wdx-ws-client-js"
+																		}
+																	],
+																	"name": "BehaviorSubject",
+																	"package": "rxjs"
+																}
+															}
+														},
+														{
+															"id": 76,
+															"name": "trendService",
+															"variant": "declaration",
+															"kind": 262144,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 253,
+																	"character": 13
+																}
+															],
+															"getSignature": {
+																"id": 77,
+																"name": "trendService",
+																"variant": "signature",
+																"kind": 524288,
+																"flags": {},
+																"sources": [
+																	{
+																		"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																		"line": 253,
+																		"character": 13
+																	}
+																],
+																"type": {
+																	"type": "reference",
+																	"target": 163,
+																	"name": "TrendService",
+																	"package": "@wago/wdx-ws-client-js"
+																}
+															}
+														},
+														{
+															"id": 46,
+															"name": "__getWsClientUrl",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 120,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 47,
+																	"name": "__getWsClientUrl",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 120,
+																			"character": 10
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																}
+															]
+														},
+														{
+															"id": 59,
+															"name": "__onError",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 198,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 60,
+																	"name": "__onError",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 198,
+																			"character": 10
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 61,
+																			"name": "error",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "any"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														},
+														{
+															"id": 62,
+															"name": "__onMessage",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 203,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 63,
+																	"name": "__onMessage",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 203,
+																			"character": 10
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 64,
+																			"name": "message",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../../node_modules/@types/websocket/index.d.ts",
+																					"qualifiedName": "Message"
+																				},
+																				"name": "Message",
+																				"package": "@types/websocket"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														},
+														{
+															"id": 54,
+															"name": "__onOpen",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 153,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 55,
+																	"name": "__onOpen",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 153,
+																			"character": 10
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 56,
+																			"name": "connection",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../../node_modules/@types/websocket/index.d.ts",
+																					"qualifiedName": "connection"
+																				},
+																				"name": "connection",
+																				"package": "@types/websocket"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														},
+														{
+															"id": 57,
+															"name": "__reconnect",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 182,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 58,
+																	"name": "__reconnect",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 182,
+																			"character": 10
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														},
+														{
+															"id": 48,
+															"name": "__sendKeepAlive",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 129,
+																	"character": 16
+																}
+															],
+															"signatures": [
+																{
+																	"id": 49,
+																	"name": "__sendKeepAlive",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 129,
+																			"character": 16
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/typescript/lib/lib.es5.d.ts",
+																			"qualifiedName": "Promise"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "void"
+																			}
+																		],
+																		"name": "Promise",
+																		"package": "typescript"
+																	}
+																}
+															]
+														},
+														{
+															"id": 50,
+															"name": "__startKeepAlive",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 133,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 51,
+																	"name": "__startKeepAlive",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 133,
+																			"character": 10
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														},
+														{
+															"id": 52,
+															"name": "__stopKeepAlive",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPrivate": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 146,
+																	"character": 10
+																}
+															],
+															"signatures": [
+																{
+																	"id": 53,
+																	"name": "__stopKeepAlive",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 146,
+																			"character": 10
+																		}
+																	],
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														},
+														{
+															"id": 44,
+															"name": "connect",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 67,
+																	"character": 15
+																}
+															],
+															"signatures": [
+																{
+																	"id": 45,
+																	"name": "connect",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 67,
+																			"character": 15
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/typescript/lib/lib.es5.d.ts",
+																			"qualifiedName": "Promise"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "void"
+																			}
+																		],
+																		"name": "Promise",
+																		"package": "typescript"
+																	}
+																}
+															]
+														},
+														{
+															"id": 68,
+															"name": "disconnect",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 231,
+																	"character": 15
+																}
+															],
+															"signatures": [
+																{
+																	"id": 69,
+																	"name": "disconnect",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 231,
+																			"character": 15
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/typescript/lib/lib.es5.d.ts",
+																			"qualifiedName": "Promise"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "void"
+																			}
+																		],
+																		"name": "Promise",
+																		"package": "typescript"
+																	}
+																}
+															]
+														},
+														{
+															"id": 65,
+															"name": "sendMessage",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																	"line": 209,
+																	"character": 15
+																}
+															],
+															"signatures": [
+																{
+																	"id": 66,
+																	"name": "sendMessage",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+																			"line": 209,
+																			"character": 15
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 67,
+																			"name": "message",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Message/AbstractMessage.d.ts",
+																					"qualifiedName": "AbstractMessage"
+																				},
+																				"name": "AbstractMessage",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/typescript/lib/lib.es5.d.ts",
+																			"qualifiedName": "Promise"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "void"
+																			}
+																		],
+																		"name": "Promise",
+																		"package": "typescript"
+																	}
+																}
+															]
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																27
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																31,
+																32,
+																41,
+																36,
+																37,
+																43,
+																39,
+																30,
+																40,
+																38,
+																33,
+																42,
+																35,
+																34
+															]
+														},
+														{
+															"title": "Accessors",
+															"children": [
+																74,
+																78,
+																72,
+																82,
+																84,
+																80,
+																70,
+																76
+															]
+														},
+														{
+															"title": "Methods",
+															"children": [
+																46,
+																59,
+																62,
+																54,
+																57,
+																48,
+																50,
+																52,
+																44,
+																68,
+																65
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/ClientService.ts",
+															"line": 29,
+															"character": 13
+														}
+													]
+												},
+												{
+													"id": 86,
+													"name": "DataService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {},
+													"children": [
+														{
+															"id": 87,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 88,
+																	"name": "new DataService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																			"line": 15,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 89,
+																			"name": "clientService",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 26,
+																				"name": "ClientService",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 86,
+																		"name": "DataService",
+																		"package": "@wago/wdx-ws-client-js"
+																	},
+																	"inheritedFrom": {
+																		"type": "reference",
+																		"target": 19,
+																		"name": "AbstractAPIService.constructor"
+																	}
+																}
+															],
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 18,
+																"name": "AbstractAPIService.constructor"
+															}
+														},
+														{
+															"id": 123,
+															"name": "_clientService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isProtected": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 13,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 26,
+																"name": "ClientService",
+																"package": "@wago/wdx-ws-client-js"
+															},
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 21,
+																"name": "AbstractAPIService._clientService"
+															}
+														},
+														{
+															"id": 90,
+															"name": "deleteSchema",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 14,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 91,
+																	"name": "deleteSchema",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 14,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 92,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 99,
+															"name": "getSchema",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 91,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 100,
+																	"name": "getSchema",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 91,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 101,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		},
+																		{
+																			"id": 102,
+																			"name": "level",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": "WDXSchema.WDX.Schema.Model.Data.GetSchemaRequestBody.DEFAULT_LEVEL"
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataSchema.d.ts",
+																					"qualifiedName": "DataSchema"
+																				},
+																				"name": "DataSchema",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 116,
+															"name": "getValue",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 229,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 117,
+																	"name": "getValue",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 229,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 118,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "literal",
+																						"value": null
+																					},
+																					{
+																						"type": "reference",
+																						"target": {
+																							"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataValue.d.ts",
+																							"qualifiedName": "DataValue"
+																						},
+																						"name": "DataValue",
+																						"package": "@wago/wdx-schema"
+																					}
+																				]
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 93,
+															"name": "refreshSchema",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 39,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 94,
+																	"name": "refreshSchema",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 39,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 95,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 106,
+															"name": "register",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 147,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 107,
+																	"name": "register",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 147,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 108,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		},
+																		{
+																			"id": 109,
+																			"name": "refreshMin",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": "1000"
+																		},
+																		{
+																			"id": 110,
+																			"name": "refreshMax",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": "0"
+																		},
+																		{
+																			"id": 111,
+																			"name": "delta",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "literal",
+																						"value": null
+																					},
+																					{
+																						"type": "reference",
+																						"target": {
+																							"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataValue.d.ts",
+																							"qualifiedName": "DataValue"
+																						},
+																						"name": "DataValue",
+																						"package": "@wago/wdx-schema"
+																					}
+																				]
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 112,
+															"name": "registerDataSchemaChanges",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 178,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 113,
+																	"name": "registerDataSchemaChanges",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 178,
+																			"character": 9
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataSchema.d.ts",
+																					"qualifiedName": "DataSchema"
+																				},
+																				"name": "DataSchema",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 96,
+															"name": "setSchema",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 64,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 97,
+																	"name": "setSchema",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 64,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 98,
+																			"name": "schema",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataSchema.d.ts",
+																					"qualifiedName": "DataSchema"
+																				},
+																				"name": "DataSchema",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataSchema.d.ts",
+																					"qualifiedName": "DataSchema"
+																				},
+																				"name": "DataSchema",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 119,
+															"name": "setValue",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 252,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 120,
+																	"name": "setValue",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 252,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 121,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		},
+																		{
+																			"id": 122,
+																			"name": "value",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "any"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "literal",
+																						"value": null
+																					},
+																					{
+																						"type": "reference",
+																						"target": {
+																							"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Data/DataValue.d.ts",
+																							"qualifiedName": "DataValue"
+																						},
+																						"name": "DataValue",
+																						"package": "@wago/wdx-schema"
+																					}
+																				]
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 103,
+															"name": "unregister",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 122,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 104,
+																	"name": "unregister",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 122,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 105,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 114,
+															"name": "unregisterDataSchemaChanges",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																	"line": 202,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 115,
+																	"name": "unregisterDataSchemaChanges",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+																			"line": 202,
+																			"character": 9
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "literal",
+																				"value": null
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																87
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																123
+															]
+														},
+														{
+															"title": "Methods",
+															"children": [
+																90,
+																99,
+																116,
+																93,
+																106,
+																112,
+																96,
+																119,
+																103,
+																114
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/DataService.ts",
+															"line": 13,
+															"character": 13
+														}
+													],
+													"extendedTypes": [
+														{
+															"type": "reference",
+															"target": 17,
+															"name": "AbstractAPIService",
+															"package": "@wago/wdx-ws-client-js"
+														}
+													]
+												},
+												{
+													"id": 186,
+													"name": "InstanceService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {},
+													"children": [
+														{
+															"id": 187,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 188,
+																	"name": "new InstanceService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																			"line": 15,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 189,
+																			"name": "clientService",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 26,
+																				"name": "ClientService",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 186,
+																		"name": "InstanceService",
+																		"package": "@wago/wdx-ws-client-js"
+																	},
+																	"inheritedFrom": {
+																		"type": "reference",
+																		"target": 19,
+																		"name": "AbstractAPIService.constructor"
+																	}
+																}
+															],
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 18,
+																"name": "AbstractAPIService.constructor"
+															}
+														},
+														{
+															"id": 220,
+															"name": "_clientService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isProtected": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 13,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 26,
+																"name": "ClientService",
+																"package": "@wago/wdx-ws-client-js"
+															},
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 21,
+																"name": "AbstractAPIService._clientService"
+															}
+														},
+														{
+															"id": 190,
+															"name": "delete",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 17,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 191,
+																	"name": "delete",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Starts eDesign Instance instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 17,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 192,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 205,
+															"name": "detail",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 178,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 206,
+																	"name": "detail",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Starts eDesign Instance instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 178,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 207,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 199,
+															"name": "list",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 115,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 200,
+																	"name": "list",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Lists eDesign Instances"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 115,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 201,
+																			"name": "status",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Status.d.ts",
+																					"qualifiedName": "Status"
+																				},
+																				"name": "Status",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "array",
+																				"elementType": {
+																					"type": "reference",
+																					"target": {
+																						"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																						"qualifiedName": "Instance"
+																					},
+																					"name": "Instance",
+																					"package": "@wago/wdx-schema"
+																				}
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 193,
+															"name": "logSubscribe",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 42,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 194,
+																	"name": "logSubscribe",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 42,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 195,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/LogMessageBody.d.ts",
+																					"qualifiedName": "LogMessageBody"
+																				},
+																				"name": "LogMessageBody",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 196,
+															"name": "logUnsubscribe",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 81,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 197,
+																	"name": "logUnsubscribe",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 81,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 198,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "literal",
+																				"value": null
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 211,
+															"name": "restart",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 239,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 212,
+																	"name": "restart",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Restart eDesign Instance instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 239,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 213,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 217,
+															"name": "save",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 306,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 218,
+																	"name": "save",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Save eDesign Instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 306,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 219,
+																			"name": "instance",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 202,
+															"name": "start",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 147,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 203,
+																	"name": "start",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Starts eDesign Instance instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 147,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 204,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 208,
+															"name": "stop",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 207,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 209,
+																	"name": "stop",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Stops eDesign Runtime Instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 207,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 210,
+																			"name": "uuid",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 214,
+															"name": "whois",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																	"line": 274,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 215,
+																	"name": "whois",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"comment": {
+																		"summary": [
+																			{
+																				"kind": "text",
+																				"text": "Save eDesign Instance"
+																			}
+																		]
+																	},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+																			"line": 274,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 216,
+																			"name": "name",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Instance/Instance.d.ts",
+																					"qualifiedName": "Instance"
+																				},
+																				"name": "Instance",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																187
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																220
+															]
+														},
+														{
+															"title": "Methods",
+															"children": [
+																190,
+																205,
+																199,
+																193,
+																196,
+																211,
+																217,
+																202,
+																208,
+																214
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/InstanceService.ts",
+															"line": 13,
+															"character": 13
+														}
+													],
+													"extendedTypes": [
+														{
+															"type": "reference",
+															"target": 17,
+															"name": "AbstractAPIService",
+															"package": "@wago/wdx-ws-client-js"
+														}
+													]
+												},
+												{
+													"id": 124,
+													"name": "ScriptService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {},
+													"children": [
+														{
+															"id": 125,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 126,
+																	"name": "new ScriptService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																			"line": 15,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 127,
+																			"name": "clientService",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 26,
+																				"name": "ClientService",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 124,
+																		"name": "ScriptService",
+																		"package": "@wago/wdx-ws-client-js"
+																	},
+																	"inheritedFrom": {
+																		"type": "reference",
+																		"target": 19,
+																		"name": "AbstractAPIService.constructor"
+																	}
+																}
+															],
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 18,
+																"name": "AbstractAPIService.constructor"
+															}
+														},
+														{
+															"id": 138,
+															"name": "_clientService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isProtected": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 13,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 26,
+																"name": "ClientService",
+																"package": "@wago/wdx-ws-client-js"
+															},
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 21,
+																"name": "AbstractAPIService._clientService"
+															}
+														},
+														{
+															"id": 135,
+															"name": "delete",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+																	"line": 75,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 136,
+																	"name": "delete",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+																			"line": 75,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 137,
+																			"name": "entry",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Filesystem/Entry.d.ts",
+																					"qualifiedName": "Entry"
+																				},
+																				"name": "Entry",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Filesystem/Entry.d.ts",
+																					"qualifiedName": "Entry"
+																				},
+																				"name": "Entry",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 128,
+															"name": "list",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+																	"line": 16,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 129,
+																	"name": "list",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+																			"line": 16,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 130,
+																			"name": "path",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		},
+																		{
+																			"id": 131,
+																			"name": "level",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": "WDXSchema.WDX.Schema.Model.Script.BROWSE_DEFAULT_LEVEL"
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Filesystem/Entry.d.ts",
+																					"qualifiedName": "Entry"
+																				},
+																				"name": "Entry",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 132,
+															"name": "save",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+																	"line": 47,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 133,
+																	"name": "save",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+																			"line": 47,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 134,
+																			"name": "entry",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Filesystem/Entry.d.ts",
+																					"qualifiedName": "Entry"
+																				},
+																				"name": "Entry",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Filesystem/Entry.d.ts",
+																					"qualifiedName": "Entry"
+																				},
+																				"name": "Entry",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																125
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																138
+															]
+														},
+														{
+															"title": "Methods",
+															"children": [
+																135,
+																128,
+																132
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/ScriptService.ts",
+															"line": 15,
+															"character": 13
+														}
+													],
+													"extendedTypes": [
+														{
+															"type": "reference",
+															"target": 17,
+															"name": "AbstractAPIService",
+															"package": "@wago/wdx-ws-client-js"
+														}
+													]
+												},
+												{
+													"id": 163,
+													"name": "TrendService",
+													"variant": "declaration",
+													"kind": 128,
+													"flags": {},
+													"children": [
+														{
+															"id": 164,
+															"name": "constructor",
+															"variant": "declaration",
+															"kind": 512,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 15,
+																	"character": 2
+																}
+															],
+															"signatures": [
+																{
+																	"id": 165,
+																	"name": "new TrendService",
+																	"variant": "signature",
+																	"kind": 16384,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																			"line": 15,
+																			"character": 2
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 166,
+																			"name": "clientService",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": 26,
+																				"name": "ClientService",
+																				"package": "@wago/wdx-ws-client-js"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": 163,
+																		"name": "TrendService",
+																		"package": "@wago/wdx-ws-client-js"
+																	},
+																	"inheritedFrom": {
+																		"type": "reference",
+																		"target": 19,
+																		"name": "AbstractAPIService.constructor"
+																	}
+																}
+															],
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 18,
+																"name": "AbstractAPIService.constructor"
+															}
+														},
+														{
+															"id": 185,
+															"name": "_clientService",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isProtected": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+																	"line": 13,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "reference",
+																"target": 26,
+																"name": "ClientService",
+																"package": "@wago/wdx-ws-client-js"
+															},
+															"inheritedFrom": {
+																"type": "reference",
+																"target": 21,
+																"name": "AbstractAPIService._clientService"
+															}
+														},
+														{
+															"id": 167,
+															"name": "delete",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																	"line": 14,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 168,
+																	"name": "delete",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																			"line": 14,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 169,
+																			"name": "id",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Trend/Trend.d.ts",
+																					"qualifiedName": "Trend"
+																				},
+																				"name": "Trend",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 170,
+															"name": "detail",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																	"line": 42,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 171,
+																	"name": "detail",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																			"line": 42,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 172,
+																			"name": "id",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Trend/Trend.d.ts",
+																					"qualifiedName": "Trend"
+																				},
+																				"name": "Trend",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 176,
+															"name": "list",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																	"line": 98,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 177,
+																	"name": "list",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																			"line": 98,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 178,
+																			"name": "active",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {
+																				"isOptional": true
+																			},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "boolean"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "array",
+																				"elementType": {
+																					"type": "reference",
+																					"target": {
+																						"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Trend/Trend.d.ts",
+																						"qualifiedName": "Trend"
+																					},
+																					"name": "Trend",
+																					"package": "@wago/wdx-schema"
+																				}
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 182,
+															"name": "register",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																	"line": 153,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 183,
+																	"name": "register",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																			"line": 153,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 184,
+																			"name": "id",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Trend/Graph/GraphData.d.ts",
+																					"qualifiedName": "GraphData"
+																				},
+																				"name": "GraphData",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 173,
+															"name": "save",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																	"line": 71,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 174,
+																	"name": "save",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																			"line": 71,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 175,
+																			"name": "alarm",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Trend/Trend.d.ts",
+																					"qualifiedName": "Trend"
+																				},
+																				"name": "Trend",
+																				"package": "@wago/wdx-schema"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"target": {
+																					"sourceFileName": "../wdx-schema/build/WDX/Schema/Model/Trend/Trend.d.ts",
+																					"qualifiedName": "Trend"
+																				},
+																				"name": "Trend",
+																				"package": "@wago/wdx-schema"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														},
+														{
+															"id": 179,
+															"name": "unregister",
+															"variant": "declaration",
+															"kind": 2048,
+															"flags": {
+																"isPublic": true
+															},
+															"sources": [
+																{
+																	"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																	"line": 127,
+																	"character": 9
+																}
+															],
+															"signatures": [
+																{
+																	"id": 180,
+																	"name": "unregister",
+																	"variant": "signature",
+																	"kind": 4096,
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+																			"line": 127,
+																			"character": 9
+																		}
+																	],
+																	"parameters": [
+																		{
+																			"id": 181,
+																			"name": "id",
+																			"variant": "param",
+																			"kind": 32768,
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "reference",
+																		"target": {
+																			"sourceFileName": "../../node_modules/rxjs/src/internal/Observable.ts",
+																			"qualifiedName": "Observable"
+																		},
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "undefined"
+																			}
+																		],
+																		"name": "Observable",
+																		"package": "rxjs"
+																	}
+																}
+															]
+														}
+													],
+													"groups": [
+														{
+															"title": "Constructors",
+															"children": [
+																164
+															]
+														},
+														{
+															"title": "Properties",
+															"children": [
+																185
+															]
+														},
+														{
+															"title": "Methods",
+															"children": [
+																167,
+																170,
+																176,
+																182,
+																173,
+																179
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "WDX/WS/Client/JS/Service/TrendService.ts",
+															"line": 13,
+															"character": 13
+														}
+													],
+													"extendedTypes": [
+														{
+															"type": "reference",
+															"target": 17,
+															"name": "AbstractAPIService",
+															"package": "@wago/wdx-ws-client-js"
+														}
+													]
+												}
+											],
+											"groups": [
+												{
+													"title": "Enumerations",
+													"children": [
+														22
+													]
+												},
+												{
+													"title": "Classes",
+													"children": [
+														17,
+														139,
+														26,
+														86,
+														186,
+														124,
+														163
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "WDX/WS/Client/JS/Service/index.ts",
+													"line": 1,
+													"character": 0
+												}
+											]
+										}
+									],
+									"groups": [
+										{
+											"title": "Namespaces",
+											"children": [
+												5,
+												16
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "WDX/WS/Client/JS/index.ts",
+											"line": 1,
+											"character": 0
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Namespaces",
+									"children": [
+										4
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "WDX/WS/Client/index.ts",
+									"line": 1,
+									"character": 0
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Namespaces",
+							"children": [
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "WDX/WS/index.ts",
+							"line": 1,
+							"character": 0
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Namespaces",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "WDX/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Namespaces",
+			"children": [
+				1
+			]
+		}
+	],
+	"packageName": "@wago/wdx-ws-client-js",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "# WDX - WS - Client - JS\n\nA TypeScript model Library library for handling class models as schema library distributed with exported classes, interfaces, and enumerations. This library allows you to use WDX Schema models using TypeScript classes and reference models in a structured manner.\n\n## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n  - [Using Client](#using-client)\n- [API](docs/modules.md)\n- [Requirements](#Requirements)\n- [License](#license)\n\n## Installation\n\nTo install the library, use npm or yarn:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\nnpm install @wago/wdx-ws-client-js\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\nor\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\nyarn add @wago/wdx-ws-client-js\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Usage\n\n### Using Client\n\nHere's an example:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```typescript\n\nconst WDXWSClient = require('@wago/wdx-ws-client-js');\n\n(async () => {\n    try {\n        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(\n            { protocol: 'ws', host: 'localhost', port: 82 }\n        );\n        await c.connect();\n\n        console.log('Connected successfully');\n\n        const path = 'Virtual.virtual-store.test';\n\n        c.dataService.getSchema(path, 1).subscribe(\n            {\n                next: (schema) => {\n                    console.log(JSON.stringify(schema, null, 2));\n                },\n\n                error: async (error) => {\n                    console.error('Error: ' + error.message);\n\n                    await c.disconnect();\n                    console.log('Disconnected successfully');\n                },\n\n                complete: async () => {\n                    await c.disconnect();\n                    console.log('Disconnected successfully');\n                }\n            },\n        );\n\n    } catch (e) {\n        console.error('Error: ' + e.message);\n        console.error('Error: ' + e.stack);\n    }\n})();\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n\nFor more examples, see github repository example [directory](examples).\n\n## License\n\nThis library is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [LICENSE.md](LICENSE.md) file for more details.\n\n© 2024 \n\nThis "
+		},
+		{
+			"kind": "code",
+			"text": "`README.md`"
+		},
+		{
+			"kind": "text",
+			"text": " provides a clear introduction to the TypeScript model schema library, with examples of how to use it, and includes the required copyright and licensing information under the MIT License."
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"sourceFileName": "src/WDX/index.ts",
+			"qualifiedName": ""
+		},
+		"2": {
+			"sourceFileName": "src/WDX/WS/index.ts",
+			"qualifiedName": ""
+		},
+		"3": {
+			"sourceFileName": "src/WDX/WS/Client/index.ts",
+			"qualifiedName": ""
+		},
+		"4": {
+			"sourceFileName": "src/WDX/WS/Client/JS/index.ts",
+			"qualifiedName": ""
+		},
+		"5": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/index.ts",
+			"qualifiedName": ""
+		},
+		"6": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Protocol"
+		},
+		"7": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Protocol.ws"
+		},
+		"8": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Protocol.wss"
+		},
+		"9": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration"
+		},
+		"10": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration.url"
+		},
+		"11": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration.protocol"
+		},
+		"12": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration.host"
+		},
+		"13": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration.port"
+		},
+		"14": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration.path"
+		},
+		"15": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Configuration/Configuration.ts",
+			"qualifiedName": "Configuration.reconnectTimeout"
+		},
+		"16": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/index.ts",
+			"qualifiedName": ""
+		},
+		"17": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService"
+		},
+		"18": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService.__constructor"
+		},
+		"19": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService"
+		},
+		"20": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "clientService"
+		},
+		"21": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService._clientService"
+		},
+		"22": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "Status"
+		},
+		"23": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "Status.CONNECTED"
+		},
+		"24": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "Status.CONNECTING"
+		},
+		"25": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "Status.DISCONNECTED"
+		},
+		"26": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService"
+		},
+		"27": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__constructor"
+		},
+		"28": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService"
+		},
+		"29": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "wsClientConfiguration"
+		},
+		"30": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__keepAliveTimeout"
+		},
+		"31": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__KEEPALIVE_INTERVAL"
+		},
+		"32": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__RECONNECT_TIMEOUT"
+		},
+		"33": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__status"
+		},
+		"34": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__wsClientConfiguration"
+		},
+		"35": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__wsClient"
+		},
+		"36": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__connection"
+		},
+		"37": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__dataService"
+		},
+		"38": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__scriptService"
+		},
+		"39": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__instanceService"
+		},
+		"40": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__runtimeService"
+		},
+		"41": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__alarmService"
+		},
+		"42": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__trendService"
+		},
+		"43": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__incommingMessages"
+		},
+		"44": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.connect"
+		},
+		"45": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.connect"
+		},
+		"46": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__getWsClientUrl"
+		},
+		"47": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__getWsClientUrl"
+		},
+		"48": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__sendKeepAlive"
+		},
+		"49": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__sendKeepAlive"
+		},
+		"50": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__startKeepAlive"
+		},
+		"51": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__startKeepAlive"
+		},
+		"52": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__stopKeepAlive"
+		},
+		"53": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__stopKeepAlive"
+		},
+		"54": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__onOpen"
+		},
+		"55": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__onOpen"
+		},
+		"56": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "connection"
+		},
+		"57": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__reconnect"
+		},
+		"58": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__reconnect"
+		},
+		"59": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__onError"
+		},
+		"60": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__onError"
+		},
+		"61": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "error"
+		},
+		"62": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__onMessage"
+		},
+		"63": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.__onMessage"
+		},
+		"64": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "message"
+		},
+		"65": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.sendMessage"
+		},
+		"66": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.sendMessage"
+		},
+		"67": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "message"
+		},
+		"68": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.disconnect"
+		},
+		"69": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.disconnect"
+		},
+		"70": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.status"
+		},
+		"71": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.status"
+		},
+		"72": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.incommingMessages"
+		},
+		"73": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.incommingMessages"
+		},
+		"74": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.alarmService"
+		},
+		"75": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.alarmService"
+		},
+		"76": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.trendService"
+		},
+		"77": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.trendService"
+		},
+		"78": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.dataService"
+		},
+		"79": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.dataService"
+		},
+		"80": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.scriptService"
+		},
+		"81": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.scriptService"
+		},
+		"82": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.instanceService"
+		},
+		"83": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.instanceService"
+		},
+		"84": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.runtimeService"
+		},
+		"85": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ClientService.ts",
+			"qualifiedName": "ClientService.runtimeService"
+		},
+		"86": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService"
+		},
+		"87": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService.__constructor"
+		},
+		"88": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "DataService"
+		},
+		"89": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "clientService"
+		},
+		"90": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.deleteSchema"
+		},
+		"91": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.deleteSchema"
+		},
+		"92": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"93": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.refreshSchema"
+		},
+		"94": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.refreshSchema"
+		},
+		"95": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"96": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.setSchema"
+		},
+		"97": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.setSchema"
+		},
+		"98": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "schema"
+		},
+		"99": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.getSchema"
+		},
+		"100": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.getSchema"
+		},
+		"101": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"102": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "level"
+		},
+		"103": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.unregister"
+		},
+		"104": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.unregister"
+		},
+		"105": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"106": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.register"
+		},
+		"107": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.register"
+		},
+		"108": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"109": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "refreshMin"
+		},
+		"110": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "refreshMax"
+		},
+		"111": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "delta"
+		},
+		"112": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.registerDataSchemaChanges"
+		},
+		"113": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.registerDataSchemaChanges"
+		},
+		"114": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.unregisterDataSchemaChanges"
+		},
+		"115": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.unregisterDataSchemaChanges"
+		},
+		"116": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.getValue"
+		},
+		"117": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.getValue"
+		},
+		"118": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"119": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.setValue"
+		},
+		"120": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "DataService.setValue"
+		},
+		"121": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "path"
+		},
+		"122": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/DataService.ts",
+			"qualifiedName": "value"
+		},
+		"123": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService._clientService"
+		},
+		"124": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService"
+		},
+		"125": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService.__constructor"
+		},
+		"126": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "ScriptService"
+		},
+		"127": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "clientService"
+		},
+		"128": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService.list"
+		},
+		"129": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService.list"
+		},
+		"130": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "path"
+		},
+		"131": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "level"
+		},
+		"132": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService.save"
+		},
+		"133": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService.save"
+		},
+		"134": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "entry"
+		},
+		"135": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService.delete"
+		},
+		"136": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "ScriptService.delete"
+		},
+		"137": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/ScriptService.ts",
+			"qualifiedName": "entry"
+		},
+		"138": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService._clientService"
+		},
+		"139": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService"
+		},
+		"140": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService.__constructor"
+		},
+		"141": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AlarmService"
+		},
+		"142": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "clientService"
+		},
+		"143": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.deleteAlarm"
+		},
+		"144": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.deleteAlarm"
+		},
+		"145": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "id"
+		},
+		"146": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.detailAlarm"
+		},
+		"147": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.detailAlarm"
+		},
+		"148": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "id"
+		},
+		"149": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.saveAlarm"
+		},
+		"150": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.saveAlarm"
+		},
+		"151": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "alarm"
+		},
+		"152": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.listAlarms"
+		},
+		"153": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.listAlarms"
+		},
+		"154": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "active"
+		},
+		"155": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.listAlarmHistory"
+		},
+		"156": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.listAlarmHistory"
+		},
+		"157": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "alarmId"
+		},
+		"158": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.unregister"
+		},
+		"159": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.unregister"
+		},
+		"160": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.register"
+		},
+		"161": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AlarmService.ts",
+			"qualifiedName": "AlarmService.register"
+		},
+		"162": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService._clientService"
+		},
+		"163": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService"
+		},
+		"164": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService.__constructor"
+		},
+		"165": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "TrendService"
+		},
+		"166": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "clientService"
+		},
+		"167": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.delete"
+		},
+		"168": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.delete"
+		},
+		"169": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "id"
+		},
+		"170": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.detail"
+		},
+		"171": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.detail"
+		},
+		"172": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "id"
+		},
+		"173": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.save"
+		},
+		"174": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.save"
+		},
+		"175": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "alarm"
+		},
+		"176": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.list"
+		},
+		"177": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.list"
+		},
+		"178": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "active"
+		},
+		"179": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.unregister"
+		},
+		"180": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.unregister"
+		},
+		"181": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "id"
+		},
+		"182": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.register"
+		},
+		"183": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "TrendService.register"
+		},
+		"184": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/TrendService.ts",
+			"qualifiedName": "id"
+		},
+		"185": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService._clientService"
+		},
+		"186": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService"
+		},
+		"187": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService.__constructor"
+		},
+		"188": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "InstanceService"
+		},
+		"189": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "clientService"
+		},
+		"190": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.delete"
+		},
+		"191": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.delete"
+		},
+		"192": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"193": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.logSubscribe"
+		},
+		"194": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.logSubscribe"
+		},
+		"195": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"196": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.logUnsubscribe"
+		},
+		"197": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.logUnsubscribe"
+		},
+		"198": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"199": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.list"
+		},
+		"200": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.list"
+		},
+		"201": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "status"
+		},
+		"202": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.start"
+		},
+		"203": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.start"
+		},
+		"204": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"205": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.detail"
+		},
+		"206": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.detail"
+		},
+		"207": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"208": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.stop"
+		},
+		"209": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.stop"
+		},
+		"210": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"211": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.restart"
+		},
+		"212": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.restart"
+		},
+		"213": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "uuid"
+		},
+		"214": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.whois"
+		},
+		"215": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.whois"
+		},
+		"216": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "name"
+		},
+		"217": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.save"
+		},
+		"218": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "InstanceService.save"
+		},
+		"219": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/InstanceService.ts",
+			"qualifiedName": "instance"
+		},
+		"220": {
+			"sourceFileName": "src/WDX/WS/Client/JS/Service/AbstractAPIService.ts",
+			"qualifiedName": "AbstractAPIService._clientService"
+		}
+	}
+}

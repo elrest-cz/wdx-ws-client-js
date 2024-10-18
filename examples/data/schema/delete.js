@@ -1,0 +1,45 @@
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Data Delete Schema
+ * 
+ * Deletes schema for given path and retrieve deleted schema from WDX with WS client.
+ *
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
+
+const WDXJSWSClient = require('../../build/WDX/WS/Client/JS/Service/ClientService');
+
+(async () => {
+
+    try {
+        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        await c.connect();
+
+        console.log('Connected successfully');
+
+        const path = 'Virtual.virtual-store.test';
+
+        c.dataService.deleteSchema(path).subscribe(
+            {
+                next: (response) => {
+                    console.log(response);
+                },
+
+                error: async (error) => {
+                    console.error('Error: ' + error.message);
+
+                    await c.disconnect();
+                    console.log('Disconnected successfully');
+                },
+
+                complete: async () => {
+                    await c.disconnect();
+                    console.log('Disconnected successfully');
+                }
+            },
+        );
+
+    } catch (e) {
+        console.error('Error: ' + e.message);
+        console.error('Error: ' + e.stack);
+    }
+})();

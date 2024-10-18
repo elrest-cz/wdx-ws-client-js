@@ -1,13 +1,13 @@
 /**
- * eDesign - WDX - Package
+ * eDesign - WDX - WS Package
  *
  * @copyright 2024 Elrest Automations Systeme GMBH
  */
 
 'use strict';
 
-import * as WS from './WS';
+import * as Client from './Client';
 
 export {
-  WS,
+  Client,
 };
