@@ -1,37 +1,20 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Create Alarm
+ * Elrest - WDX - WS - Client - JS - Example - Delete Alarm
  * 
- * Creates a new alarm in WDX with WS client.
+ * Deletes alarm in WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
-const WDXJSWSClient = require('../../build/WDX/WS/Client/JS/Service/ClientService');
-const WDXSchema = require('@wago/wdx-schema');
+const WDXWSClient = require('@wago/wdx-ws-client-js');
 
 (async () => {
     try {
-
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
         console.log('Connected successfully');
 
-        const alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-            undefined,
-            'adds sdds',
-            true,
-            'adds sdds sd',
-            3335,
-        );
-        alarm.conditions.push(
-            new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                'Virtual.store.b',
-                WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.EQUALS,
-                1
-            ),
-        );
-
-        c.alarmService.saveAlarm(alarm).subscribe(
+        c.alarmService.deleteAlarm(2).subscribe(
             {
                 next: (alarm) => {
                     console.log(JSON.stringify(alarm, null, 2));

@@ -1,24 +1,24 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Delete Alarm
+ * Elrest - WDX - WS - Client - JS - Example - List Alarm(s) History
  * 
- * Deletes alarm in WDX with WS client.
+ * Retrieve Alarm(s) History list from WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
-const WDXJSWSClient = require('../../build/WDX/WS/Client/JS/Service/ClientService');
+const WDXWSClient = require('@wago/wdx-ws-client-js');
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
         console.log('Connected successfully');
 
 
-        c.alarmService.deleteAlarm(2).subscribe(
+        c.alarmService.listAlarmHistory(1).subscribe(
             {
-                next: (alarm) => {
-                    console.log(JSON.stringify(alarm, null, 2));
+                next: (update) => {
+                    console.log(JSON.stringify(update, null, 2));
                 },
 
                 error: async (error) => {

@@ -1,16 +1,22 @@
-const WDXJSWSClientConfiguration = require('../../build/WDX//Client//WS/Configuration/Configuration');
-const WDXJSWSClient = require('../../build/WDX//Client//WS/Service/ClientService');
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Unsubscribe Data Value Changes
+ * 
+ * Unsubscribes for Data Value changes for given data schema path from WDX with WS client.
+ *
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
+
+const WDXWSClient = require('@wago/wdx-ws-client-js');
 
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
         console.log('Connected successfully');
 
-        //const path = 'Virtual.store.aaaaa';
-        //const path = 'Virtual.store.bbbbb';
-        const path = 'Virtual.storeaa.bbbbb';
+        const path = 'Virtual.virtual-store.test';
+
         c.dataService.register(path).subscribe(
             {
                 next: (dataValue) => {

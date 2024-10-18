@@ -1,21 +1,20 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Unsubscribe Alarm
+ * Elrest - WDX - WS - Client - JS - Example - List Active Alarm
  * 
- * Unsubscribe retrieve of Alarms changes from WDX with WS client.
+ * Retrieve list of active alarms from WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
-const WDXJSWSClient = require('../../build/WDX/WS/Client/JS/Service/ClientService'); 
+const WDXWSClient = require('@wago/wdx-ws-client-js');
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
-
         console.log('Connected successfully');
 
-        c.alarmService.unregister().subscribe(
+        c.alarmService.listAlarms(true).subscribe(
             {
                 next: (update) => {
                     console.log(JSON.stringify(update, null, 2));

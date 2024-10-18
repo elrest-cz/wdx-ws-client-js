@@ -1,7 +1,16 @@
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Instance Delete Schema
+ * 
+ * Deletes Instance for given Instance UUID and retrieve deleted instance from WDX with WS client.
+ *
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
+
+const WDXWSClient = require('@wago/wdx-ws-client-js');
+
 (async () => {
     try {
-        const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
 
         console.log('Connected successfully');

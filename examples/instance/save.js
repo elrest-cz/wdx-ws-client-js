@@ -1,9 +1,18 @@
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Instance save
+ * 
+ * Saves Instance model to WDX with WS client.
+ *
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
+
+const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXSchema = require('@wago/wdx-schema');
+
 (async () => {
     try {
-        const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
-        const WDXSchema = require('@wago/wdx-schema');
 
-        const c = new WDXJSWSClient.ClientService();
+        const c = new WDXWSClient.ClientService();
 
         await c.connect({ protocol: 'ws', host: 'localhost', port: 4282 });
 

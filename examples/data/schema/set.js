@@ -6,12 +6,12 @@
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
-const WDXJSWSClient = require('../../build/WDX/WS/Client/JS/Service/ClientService');
+const WDXWSClient = require('@wago/wdx-ws-client-js');
 const WDXSchema = require('@wago/wdx-schema');
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
         await c.connect();
 
         console.log('Connected successfully');
