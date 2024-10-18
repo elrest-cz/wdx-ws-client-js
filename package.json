@@ -20,7 +20,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "8.0.0",
+	"version": "8.2.0",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
 	"directories": {
@@ -64,6 +64,10 @@
 		"ts-jest": "^29.2.3",
 		"ts-node": "^10.9.2",
 		"typedoc": "^0.25.7",
-		"typescript": "^5.3.3"
+		"typescript": "^5.3.3",
+		"concat-md": "^0.5.1",
+		"nyc": "^15.1.0",
+		"showdown": "^2.1.0",
+		"typedoc-plugin-markdown": "^3.17.1"
 	}
 }
