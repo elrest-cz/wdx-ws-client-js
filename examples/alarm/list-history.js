@@ -1,34 +1,43 @@
 /**
  * Elrest - WDX - WS - Client - JS - Example - List Alarm(s) History
  * 
- * Retrieve Alarm(s) History list from WDX with WS client.
+ * Retrieve Single Alarm History, or All Alarms History list (when alarm id is not specified) from WDX with WS client.
+ * 
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 (async () => {
     try {
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
         console.log('Connected successfully');
 
 
-        c.alarmService.listAlarmHistory(1).subscribe(
+        c.alarmService.listAlarmHistory().subscribe(
             {
                 next: (update) => {
                     console.log(JSON.stringify(update, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error: ' + error.message);
+                    console.error('Error:', JSON.stringify(error, null, 2));
 
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 },
 
                 complete: async () => {
+                    console.log('Completed');
+
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 }
