@@ -71,7 +71,7 @@
 		"concat-md": "^0.5.1",
 		"nyc": "^15.1.0",
 		"showdown": "^2.1.0",
-		"typedoc": "^0.26.10",
-		"typedoc-plugin-markdown": "^4.2.9"
+		"typedoc": "^0.25.7",
+		"typedoc-plugin-markdown": "^3.17.1"
 	}
 }
