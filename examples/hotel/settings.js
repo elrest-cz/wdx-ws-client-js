@@ -3,6 +3,8 @@ const fs = require('fs');
 const WDXUUID = require('uuid');
 const WDXSchema = require('@wago/wdx-schema');
 
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
+
 module.exports.colors = [
     'f7d42e',
     '31a8fa',
@@ -13,7 +15,7 @@ module.exports.colors = [
     'f6dd38',
 ];
 
-module.exports.wsConfiguration = { protocol: 'ws', host: 'localhost', port: 4282, };
+module.exports.wsConfiguration = WDXWSClientConfiguration.wsConfiguration;
 
 module.exports.floors = 2;
 module.exports.rooms = 2;
@@ -257,9 +259,9 @@ module.exports.getTrends = () => {
         trend.active = true;
         trend.legend = true;
         trend.intervalPicker = true;
-        trend.exportCurrentViewButton=true;
-        trend.exportFullDataButton=true;
-        trend.resetButton=true;
+        trend.exportCurrentViewButton = true;
+        trend.exportFullDataButton = true;
+        trend.resetButton = true;
         trend.dataPoolInterval = 1000;
         trend.xAxis.label = 'Time';
 

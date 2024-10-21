@@ -1,5 +1,6 @@
 
-const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
+const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 const WDXSettings = require('./settings');
 const WDXContinue = require('./continue');
 
@@ -10,8 +11,12 @@ module.exports.initRooms = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
+        console.log('Connected successfully');
 
         WDXSettings.lineSeparator();
         console.log(`${WDXSettings.indentation()}WDX WS Client - Connected successfully`);

@@ -1,34 +1,40 @@
 /**
  * Elrest - WDX - WS - Client - JS - Example - Subscribe Alarm
  * 
- * Retrieve Alarms changes from WDX with WS client, when alarms are changed.
+ * Retrieve Alarms whose status changed, when condition was resolved as true, from WDX with WS client, when alarms are changed.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 (async () => {
     try {
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
-
         console.log('Connected successfully');
 
-        c.alarmService.register().subscribe(
+        const subscribtion = c.alarmService.register().subscribe(
             {
                 next: (update) => {
-                    console.log(JSON.stringify(update, null, 2));
+                    console.log('Subscribtion Update:',JSON.stringify(update, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error: ' + error.message);
-
+                    console.error('Error:', JSON.stringify(error, null, 2));
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 },
 
                 complete: async () => {
+                    console.log('Completed');
+
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 }

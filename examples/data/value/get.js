@@ -7,6 +7,7 @@
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../../configuration/configuration.js');
 
 (async () => {
     try {
@@ -20,17 +21,22 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
         c.dataService.getValue(path).subscribe(
             {
                 next: (response) => {
-                    console.log(response);
+                    console.log('Response');
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error: ' + error.message);
+                    console.error('Error Code: ' + error.code);
+                    console.error('Error Message: ' + error.message);
 
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 },
 
                 complete: async () => {
+                    console.log('Completed');
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 }
