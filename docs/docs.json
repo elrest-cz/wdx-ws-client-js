@@ -5133,7 +5133,7 @@
 	"readme": [
 		{
 			"kind": "text",
-			"text": "# WDX - WS - Client - JS\n\nA TypeScript model Library library for handling class models as schema library distributed with exported classes, interfaces, and enumerations. This library allows you to use WDX Schema models using TypeScript classes and reference models in a structured manner.\n\n## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n  - [Using Client](#using-client)\n- [API](docs/modules.md)\n- [Requirements](#Requirements)\n- [License](#license)\n\n## Installation\n\nTo install the library, use npm or yarn:\n\n"
+			"text": "# WDX - WS - Client - JS\n\nA TypeScript Web Socket Library providing services for Managing WDX instance.\n\n## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n  - [Using Client](#using-client)\n- [API](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/docs/modules.md)\n- [License](#license)\n\n## Installation\n\nTo install the library, use npm or yarn:\n\n"
 		},
 		{
 			"kind": "code",
@@ -5157,7 +5157,7 @@
 		},
 		{
 			"kind": "text",
-			"text": "\n\n\nFor more examples, see github repository example [directory](examples).\n\n## License\n\nThis library is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [LICENSE.md](LICENSE.md) file for more details.\n\n© 2024 \n\nThis "
+			"text": "\n\n\nFor more examples, see github repository example [directory](https://github.com/elrest-cz/wdx-ws-client-js/tree/master/examples).\n\n## License\n\nThis library is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [LICENSE.md](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/LICENSE.md) file for more details.\n\n© 2024 \n\nThis "
 		},
 		{
 			"kind": "code",

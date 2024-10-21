@@ -14,8 +14,4 @@ const wsConfiguration = {
     // url: 'ws://localhost:4282'
 };
 
-module.exports.wsConfiguration = {
-    protocol: 'ws',
-    host: 'localhost',
-    port: 4282
-};
+module.exports.wsConfiguration = wsConfiguration

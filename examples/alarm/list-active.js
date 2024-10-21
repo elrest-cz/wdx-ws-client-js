@@ -7,10 +7,14 @@
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 (async () => {
     try {
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
         console.log('Connected successfully');
 
@@ -33,6 +37,8 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
                 }
             },
         );
+
+        // or const alarms=await c.alarmService.listAlarms(true).toPromise(); in try/catch mode
 
     } catch (e) {
         console.error('Error: ' + e.message);

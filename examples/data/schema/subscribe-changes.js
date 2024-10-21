@@ -7,29 +7,36 @@
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../../configuration/configuration.js');
 
 (async () => {
     try {
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
-
         console.log('Connected successfully');
-
 
         c.dataService.registerDataSchemaChanges().subscribe(
             {
-                next: (dataValue) => {
-                    console.log(JSON.stringify(dataValue, null, 2));
+                next: (response) => {
+                    console.log('Response');
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error: ' + error.message);
+                    console.error('Error Code: ' + error.code);
+                    console.error('Error Message: ' + error.message);
 
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 },
 
                 complete: async () => {
+                    console.log('Completed');
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 }
@@ -37,7 +44,7 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
         );
 
     } catch (e) {
-        console.error('Error: ' + e.message);
+        console.error('Error Message: ' + e.message);
         //console.error('Error: ' + e.stack);
     }
 })();

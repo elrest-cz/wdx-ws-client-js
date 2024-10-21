@@ -1,18 +1,22 @@
 /**
  * Elrest - WDX - WS - Client - JS - Example - Refresh Data Schema
  * 
- * Refreshes Data Schema for given path from WDX with WS client. Usable when data is connected WDX - Data Adapter to IOT which dynamically changes data schema.
+ * Refreshes Data Schema for given path in WDX - Data with WS client Data Service.
+ *  - use when data is connected as WDX - Data IOT Adapters, whose changed data schema inside IOT Device.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../../configuration/configuration.js');
 
 (async () => {
     try {
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
-
         console.log('Connected successfully');
 
         const path = 'MQTT.some-instance';
@@ -20,17 +24,22 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
         c.dataService.refreshSchema(path).subscribe(
             {
                 next: (response) => {
-                    console.log(response);
+                    console.log('Response');
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error: ' + JSON.stringify(error));
+                    console.error('Error Code: ' + error.code);
+                    console.error('Error Message: ' + error.message);
 
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 },
 
                 complete: async () => {
+                    console.log('Completed');
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 }

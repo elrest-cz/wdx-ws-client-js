@@ -7,29 +7,36 @@
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 const WDXSchema = require('@wago/wdx-schema');
 
 (async () => {
     try {
-
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
         console.log('Connected successfully');
 
         const alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-            undefined,
-            'adds sdds',
-            true,
-            'adds sdds sd',
-            3335,
-        );
+            'WDX - Examples - Alarms - Virtual.virtua-store.test no empty',//name
+            true,//active
+            3335, // number
+            WDXSchema.WDX.Schema.Model.Alarm.AlarmType.ERROR_WITHOUT_ACK,//type
+            [
+                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                    'Virtual.virtua-store.test',
+                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY,
+                    undefined,
+                    'ee4c3746-8f1c-11ef-b706-088fc37eff34',
 
-        alarm.conditions.push(
-            new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                'Virtual.virtua-store.test',
-                WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.EQUALS,
-                1
-            ),
+                ),
+            ],
+            [],//history
+            undefined, //message
+            undefined, //messageOff
+            'a37a75f2-8f1c-11ef-b4ad-088fc37eff34' // uuid
         );
 
         c.alarmService.saveAlarm(alarm).subscribe(
@@ -39,13 +46,17 @@ const WDXSchema = require('@wago/wdx-schema');
                 },
 
                 error: async (error) => {
-                    console.error('Error: ' + error.message);
+                    console.error('Error Code: ' + error.code);
+                    console.error('Error Message: ' + error.message);
 
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 },
 
                 complete: async () => {
+                    console.log('Completed');
+                    console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
                 }
