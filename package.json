@@ -20,7 +20,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "11.1.0",
+	"version": "11.1.2",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
 	"directories": {
@@ -36,7 +36,7 @@
 		"build:prod": "npm run clean && npm run build && npm run docs",
 		"build:dev": "npm run build-tsc",
 		"build-tsc": "npx tsc",
-		"docs": "npm run docs:html && npm run docs:md",
+		"docs": "npm run docs:md",
 		"docs:html": "npx typedoc --json ./docs/docs.json --pretty --options ./typedoc.json",
 		"docs:md": "npx typedoc --plugin typedoc-plugin-markdown --theme markdown --out docs",
 		"docs:all": "npx typedoc --plugin typedoc-plugin-markdown --theme markdown --out docs && npx concat-md --toc --decrease-title-levels --dir-name-as-title temp-docs > README.md && npx showdown makehtml -i README.md -o README.html && npx rimraf docs/temp",
