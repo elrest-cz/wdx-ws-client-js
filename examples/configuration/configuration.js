@@ -8,7 +8,7 @@
 
 const wsConfiguration = {
     protocol: 'ws',
-    host: 'localhost',
+    host: '192.168.1.60',
     port: 4282,
     // or url
     // url: 'ws://localhost:4282'

@@ -178,4 +178,60 @@ export class TrendService extends AbstractAPIService {
 
     return response.asObservable();
   }
+
+  public graphConfiguration(id: number):
+      Observable<WDXSchema.WDX.Schema.Model.Trend.Graph.Graph> {
+    const request:
+        WDXSchema.WDX.Schema.Message.Trend.GraphConfigurationRequest =
+        new WDXSchema.WDX.Schema.Message.Trend.GraphConfigurationRequest(id);
+
+    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.Graph> =
+        new Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.Graph>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (message.type ===
+                      WDXSchema.WDX.Schema.Message.Type
+                          .TrendingGraphConfigurationResponse &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+                subscription.unsubscribe();
+              }
+            },
+        );
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
+
+  public graphData(id: number):
+      Observable<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData> {
+    const request: WDXSchema.WDX.Schema.Message.Trend.GraphDataRequest =
+        new WDXSchema.WDX.Schema.Message.Trend.GraphDataRequest(id);
+
+    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData> =
+        new Subject<WDXSchema.WDX.Schema.Model.Trend.Graph.GraphData>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (message.type ===
+                      WDXSchema.WDX.Schema.Message.Type
+                          .TrendingGraphDataResponse &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+                subscription.unsubscribe();
+              }
+            },
+        );
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
 }
