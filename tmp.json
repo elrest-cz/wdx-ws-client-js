@@ -1,0 +1,46 @@
+Connecting
+Connected successfully
+Response
+{
+  "type": "line",
+  "data": {
+    "labels": [],
+    "datasets": [
+      {
+        "label": "Virtual.virtual-store.test",
+        "uuid": "624a1b98-d011-49fa-bd8b-a992e698b69c",
+        "borderColor": "#554e7d",
+        "backgroundColor": "#554e7d",
+        "pointBackgroundColor": "#554e7d",
+        "pointBorderColor": "#554e7d",
+        "hidden": false,
+        "showLine": true,
+        "data": []
+      }
+    ],
+    "trendUuid": "026e12d9-b402-40a8-9770-484f901ce310"
+  },
+  "options": {
+    "responsive": true,
+    "plugins": {
+      "title": {
+        "display": true,
+        "text": "asdasd"
+      },
+      "tooltip": {
+        "enabled": true
+      },
+      "legend": {
+        "title": {
+          "display": true
+        },
+        "display": true
+      }
+    },
+    "animation": false,
+    "scales": {}
+  }
+}
+Completed
+Disconnecting
+Disconnected successfully

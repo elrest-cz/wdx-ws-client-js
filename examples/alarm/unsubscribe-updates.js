@@ -25,7 +25,9 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
                 },
 
                 error: async (error) => {
-                    console.error('Error:', JSON.stringify(error, null, 2));
+                    console.error('Error Code: ' + error.code);
+                    console.error('Error Message: ' + error.message);
+
                     console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');

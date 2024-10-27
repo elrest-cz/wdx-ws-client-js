@@ -17,5 +17,6 @@
 - [ClientService](../classes/WDX.WS.Client.JS.Service.ClientService.md)
 - [DataService](../classes/WDX.WS.Client.JS.Service.DataService.md)
 - [InstanceService](../classes/WDX.WS.Client.JS.Service.InstanceService.md)
+- [RuntimeService](../classes/WDX.WS.Client.JS.Service.RuntimeService.md)
 - [ScriptService](../classes/WDX.WS.Client.JS.Service.ScriptService.md)
 - [TrendService](../classes/WDX.WS.Client.JS.Service.TrendService.md)

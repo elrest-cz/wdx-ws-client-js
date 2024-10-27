@@ -13,6 +13,7 @@ import {ScriptService} from './ScriptService';
 import {AlarmService} from './AlarmService';
 import {TrendService} from './TrendService';
 import {InstanceService} from './InstanceService';
+import {RuntimeService} from './RuntimeService';
 
 export {
   AbstractAPIService,
@@ -23,4 +24,5 @@ export {
   AlarmService,
   TrendService,
   InstanceService,
+  RuntimeService,
 };

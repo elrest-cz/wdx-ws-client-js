@@ -147,7 +147,7 @@ ___
 
 #### Defined in
 
-WDX/WS/Client/JS/Service/TrendService.ts:211
+WDX/WS/Client/JS/Service/TrendService.ts:212
 
 ___
 
