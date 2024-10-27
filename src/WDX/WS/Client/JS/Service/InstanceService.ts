@@ -170,11 +170,6 @@ export class InstanceService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  /**
-   * Starts eDesign Instance instance
-   *
-   * @param id number WDXSchema.WDX.Schema.Model.Instance.Instance id number
-   */
   public detail(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request: WDXSchema.WDX.Schema.Message.Instance.DetailRequest =
@@ -187,7 +182,8 @@ export class InstanceService extends AbstractAPIService {
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type.InstanceDetailResponse &&
+                      WDXSchema.WDX.Schema.Message.Type
+                          .InstanceDetailResponse &&
                   message.uuid === request.uuid) {
                 (message.error) ? response.error(message.error) :
                                   response.next(message.body);
@@ -269,10 +265,14 @@ export class InstanceService extends AbstractAPIService {
   }
 
   /**
-   * Save eDesign Instance
+   * Request WDX Whois Instance information
    */
-  public whois(name: string):
-      Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
+  public whois(
+      /**
+       * Instance name
+       */
+      name: string,
+      ): Observable<WDXSchema.WDX.Schema.Model.Instance.Instance> {
     const request: WDXSchema.WDX.Schema.Message.Instance.WhoIsRequest =
         new WDXSchema.WDX.Schema.Message.Instance.WhoIsRequest(name);
 

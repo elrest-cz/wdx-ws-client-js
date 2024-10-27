@@ -24,6 +24,8 @@
 
 - [delete](WDX.WS.Client.JS.Service.TrendService.md#delete)
 - [detail](WDX.WS.Client.JS.Service.TrendService.md#detail)
+- [graphConfiguration](WDX.WS.Client.JS.Service.TrendService.md#graphconfiguration)
+- [graphData](WDX.WS.Client.JS.Service.TrendService.md#graphdata)
 - [list](WDX.WS.Client.JS.Service.TrendService.md#list)
 - [register](WDX.WS.Client.JS.Service.TrendService.md#register)
 - [save](WDX.WS.Client.JS.Service.TrendService.md#save)
@@ -106,6 +108,46 @@ ___
 #### Defined in
 
 WDX/WS/Client/JS/Service/TrendService.ts:42
+
+___
+
+### graphConfiguration
+
+▸ **graphConfiguration**(`id`): `Observable`\<`Graph`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `number` |
+
+#### Returns
+
+`Observable`\<`Graph`\>
+
+#### Defined in
+
+WDX/WS/Client/JS/Service/TrendService.ts:182
+
+___
+
+### graphData
+
+▸ **graphData**(`id`): `Observable`\<`GraphData`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `number` |
+
+#### Returns
+
+`Observable`\<`GraphData`\>
+
+#### Defined in
+
+WDX/WS/Client/JS/Service/TrendService.ts:212
 
 ___
 

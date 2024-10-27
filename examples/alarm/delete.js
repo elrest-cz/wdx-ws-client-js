@@ -18,14 +18,16 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.alarmService.deleteAlarm(1).subscribe(
+        c.alarmService.delete('a37a75f2-8f1c-11ef-b4ad-088fc37eff34').subscribe(
             {
                 next: (alarm) => {
+                    console.log('Response');
                     console.log(JSON.stringify(alarm, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error:', JSON.stringify(error, null, 2));
+                    console.error('Error Code: ' + error.code);
+                    console.error('Error Message: ' + error.message);
 
                     console.log('Disconnecting');
                     await c.disconnect();

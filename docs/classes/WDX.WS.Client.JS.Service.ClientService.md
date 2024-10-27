@@ -156,7 +156,7 @@ ___
 
 ### \_\_runtimeService
 
-• `Private` **\_\_runtimeService**: `RuntimeService`
+• `Private` **\_\_runtimeService**: [`RuntimeService`](WDX.WS.Client.JS.Service.RuntimeService.md)
 
 #### Defined in
 
@@ -272,11 +272,11 @@ ___
 
 ### runtimeService
 
-• `get` **runtimeService**(): `RuntimeService`
+• `get` **runtimeService**(): [`RuntimeService`](WDX.WS.Client.JS.Service.RuntimeService.md)
 
 #### Returns
 
-`RuntimeService`
+[`RuntimeService`](WDX.WS.Client.JS.Service.RuntimeService.md)
 
 #### Defined in
 

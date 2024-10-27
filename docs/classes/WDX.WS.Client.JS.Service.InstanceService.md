@@ -99,8 +99,6 @@ ___
 
 ▸ **detail**(`uuid`): `Observable`\<`Instance`\>
 
-Starts eDesign Instance instance
-
 #### Parameters
 
 | Name | Type |
@@ -113,7 +111,7 @@ Starts eDesign Instance instance
 
 #### Defined in
 
-WDX/WS/Client/JS/Service/InstanceService.ts:178
+WDX/WS/Client/JS/Service/InstanceService.ts:173
 
 ___
 
@@ -197,7 +195,7 @@ Restart eDesign Instance instance
 
 #### Defined in
 
-WDX/WS/Client/JS/Service/InstanceService.ts:239
+WDX/WS/Client/JS/Service/InstanceService.ts:235
 
 ___
 
@@ -263,7 +261,7 @@ Stops eDesign Runtime Instance
 
 #### Defined in
 
-WDX/WS/Client/JS/Service/InstanceService.ts:207
+WDX/WS/Client/JS/Service/InstanceService.ts:203
 
 ___
 
@@ -271,13 +269,13 @@ ___
 
 ▸ **whois**(`name`): `Observable`\<`Instance`\>
 
-Save eDesign Instance
+Request WDX Whois Instance information
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Instance name |
 
 #### Returns
 
@@ -285,4 +283,4 @@ Save eDesign Instance
 
 #### Defined in
 
-WDX/WS/Client/JS/Service/InstanceService.ts:274
+WDX/WS/Client/JS/Service/InstanceService.ts:270

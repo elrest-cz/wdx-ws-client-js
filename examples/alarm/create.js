@@ -33,15 +33,15 @@ const WDXSchema = require('@wago/wdx-schema');
 
                 ),
             ],
-            [],//history
             undefined, //message
             undefined, //messageOff
             'a37a75f2-8f1c-11ef-b4ad-088fc37eff34' // uuid
         );
 
-        c.alarmService.saveAlarm(alarm).subscribe(
+        c.alarmService.save(alarm).subscribe(
             {
                 next: (alarm) => {
+                    console.log('Response');
                     console.log(JSON.stringify(alarm, null, 2));
                 },
 

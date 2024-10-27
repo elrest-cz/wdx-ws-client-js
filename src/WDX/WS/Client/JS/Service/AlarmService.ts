@@ -11,16 +11,11 @@ import {AbstractAPIService} from '.';
 import * as WDXSchema from '@wago/wdx-schema';
 
 export class AlarmService extends AbstractAPIService {
-  /**
-   * 
-   * 
-   * @param id 
-   * @returns 
-   */
-  public deleteAlarm(id: number):
+
+  public delete(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.DeleteRequest =
-        new WDXSchema.WDX.Schema.Message.Alarm.DeleteRequest(id);
+        new WDXSchema.WDX.Schema.Message.Alarm.DeleteRequest(uuid);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm> =
         new Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm>();
@@ -44,10 +39,10 @@ export class AlarmService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public detailAlarm(id: number):
+  public detail(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.DetailRequest =
-        new WDXSchema.WDX.Schema.Message.Alarm.DetailRequest(id);
+        new WDXSchema.WDX.Schema.Message.Alarm.DetailRequest(uuid);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm> =
         new Subject<WDXSchema.WDX.Schema.Model.Alarm.Alarm>();
@@ -71,7 +66,7 @@ export class AlarmService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public saveAlarm(alarm: WDXSchema.WDX.Schema.Model.Alarm.Alarm):
+  public save(alarm: WDXSchema.WDX.Schema.Model.Alarm.Alarm):
       Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.SetRequest =
         new WDXSchema.WDX.Schema.Message.Alarm.SetRequest(alarm);
@@ -98,7 +93,7 @@ export class AlarmService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public listAlarms(
+  public list(
       active?: boolean|undefined,
       ): Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm[]> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.ListRequest =
@@ -128,10 +123,10 @@ export class AlarmService extends AbstractAPIService {
   }
 
   public listAlarmHistory(
-      alarmId?: number|undefined,
+      alarmUuid?: string|undefined,
       ): Observable<WDXSchema.WDX.Schema.Model.Alarm.AlarmHistory[]> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.ListHistoryRequest =
-        new WDXSchema.WDX.Schema.Message.Alarm.ListHistoryRequest(alarmId);
+        new WDXSchema.WDX.Schema.Message.Alarm.ListHistoryRequest(alarmUuid);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Alarm.AlarmHistory[]> =
         new Subject<WDXSchema.WDX.Schema.Model.Alarm.AlarmHistory[]>();

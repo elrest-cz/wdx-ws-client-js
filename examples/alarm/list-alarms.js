@@ -21,6 +21,7 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         c.alarmService.listAlarms().subscribe(
             {
                 next: (response) => {
+                    console.log('Response');
                     console.log(JSON.stringify(response, null, 2));
                 },
 
