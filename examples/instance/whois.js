@@ -1,11 +1,21 @@
-const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
-const WDXSchema = require('@wago/wdx-schema');
+
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Instance Whois
+ * 
+ * Retrieves Instances list from WDX with WS client.
+ *
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
+const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 (async () => {
     try {
-        const c = new WDXJSWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
-
         console.log('Connected successfully');
 
         c.instanceService.whois('test-virtual').subscribe(
