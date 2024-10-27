@@ -43,13 +43,6 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
             },
         );
 
-
-        await c.disconnect();
-
-
-
-
-
     } catch (e) {
         console.error('Error: ' + e.message);
     }

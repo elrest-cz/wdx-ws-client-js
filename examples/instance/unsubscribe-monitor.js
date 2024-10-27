@@ -44,11 +44,8 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         );
 
 
-
     } catch (e) {
         console.error('Error: ' + e.message);
     }
-
-
 
 })();
