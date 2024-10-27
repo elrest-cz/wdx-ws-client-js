@@ -18,16 +18,15 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
         c.trendService.delete('949d9259-8756-45f7-a7b9-cc8e661d2257').subscribe(
             {
-                next: (trend) => {
+                next: (response) => {
                     console.log('Response');
-                    console.log(JSON.stringify(trend, null, 2));
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
                     console.error('Error Code: ' + error.code);
                     console.error('Error Message: ' + error.message);
                     console.error('Error Stack: ' + error.stack);
-
 
                     console.log('Disconnecting');
                     await c.disconnect();
