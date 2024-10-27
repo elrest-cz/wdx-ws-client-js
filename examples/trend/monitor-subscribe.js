@@ -1,8 +1,7 @@
+
 /**
- * Elrest - WDX - WS - Client - JS - Example - List Active Alarm
+ * Elrest - WDX - WS - Client - JS - Example - Trends - Monitor Subscribe Request
  * 
- * Retrieve list of active alarms from WDX with WS client.
- *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
@@ -18,16 +17,18 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.alarmService.listAlarms(true).subscribe(
+        c.trendService.register('026e12d9-b402-40a8-9770-484f901ce310').subscribe(
             {
-                next: (update) => {
+                next: (response) => {
                     console.log('Response');
-                    console.log(JSON.stringify(alarm, null, 2));
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
                     console.error('Error Code: ' + error.code);
                     console.error('Error Message: ' + error.message);
+                    console.error('Error Stack: ' + error.stack);
+
 
                     console.log('Disconnecting');
                     await c.disconnect();
@@ -36,15 +37,12 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
                 complete: async () => {
                     console.log('Completed');
-
                     console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
-                }
+                },
             },
         );
-
-        // or const alarms=await c.alarmService.listAlarms(true).toPromise(); in try/catch mode
 
     } catch (e) {
         console.error('Error: ' + e.message);

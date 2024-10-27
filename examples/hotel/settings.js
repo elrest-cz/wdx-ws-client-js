@@ -193,46 +193,45 @@ module.exports.getAlarms = () => {
                     // No Empty
                     let type = types[typeId];
                     let name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type}`;
-                    let alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-                        undefined,
-                        name,
-                        true,
-                        `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} color changed`,
-                        `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} color reseted`,
-                        ++alarmNumber,
-                        type,
+
+                    alarms.push(
+                        new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
+                            name,
+                            true,
+                            ++alarmNumber,
+                            type,
+                            [
+                                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                                    `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
+                                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY,
+                                    undefined,
+                                    uuid()
+                                )
+                            ],
+                            `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} alarm is activated`,
+                            `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} alarm is gone`,
+                        ),
                     );
-                    alarm.conditions.push(
-                        new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                            undefined,
-                            `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                            WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY
-                        ));
-                    alarms.push(alarm);
 
                     // Empty
                     type = types[typeId];
-
                     name = `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type}`;
-
-                    alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-                        undefined,
-                        name,
-                        true,
-                        `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} color changed`,
-                        `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} color reseted`,
-                        ++alarmNumber,
-                        type,
+                    alarms.push(
+                        new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
+                            name,
+                            true,
+                            ++alarmNumber,
+                            type,
+                            [
+                                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
+                                    `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
+                                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY
+                                )
+                            ],
+                            `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} alarm is active`,
+                            `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} alarm gone`,
+                        ),
                     );
-
-                    alarm.conditions.push(
-                        new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                            undefined,
-                            `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                            WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY
-                        ));
-
-                    alarms.push(alarm);
 
                 }
             }

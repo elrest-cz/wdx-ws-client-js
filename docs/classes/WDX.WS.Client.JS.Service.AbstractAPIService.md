@@ -18,6 +18,8 @@
 
   ↳ [`InstanceService`](WDX.WS.Client.JS.Service.InstanceService.md)
 
+  ↳ [`RuntimeService`](WDX.WS.Client.JS.Service.RuntimeService.md)
+
 ## Table of contents
 
 ### Constructors
