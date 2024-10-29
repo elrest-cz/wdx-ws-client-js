@@ -1,12 +1,13 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - List Alarms
+ * Elrest - WDX - WS - Client - JS - Example - Instance save
  * 
- * Retrieve Alarms list from WDX with WS client.
+ * Saves Instance model to WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXSchema = require('@wago/wdx-schema');
 const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 (async () => {
@@ -18,7 +19,13 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.alarmService.listAlarms().subscribe(
+
+        const instance = new WDXSchema.WDX.Schema.Model.Instance.DataAdapter.VirtualDataAdapterInstance(
+            'b8ed912d-db48-4165-937c-6e7e039fedc9',
+            'virtual-store',
+        );
+
+        c.instanceService.save(instance).subscribe(
             {
                 next: (response) => {
                     console.log('Response');
@@ -43,11 +50,8 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
             },
         );
 
-        // or const alarms= await c.alarmService.listAlarms().toPromise(); in try/catch mode
-
-
     } catch (e) {
         console.error('Error: ' + e.message);
-        //console.error('Error: ' + e.stack);
+        console.error('Error: ' + e.stack);
     }
 })();

@@ -1,14 +1,23 @@
 # WDX - WS - Client - JS
 
-A TypeScript Web Socket Library providing services for Managing WDX instance.
+A TypeScript Web Socket Service Library for Managing WDX.
+
+See [API](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/docs/modules.md) specification for Client library calls avaiable on ws interface. 
 
 ## Table of Contents
 
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Using Client](#using-client)
+- [Examples](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/examples/README.md)
 - [API](https://github.com/elrest-cz/wdx-ws-client-js/blob/master/docs/modules.md)
 - [License](#license)
+
+
+## Requirements
+
++ nodejs version 18.18.2 or higher is required.
 
 ## Installation
 
