@@ -27,7 +27,7 @@ module.exports.roomCount = () => {
 module.exports.wdx = {
     protocol: 'http',
     host: '192.168.1.60',
-    port: '4285',
+    port: '4585',
     path: '/wdx',
 };
 
@@ -297,15 +297,15 @@ module.exports.getTrends = () => {
 
         let trendTotal = new WDXSchema.WDX.Schema.Model.Trend.Trend();
         trendTotal.name = 'Hotel Lights - Total colors counts';
-        trend.active = true;
-        trend.legend = true;
-        trend.intervalPicker = true;
-        trend.exportCurrentViewButton = true;
-        trend.exportFullDataButton = true;
-        trend.resetButton = true;
-        trend.dataPoolInterval = 1000;
-        trend.xAxis.label = 'Time';
-        trend.uuid=WDXUUID.v4();
+        trendTotal.active = true;
+        trendTotal.legend = true;
+        trendTotal.intervalPicker = true;
+        trendTotal.exportCurrentViewButton = true;
+        trendTotal.exportFullDataButton = true;
+        trendTotal.resetButton = true;
+        trendTotal.dataPoolInterval = 1000;
+        trendTotal.xAxis.label = 'Time';
+        trendTotal.uuid=WDXUUID.v4();
 
         trendTotal.yAxis[0].color = '#000000';
         trendTotal.yAxis[0].label = 'Total count';
@@ -321,7 +321,7 @@ module.exports.getTrends = () => {
             dataSet.label = dataSet.color;
             dataSet.name = dataSet.color;
             dataSet.visible = true;
-            dataSet.yAxis = trend.yAxis[0].uuid;
+            dataSet.yAxis = trendTotal.yAxis[0].uuid;
             dataSet.uuid=WDXUUID.v4();
             dataSet.dataSchemaPath = `Virtual.stats.total.${color}`;
             trendTotal.dataSet.push(dataSet);

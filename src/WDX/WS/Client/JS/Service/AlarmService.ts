@@ -39,6 +39,61 @@ export class AlarmService extends AbstractAPIService {
     return response.asObservable();
   }
 
+
+  public confirmAll():
+      Observable<null> {
+    const request: WDXSchema.WDX.Schema.Message.Alarm.ConfirmRequest =
+        new WDXSchema.WDX.Schema.Message.Alarm.ConfirmRequest();
+
+    const response: Subject<null> =
+        new Subject<null>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (WDXSchema.WDX.Schema.Message.Type.AlarmingConfirmResponse ===
+                      message.type &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+
+                response.complete();
+                subscription.unsubscribe();
+              }
+            });
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
+  public confirm(uuid: string):
+      Observable<null> {
+    const request: WDXSchema.WDX.Schema.Message.Alarm.ConfirmRequest =
+        new WDXSchema.WDX.Schema.Message.Alarm.ConfirmRequest(uuid);
+
+    const response: Subject<null> =
+        new Subject<null>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (WDXSchema.WDX.Schema.Message.Type.AlarmingConfirmResponse ===
+                      message.type &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+
+                response.complete();
+                subscription.unsubscribe();
+              }
+            });
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
   public detail(uuid: string):
       Observable<WDXSchema.WDX.Schema.Model.Alarm.Alarm> {
     const request: WDXSchema.WDX.Schema.Message.Alarm.DetailRequest =
