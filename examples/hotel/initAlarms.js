@@ -46,7 +46,7 @@ module.exports.initAlarms = async () => {
 
         for (const alarm of alarms) {
             try {
-                await c.alarmService.saveAlarm(alarm).toPromise();
+                await c.alarmService.save(alarm).toPromise();
 
                 process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K    Alarm ${alarm.name} save successfully ${currentCount + 1} / ${totalCount}.`);
                 currentCount += 1;

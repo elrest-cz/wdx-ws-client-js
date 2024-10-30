@@ -1,14 +1,14 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Create Alarm
+ * Elrest - WDX - WS - Client - JS - Example - Instance save
  * 
- * Creates a new alarm in WDX with WS client.
+ * Saves Instance model to WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
-const WDXWSClientConfiguration = require('../configuration/configuration.js');
 const WDXSchema = require('@wago/wdx-schema');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 (async () => {
     try {
@@ -19,30 +19,17 @@ const WDXSchema = require('@wago/wdx-schema');
         await c.connect();
         console.log('Connected successfully');
 
-        const alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-            'WDX - Examples - Alarms - Virtual.virtua-store.test no empty',//name
-            true,//active
-            3335, // number
-            WDXSchema.WDX.Schema.Model.Alarm.AlarmType.ERROR_WITHOUT_ACK,//type
-            [
-                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                    'Virtual.virtua-store.test',
-                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY,
-                    undefined,
-                    'ee4c3746-8f1c-11ef-b706-088fc37eff34',
 
-                ),
-            ],
-            undefined, //message
-            undefined, //messageOff
-            'a37a75f2-8f1c-11ef-b4ad-088fc37eff34' // uuid
+        const instance = new WDXSchema.WDX.Schema.Model.Instance.DataAdapter.VirtualDataAdapterInstance(
+            'b8ed912d-db48-4165-937c-6e7e039fedc9',
+            'virtual-store',
         );
 
-        c.alarmService.save(alarm).subscribe(
+        c.instanceService.save(instance).subscribe(
             {
-                next: (alarm) => {
+                next: (response) => {
                     console.log('Response');
-                    console.log(JSON.stringify(alarm, null, 2));
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
@@ -65,6 +52,6 @@ const WDXSchema = require('@wago/wdx-schema');
 
     } catch (e) {
         console.error('Error: ' + e.message);
-        //console.error('Error: ' + e.stack);
+        console.error('Error: ' + e.stack);
     }
 })();

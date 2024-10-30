@@ -1,9 +1,10 @@
 
-const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
+
+const WDXJSWSClient = require('@wago/wdx-ws-client-js');
 const WDXSchema = require('@wago/wdx-schema');
 const WDXSettings = require('./settings');
 const WDXContinue = require('./continue');
-
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 /**
  * Map of colors and count
@@ -27,11 +28,15 @@ module.exports.scripts = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
-        await c.connect();
 
-        console.log(`${WDXSettings.indentation()}Connected successfully`);
+        const c = new WDXJSWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
+        await c.connect();
+        console.log('Connected successfully');
         WDXSettings.lineSeparator();
+
 
         module.exports.title();
         WDXSettings.lineSeparator();

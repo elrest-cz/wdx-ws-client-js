@@ -1,7 +1,7 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Detail Alarm
+ * Elrest - WDX - WS - Client - JS - Example - List Alarms
  * 
- * Retrieves ALarm details from WDX with WS client.
+ * Retrieve Alarms list from WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
@@ -18,11 +18,11 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.alarmService.detail('a37a75f2-8f1c-11ef-b4ad-088fc37eff34').subscribe(
+        c.alarmService.list().subscribe(
             {
-                next: (alarm) => {
+                next: (response) => {
                     console.log('Response');
-                    console.log(JSON.stringify(alarm, null, 2));
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
@@ -36,7 +36,6 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
                 complete: async () => {
                     console.log('Completed');
-
                     console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
@@ -44,7 +43,7 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
             },
         );
 
-        // or const alarm=await c.alarmService.detail('a37a75f2-8f1c-11ef-b4ad-088fc37eff34').toPromise(); in try/catch mode
+        // or const alarms= await c.alarmService.listAlarms().toPromise(); in try/catch mode
 
 
     } catch (e) {

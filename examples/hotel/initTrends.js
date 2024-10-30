@@ -1,8 +1,9 @@
 
-const WDXJSWSClient = require('../../build/WDX/Client/WS/Service/ClientService');
+const WDXJSWSClient = require('@wago/wdx-ws-client-js');
 const WDXSchema = require('@wago/wdx-schema');
 const WDXSettings = require('./settings');
 const WDXContinue = require('./continue');
+const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 
 module.exports.initTrends = async () => {
@@ -10,12 +11,12 @@ module.exports.initTrends = async () => {
         WDXSettings.title();
         WDXSettings.copyright();
 
-        const c = new WDXJSWSClient.ClientService(WDXSettings.wsConfiguration);
+        const c = new WDXJSWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
+        console.log('Connecting');
         await c.connect();
-        
-        WDXSettings.lineSeparator();
-        console.log(`${WDXSettings.indentation()}WDX WS Client - Connected successfully`);
-
+        console.log('Connected successfully');
         WDXSettings.lineSeparator();
 
 
@@ -75,7 +76,7 @@ module.exports.initTrends = async () => {
             try {
                 const result = await c.trendService.save(trend).toPromise();
                 process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K${WDXSettings.indentation()}Trend ${trend.name} saved successfully ${currentCount} / ${totalCount}.`);
-                currentCount=currentCount+1;
+                currentCount = currentCount + 1;
             } catch (e) {
                 console.error(e);
             }

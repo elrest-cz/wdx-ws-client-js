@@ -18,11 +18,11 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.alarmService.listAlarms(true).subscribe(
+        c.alarmService.list(true).subscribe(
             {
-                next: (update) => {
+                next: (response) => {
                     console.log('Response');
-                    console.log(JSON.stringify(alarm, null, 2));
+                    console.log(JSON.stringify(response, null, 2));
                 },
 
                 error: async (error) => {
