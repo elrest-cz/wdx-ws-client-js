@@ -43,7 +43,7 @@ module.exports.initRooms = async () => {
         for (const instance of instances) {
             try {
                 await c.instanceService.save(instance).toPromise();
-                await c.instanceService.start(instance.uuid).toPromise();
+                await c.instanceService.restart(instance.uuid).toPromise();
                 process.stdout.write(`\u001b[${position.rows};${position.cols}H\u001b[K    Instance ${instance.name} started successfully ${currentCount} / ${totalCount}.`);
                 currentCount += 1;
             } catch (e) {

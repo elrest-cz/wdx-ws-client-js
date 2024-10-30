@@ -44,7 +44,7 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
             },
         );
 
-        // or const alarm=await c.alarmService.deleteAlarm(1).toPromise(); in try/catch mode
+        // or const alarm=await c.alarmService.delete('a37a75f2-8f1c-11ef-b4ad-088fc37eff34').toPromise(); in try/catch mode
 
     } catch (e) {
         console.error('Error: ' + e.message);

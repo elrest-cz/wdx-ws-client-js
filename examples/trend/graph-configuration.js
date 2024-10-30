@@ -20,9 +20,9 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
 
 
         // Call in one line or subscribe service Observable response.
-        // const graphData=await c.trendService.graphConfiguration('026e12d9-b402-40a8-9770-484f901ce310').toPromise();
+        // const graphData=await c.trendService.graphConfiguration('949d9259-8756-45f7-a7b9-cc8e661d2257').toPromise();
 
-        c.trendService.graphConfiguration('026e12d9-b402-40a8-9770-484f901ce310').subscribe(
+        c.trendService.graphConfiguration('949d9259-8756-45f7-a7b9-cc8e661d2257').subscribe(
             {
                 next: (trend) => {
                     console.log('Response');

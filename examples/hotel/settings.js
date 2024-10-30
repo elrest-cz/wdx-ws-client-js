@@ -26,8 +26,8 @@ module.exports.roomCount = () => {
 
 module.exports.wdx = {
     protocol: 'http',
-    host: 'localhost',
-    port: '4285',
+    host: '192.168.1.60',
+    port: '4585',
     path: '/wdx',
 };
 
@@ -116,6 +116,8 @@ module.exports.settings = () => {
     console.log(`\t\tprotocol: ${module.exports.wsConfiguration.protocol}`);
     console.log(`\t\thost    : ${module.exports.wsConfiguration.host}`);
     console.log(`\t\tport    : ${module.exports.wsConfiguration.port}`);
+    console.log(`\t\tpath    : ${module.exports.wsConfiguration.path}`);
+    console.log(`\t\turl     : ${module.exports.wsConfiguration.url}`);
 
     console.log(`\n\t3. Hotel has ${module.exports.floors} floors and on each floor has ${module.exports.rooms} rooms.`);
     console.log(`\t4. Hotel has in total ${module.exports.floors * module.exports.rooms} rooms.`);
@@ -205,11 +207,12 @@ module.exports.getAlarms = () => {
                                     `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
                                     WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY,
                                     undefined,
-                                    uuid()
+                                    WDXUUID.v4()
                                 )
                             ],
                             `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} alarm is activated`,
                             `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} alarm is gone`,
+                            WDXUUID.v4(),
                         ),
                     );
 
@@ -225,11 +228,14 @@ module.exports.getAlarms = () => {
                             [
                                 new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
                                     `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY
+                                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY,
+                                    undefined,
+                                    WDXUUID.v4()
                                 )
                             ],
                             `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} alarm is active`,
                             `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} alarm gone`,
+                            WDXUUID.v4()
                         ),
                     );
 
@@ -263,6 +269,7 @@ module.exports.getTrends = () => {
         trend.resetButton = true;
         trend.dataPoolInterval = 1000;
         trend.xAxis.label = 'Time';
+        trend.uuid=WDXUUID.v4();
 
         trend.yAxis[0].color = '#000000';
         trend.yAxis[0].label = 'Current count';
@@ -270,6 +277,7 @@ module.exports.getTrends = () => {
         trend.yAxis[0].min = 0;
         trend.yAxis[0].max = module.exports.roomCount();
         trend.yAxis[0].visible = true;
+        trend.yAxis[0].uuid=WDXUUID.v4();
         trend.dataSet = [];
 
         for (color of module.exports.colors) {
@@ -280,6 +288,7 @@ module.exports.getTrends = () => {
             dataSet.visible = true;
             dataSet.enabled = true;
             dataSet.yAxis = trend.yAxis[0].uuid;
+            dataSet.uuid=WDXUUID.v4();
             dataSet.dataSchemaPath = `Virtual.stats.current.${color}`;
             trend.dataSet.push(dataSet);
         }
@@ -289,14 +298,21 @@ module.exports.getTrends = () => {
         let trendTotal = new WDXSchema.WDX.Schema.Model.Trend.Trend();
         trendTotal.name = 'Hotel Lights - Total colors counts';
         trendTotal.active = true;
+        trendTotal.legend = true;
+        trendTotal.intervalPicker = true;
+        trendTotal.exportCurrentViewButton = true;
+        trendTotal.exportFullDataButton = true;
+        trendTotal.resetButton = true;
         trendTotal.dataPoolInterval = 1000;
         trendTotal.xAxis.label = 'Time';
+        trendTotal.uuid=WDXUUID.v4();
 
         trendTotal.yAxis[0].color = '#000000';
         trendTotal.yAxis[0].label = 'Total count';
         trendTotal.yAxis[0].name = 'total-color-count';
         trendTotal.yAxis[0].min = 0;
         trendTotal.yAxis[0].visible = true;
+        trendTotal.yAxis[0].uuid=WDXUUID.v4();
         trendTotal.dataSet = [];
 
         for (color of module.exports.colors) {
@@ -306,6 +322,7 @@ module.exports.getTrends = () => {
             dataSet.name = dataSet.color;
             dataSet.visible = true;
             dataSet.yAxis = trendTotal.yAxis[0].uuid;
+            dataSet.uuid=WDXUUID.v4();
             dataSet.dataSchemaPath = `Virtual.stats.total.${color}`;
             trendTotal.dataSet.push(dataSet);
         }

@@ -7,6 +7,7 @@
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXSchema = require('@wago/wdx-schema');
 const WDXWSClientConfiguration = require('../../configuration/configuration.js');
 
 (async () => {
