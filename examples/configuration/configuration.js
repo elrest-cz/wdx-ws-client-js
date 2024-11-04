@@ -8,9 +8,9 @@
 
 const wsConfiguration = {
     protocol: 'ws',
-    host: '192.168.1.60',
-    port: 4282,
-    //path: '/wdx/ws',
+    host: 'localhost',
+    port: 4285,
+    path: '/wdx/ws',
     // or url
     // url: 'ws://localhost:4282'
 };
