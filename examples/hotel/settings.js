@@ -26,8 +26,8 @@ module.exports.roomCount = () => {
 
 module.exports.wdx = {
     protocol: 'http',
-    host: '192.168.1.60',
-    port: '4585',
+    host: 'localhost',
+    port: '4285',
     path: '/wdx',
 };
 
