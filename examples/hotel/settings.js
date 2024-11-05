@@ -17,8 +17,8 @@ module.exports.colors = [
 
 module.exports.wsConfiguration = WDXWSClientConfiguration.wsConfiguration;
 
-module.exports.floors = 2;
-module.exports.rooms = 2;
+module.exports.floors = 10;
+module.exports.rooms = 7;
 
 module.exports.roomCount = () => {
     return module.exports.floors * module.exports.rooms;
@@ -27,7 +27,7 @@ module.exports.roomCount = () => {
 module.exports.wdx = {
     protocol: 'http',
     host: 'localhost',
-    port: '4285',
+    port: '8081',
     path: '/wdx',
 };
 

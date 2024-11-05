@@ -7,6 +7,7 @@
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('../../configuration/configuration.js');
 
 (async () => {
     try {
@@ -17,7 +18,7 @@ const WDXWSClient = require('@wago/wdx-ws-client-js');
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'Virtual.virtual-store.test';
+        const path = 'Virtual.stats';
 
         c.dataService.register(path).subscribe(
             {
