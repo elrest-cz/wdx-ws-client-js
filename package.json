@@ -20,7 +20,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "17.1.4",
+	"version": "17.1.5",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
 	"directories": {
