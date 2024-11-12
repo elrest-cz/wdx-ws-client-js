@@ -7,12 +7,10 @@
  */
 
 const wsConfiguration = {
-    protocol: 'ws',
-    host: 'localhost',
-    port: 4285,
-    path: '/wdx/ws',
-    // or url
-    // url: 'ws://localhost:4282'
+    url: 'ws://localhost:4285/wdx/ws',
+    //url: 'ws://localhost:8081/wdx/ws',
+    //url: 'ws://wdx-runtime.cloud:8081/wdx/ws',
+    //url: 'ws://wdx-runtime.cloud:8081/wdx/ws',
 };
 
 module.exports.wsConfiguration = wsConfiguration

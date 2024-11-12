@@ -18,7 +18,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'Virtual.stats';
+        const path = 'Virtual.virtual-store';
 
         c.dataService.register(path).subscribe(
             {

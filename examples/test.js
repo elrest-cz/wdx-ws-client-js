@@ -1,14 +1,14 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Refresh Data Schema
+ * Elrest - WDX - WS - Client - JS - Example - Create Alarm
  * 
- * Refreshes Data Schema for given path from WDX with WS client. Usable when data is connected WDX - Data Adapter to IOT which dynamically changes data schema.
+ * Creates a new alarm in WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
+const WDXWSClientConfiguration = require('./configuration/configuration.js');
 const WDXSchema = require('@wago/wdx-schema');
-const WDXWSClientConfiguration = require('../../configuration/configuration.js');
 
 (async () => {
     try {
@@ -19,39 +19,24 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const schema = new WDXSchema.WDX.Schema.Model.Data.DataSchema(
-            'Virtual.store.folder.test',
-            'test',
-            'test',
-            undefined,
-            new WDXSchema.WDX.Schema.Model.Data.MetaData.MetaDataVirtual(),
-            false,
-            true,
-            true,
-            false,
-            true,
-            true,
-        );
 
-        c.dataService.setSchema(schema).subscribe(
+        c.alarmService.detail('a37a75f2-8f1c-11ef-b4ad-088fc37eff34').subscribe(
             {
-                next: (schema) => {
-                    console.log(JSON.stringify(schema, null, 2));
+                next: (alarm) => {
+                    console.log('Response');
+                    console.log(JSON.stringify(alarm, null, 2));
                 },
 
                 error: async (error) => {
-                    console.error('Error Code: ' + error.code);
-                    console.error('Error Message: ' + error.message);
+                    console.error('Error: ', JSON.stringify(error, null, 2));
 
                     console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
-
                 },
 
                 complete: async () => {
                     console.log('Completed');
-
                     console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');
@@ -59,8 +44,9 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
             },
         );
 
+
     } catch (e) {
         console.error('Error: ' + e.message);
-        console.error('Error: ' + e.stack);
+        //console.error('Error: ' + e.stack);
     }
 })();
