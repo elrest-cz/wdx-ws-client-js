@@ -213,7 +213,7 @@ export class ClientService {
         (resolve, reject) => {
           try {
             const data: string = JSON.stringify(message);
-            console.log(data);
+
             this.__connection?.send(
                 data,
                 () => {

@@ -184,61 +184,46 @@ module.exports.getAlarms = () => {
     if (false === module.exports.dataExists(dataFile)) {
 
         const alarms = [];
-        let alarmNumber = 10000;
+        let alarmNumber = 100000;
+        const classification = Object.values(WDXSchema.WDX.Schema.Model.Alarm.AlarmClassification);
         const types = Object.values(WDXSchema.WDX.Schema.Model.Alarm.AlarmType);
 
         for (let floor = 1; floor <= module.exports.floors; floor++) {
             for (let room = 1; room <= module.exports.rooms; room++) {
 
-                for (let typeId = 0; typeId < types.length; typeId++) {
+                for (let classificationId = 0; classificationId < classification.length; classificationId++) {
+                    for (let typeId = 0; typeId < types.length; typeId++) {
 
-                    // No Empty
-                    let type = types[typeId];
-                    let name = `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type}`;
+                        // No Empty
+                        const alarm1 = new WDXSchema.WDX.Schema.Model.Alarm.Alarm();
+                        alarm1.classification = classification[classificationId];
+                        alarm1.type = types[typeId];
+                        alarm1.name = `Example - Hotel light ${alarm1.classification} - ${alarm1.type} floor: ${floor} room: ${room} Condition: no-empty`;
+                        alarm1.code = ++alarmNumber;
+                        alarm1.enabled = true;
 
-                    alarms.push(
-                        new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-                            name,
-                            true,
-                            ++alarmNumber,
-                            type,
-                            [
-                                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                                    `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY,
-                                    undefined,
-                                    WDXUUID.v4()
-                                )
-                            ],
-                            `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} alarm is activated`,
-                            `alarm-hotel-light-floor-${floor}-room-${room}-no-empty-${type} alarm is gone`,
-                            WDXUUID.v4(),
-                        ),
-                    );
+                        const condition1 = new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition();
+                        condition1.path = `Virtual.hotel-light-floor-${floor}-room-${room}.color`;
+                        condition1.expression = WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY;
 
-                    // Empty
-                    type = types[typeId];
-                    name = `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type}`;
-                    alarms.push(
-                        new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-                            name,
-                            true,
-                            ++alarmNumber,
-                            type,
-                            [
-                                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                                    `Virtual.hotel-light-floor-${floor}-room-${room}.color`,
-                                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY,
-                                    undefined,
-                                    WDXUUID.v4()
-                                )
-                            ],
-                            `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} alarm is active`,
-                            `alarm-hotel-light-floor-${floor}-room-${room}-empty-${type} alarm gone`,
-                            WDXUUID.v4()
-                        ),
-                    );
+                        alarm1.conditions = [condition1];
+                        alarms.push(alarm1);
 
+                        // Empty
+                        const alarm2 = new WDXSchema.WDX.Schema.Model.Alarm.Alarm();
+                        alarm2.classification = classification[classificationId];
+                        alarm2.type = types[typeId];
+                        alarm2.name = `Example - Hotel light ${alarm2.classification} - ${alarm2.type} floor: ${floor} room: ${room} Condition: is-empty`;
+                        alarm2.code = ++alarmNumber;
+                        alarm2.enabled = true;
+
+                        const condition2 = new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition();
+                        condition2.path = `Virtual.hotel-light-floor-${floor}-room-${room}.color`;
+                        condition2.expression = WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_EMPTY;
+
+                        alarm2.conditions = [condition2];
+                        alarms.push(alarm2);
+                    }
                 }
             }
         }
@@ -269,7 +254,7 @@ module.exports.getTrends = () => {
         trend.resetButton = true;
         trend.dataPoolInterval = 1000;
         trend.xAxis.label = 'Time';
-        trend.uuid=WDXUUID.v4();
+        trend.uuid = WDXUUID.v4();
 
         trend.yAxis[0].color = '#000000';
         trend.yAxis[0].label = 'Current count';
@@ -277,7 +262,7 @@ module.exports.getTrends = () => {
         trend.yAxis[0].min = 0;
         trend.yAxis[0].max = module.exports.roomCount();
         trend.yAxis[0].visible = true;
-        trend.yAxis[0].uuid=WDXUUID.v4();
+        trend.yAxis[0].uuid = WDXUUID.v4();
         trend.dataSet = [];
 
         for (color of module.exports.colors) {
@@ -288,7 +273,7 @@ module.exports.getTrends = () => {
             dataSet.visible = true;
             dataSet.enabled = true;
             dataSet.yAxis = trend.yAxis[0].uuid;
-            dataSet.uuid=WDXUUID.v4();
+            dataSet.uuid = WDXUUID.v4();
             dataSet.dataSchemaPath = `Virtual.stats.current.${color}`;
             trend.dataSet.push(dataSet);
         }
@@ -305,14 +290,14 @@ module.exports.getTrends = () => {
         trendTotal.resetButton = true;
         trendTotal.dataPoolInterval = 1000;
         trendTotal.xAxis.label = 'Time';
-        trendTotal.uuid=WDXUUID.v4();
+        trendTotal.uuid = WDXUUID.v4();
 
         trendTotal.yAxis[0].color = '#000000';
         trendTotal.yAxis[0].label = 'Total count';
         trendTotal.yAxis[0].name = 'total-color-count';
         trendTotal.yAxis[0].min = 0;
         trendTotal.yAxis[0].visible = true;
-        trendTotal.yAxis[0].uuid=WDXUUID.v4();
+        trendTotal.yAxis[0].uuid = WDXUUID.v4();
         trendTotal.dataSet = [];
 
         for (color of module.exports.colors) {
@@ -322,7 +307,7 @@ module.exports.getTrends = () => {
             dataSet.name = dataSet.color;
             dataSet.visible = true;
             dataSet.yAxis = trendTotal.yAxis[0].uuid;
-            dataSet.uuid=WDXUUID.v4();
+            dataSet.uuid = WDXUUID.v4();
             dataSet.dataSchemaPath = `Virtual.stats.total.${color}`;
             trendTotal.dataSet.push(dataSet);
         }
