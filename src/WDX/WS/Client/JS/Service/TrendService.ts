@@ -97,9 +97,21 @@ export class TrendService extends AbstractAPIService {
 
   public list(
       active?: boolean|undefined,
+      offset:
+          number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_OFFSET,
+      limit:
+          number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_LIMIT,
       ): Observable<WDXSchema.WDX.Schema.Model.Trend.Trend[]> {
     const request: WDXSchema.WDX.Schema.Message.Trend.ListRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.ListRequest(active);
+        new WDXSchema.WDX.Schema.Message.Trend.ListRequest(
+          {
+            where:{
+              active: active,
+            },
+            take:limit,
+            skip: offset,
+          }
+        );
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Trend[]> =
         new Subject<WDXSchema.WDX.Schema.Model.Trend.Trend[]>();
@@ -261,8 +273,7 @@ export class TrendService extends AbstractAPIService {
                 ),
         );
 
-    const response: Subject<string> =
-        new Subject<string>();
+    const response: Subject<string> = new Subject<string>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
@@ -283,6 +294,4 @@ export class TrendService extends AbstractAPIService {
 
     return response.asObservable();
   }
-
-  
 }
