@@ -1,19 +1,26 @@
 
-const WDXWSClient = require('@wago/wdx-ws-client-js');
-const WDXWSClientConfiguration = require('../configuration/configuration.js');
+/**
+ * Elrest - WDX - WS - Client - JS - Example - Chart - Unsubscribe Request
+ * 
+ * @copyright 2024 Elrest AutomationsSysteme GMBH
+ */
 
 (async () => {
     try {
-        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(WDXWSClientConfiguration.wsConfiguration,);
-        await c.connect();
+        const WDXWSClient = require('@wago/wdx-ws-client-js');
+        const WDXWSClientConfiguration = require('../configuration/configuration.js');
+        const WDXExampleChart = require('./chart.json');
 
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(WDXWSClientConfiguration.wsConfiguration,
+
+        );
+
+        console.log('Connecting');
+        await c.connect();
         console.log('Connected successfully');
 
-        // Call in one line or subscribe service Observable response.
 
-        // const response=await c.trendService.unregister('026e12d9-b402-40a8-9770-484f901ce310').toPromise();
-
-        c.trendService.unregister('026e12d9-b402-40a8-9770-484f901ce310').subscribe(
+        c.chartService.unregister(WDXExampleChart.uuid).subscribe(
             {
                 next: (response) => {
                     console.log('Response');

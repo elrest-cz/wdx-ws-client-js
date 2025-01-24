@@ -1,23 +1,28 @@
 
 /**
- * Elrest - WDX - WS - Client - JS - Example - Trends - Monitor Subscribe Request
+ * Elrest - WDX - WS - Client - JS - Example - Chart - Subscribe Request
  * 
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
-const WDXWSClient = require('@wago/wdx-ws-client-js');
-const WDXWSClientConfiguration = require('../configuration/configuration.js');
-
 (async () => {
     try {
+
+        const WDXWSClient = require('@wago/wdx-ws-client-js');
+        const WDXWSClientConfiguration = require('../configuration/configuration.js');
+        const WDXExampleChart = require('./chart.json');
+
+        console.log(`WDX Chart - Subscribe Request: ${WDXExampleChart.uuid}`);
+
         const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
             WDXWSClientConfiguration.wsConfiguration
         );
+
         console.log('Connecting');
         await c.connect();
         console.log('Connected successfully');
 
-        c.chartService.register('edf46f62-04cf-4bbc-bd82-56e8024de759').subscribe(
+        c.chartService.register(WDXExampleChart.uuid).subscribe(
             {
                 next: (response) => {
                     console.log('Response');
