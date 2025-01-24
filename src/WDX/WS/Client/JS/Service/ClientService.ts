@@ -17,6 +17,7 @@ import http = require('http');
 import * as WDXSchema from '@wago/wdx-schema';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {TrendService} from './TrendService';
+import {ChartService} from './ChartService';
 
 /**
  * @todo Multiple connect create isolated subscription on status,
@@ -53,6 +54,8 @@ export class ClientService {
   private __alarmService: AlarmService;
 
   private __trendService: TrendService;
+
+  private __chartService: ChartService;
 
   private __incommingMessages:
       Subject<WDXSchema.WDX.Schema.Message.AbstractMessage> =
@@ -177,8 +180,6 @@ export class ClientService {
     this.__startKeepAlive();
   }
 
-
-
   private __reconnect(): void {
     console.error(`Reconnecting after ${this.__RECONNECT_TIMEOUT}ms`);
 
@@ -248,6 +249,13 @@ export class ClientService {
       this.__alarmService = new AlarmService(this);
     }
     return this.__alarmService;
+  }
+
+  public get chartService(): ChartService {
+    if (undefined === this.__chartService) {
+      this.__chartService = new ChartService(this);
+    }
+    return this.__chartService;
   }
 
   public get trendService(): TrendService {

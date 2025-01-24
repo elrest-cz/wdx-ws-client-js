@@ -10,19 +10,19 @@ import {Observable, Subject, Subscription} from 'rxjs';
 import {AbstractAPIService} from '.';
 import * as WDXSchema from '@wago/wdx-schema';
 
-export class TrendService extends AbstractAPIService {
+export class ChartService extends AbstractAPIService {
   public delete(uuid: string):
-      Observable<WDXSchema.WDX.Schema.Model.Trend.Trend> {
-    const request: WDXSchema.WDX.Schema.Message.Trend.DeleteRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.DeleteRequest(uuid);
+      Observable<WDXSchema.WDX.Schema.Model.Chart.Chart> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.DeleteRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.DeleteRequest(uuid);
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Trend> =
-        new Subject<WDXSchema.WDX.Schema.Model.Trend.Trend>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Chart.Chart> =
+        new Subject<WDXSchema.WDX.Schema.Model.Chart.Chart>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
-              if (WDXSchema.WDX.Schema.Message.Type.TrendingDeleteResponse ===
+              if (WDXSchema.WDX.Schema.Message.Type.ChartDeleteResponse ===
                       message.type &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
@@ -40,17 +40,17 @@ export class TrendService extends AbstractAPIService {
   }
 
   public detail(uuid: string):
-      Observable<WDXSchema.WDX.Schema.Model.Trend.Trend> {
-    const request: WDXSchema.WDX.Schema.Message.Trend.DetailRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.DetailRequest(uuid);
+      Observable<WDXSchema.WDX.Schema.Model.Chart.Chart> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.DetailRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.DetailRequest(uuid);
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Trend> =
-        new Subject<WDXSchema.WDX.Schema.Model.Trend.Trend>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Chart.Chart> =
+        new Subject<WDXSchema.WDX.Schema.Model.Chart.Chart>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
-              if (WDXSchema.WDX.Schema.Message.Type.TrendingDetailResponse ===
+              if (WDXSchema.WDX.Schema.Message.Type.ChartDetailResponse ===
                       message.type &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
@@ -67,20 +67,19 @@ export class TrendService extends AbstractAPIService {
     return response.asObservable();
   }
 
+  public save(item: WDXSchema.WDX.Schema.Model.Chart.Chart):
+      Observable<WDXSchema.WDX.Schema.Model.Chart.Chart> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.SaveRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.SaveRequest(item);
 
-  public save(trend: WDXSchema.WDX.Schema.Model.Trend.Trend):
-      Observable<WDXSchema.WDX.Schema.Model.Trend.Trend> {
-    const request: WDXSchema.WDX.Schema.Message.Trend.SaveRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.SaveRequest(trend);
-
-    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Trend> =
-        new Subject<WDXSchema.WDX.Schema.Model.Trend.Trend>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Chart.Chart> =
+        new Subject<WDXSchema.WDX.Schema.Model.Chart.Chart>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type.TrendingSaveResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.ChartSaveResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -96,29 +95,29 @@ export class TrendService extends AbstractAPIService {
   }
 
   public list(
-      active?: boolean|undefined,
       offset:
           number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_OFFSET,
       limit:
           number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_LIMIT,
-      ): Observable<WDXSchema.WDX.Schema.Model.Trend.Trend[]> {
-    const request: WDXSchema.WDX.Schema.Message.Trend.ListRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.ListRequest({
-          where: {
-            active: active,
-          },
+      ): Observable<WDXSchema.WDX.Schema.Model.Pagination
+                        .Response<WDXSchema.WDX.Schema.Model.Chart.Chart>> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.ListRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.ListRequest({
+          where: {},
           take: limit,
           skip: offset,
         });
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Trend[]> =
-        new Subject<WDXSchema.WDX.Schema.Model.Trend.Trend[]>();
+    const response: Subject<WDXSchema.WDX.Schema.Model.Pagination.Response<
+        WDXSchema.WDX.Schema.Model.Chart.Chart>> =
+        new Subject<WDXSchema.WDX.Schema.Model.Pagination
+                        .Response<WDXSchema.WDX.Schema.Model.Chart.Chart>>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type.TrendingListResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.ChartListResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -134,9 +133,15 @@ export class TrendService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public unregister(uuid: string): Observable<undefined> {
-    const request: WDXSchema.WDX.Schema.Message.Trend.UnsubscribeRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.UnsubscribeRequest(uuid);
+  public unregister(
+      /**
+       * Chart uuid
+       */
+      uuid: string,
+
+      ): Observable<undefined> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.UnsubscribeRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.UnsubscribeRequest(uuid);
 
     const response = new Subject<undefined>();
     const subscription: Subscription =
@@ -144,7 +149,7 @@ export class TrendService extends AbstractAPIService {
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
                       WDXSchema.WDX.Schema.Message.Type
-                          .TrendingUnsubscribeResponse &&
+                          .ChartUnsubscribeResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(undefined);
@@ -160,27 +165,33 @@ export class TrendService extends AbstractAPIService {
     return response.asObservable();
   }
 
-  public register(uuid: string):
-      Observable<WDXSchema.WDX.Schema.Model.Trend.Data> {
-    const request: WDXSchema.WDX.Schema.Message.Trend.SubscribeRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.SubscribeRequest(uuid);
+  public register(
+      /**
+       * Chart uuid
+       */
+      uuid: string,
 
-    const response: Subject<WDXSchema.WDX.Schema.Model.Trend.Data> =
-        new Subject<WDXSchema.WDX.Schema.Model.Trend.Data>();
+      ):
+      Observable<WDXSchema.WDX.Schema.Model.Chart.ConfigurationData|undefined> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.SubscribeRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.SubscribeRequest(uuid);
+
+    const response:
+        Subject<WDXSchema.WDX.Schema.Model.Chart.ConfigurationData|undefined> =
+            new Subject<WDXSchema.WDX.Schema.Model.Chart.ConfigurationData|
+                        undefined>();
 
     const topic: string =
-        `${WDXSchema.WDX.Schema.Message.Type.TrendingUpdate}-${uuid}`;
+        `${WDXSchema.WDX.Schema.Message.Type.ChartUpdate}-${uuid}`;
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if ((message.type ===
                        WDXSchema.WDX.Schema.Message.Type
-                           .TrendingSubscribeResponse &&
+                           .ChartSubscribeResponse &&
                    message.uuid === request.uuid) ||
-                  (topic === message.topic &&
-                   message.type ===
-                       WDXSchema.WDX.Schema.Message.Type.TrendingUpdate)) {
+                  (topic === message.topic)) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
               }
@@ -192,55 +203,62 @@ export class TrendService extends AbstractAPIService {
     return response.asObservable();
   }
 
+  public configuration(uuid: string):
+      Observable<WDXSchema.WDX.Schema.Model.Chart.Configuration> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.ConfigurationRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.ConfigurationRequest(uuid);
+
+    const response: Subject<WDXSchema.WDX.Schema.Model.Chart.Configuration> =
+        new Subject<WDXSchema.WDX.Schema.Model.Chart.Configuration>();
+
+    const subscription: Subscription =
+        this._clientService.incommingMessages.subscribe(
+            (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
+              if (message.type ===
+                      WDXSchema.WDX.Schema.Message.Type
+                          .ChartConfigurationResponse &&
+                  message.uuid === request.uuid) {
+                message.error ? response.error(message.error) :
+                                response.next(message.body);
+                subscription.unsubscribe();
+                response.complete();
+              }
+            },
+        );
+
+    this._clientService.sendMessage(request);
+
+    return response.asObservable();
+  }
+
   public data(
+
+      /**
+       * Chart uuid
+       */
       uuid: string,
+
       dateFrom?: number,
       dateTo?: number,
-      offset:
-          number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_OFFSET,
-      limit:
-          number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_LIMIT,
-      sortColumn?: string,
-      sortOrder?: string,
-      ): Observable<WDXSchema.WDX.Schema.Model.Pagination
-                        .Response<WDXSchema.WDX.Schema.Model.Trend.Data>> {
-    let params = {
-      take: limit,
-      skip: offset,
-    };
-
-    if (undefined !== sortOrder && undefined !== sortColumn) {
-      params = Object.assign(
-          params,
-          {
-            order: {
-              [sortColumn]: sortOrder,
-            }
-          },
-      );
-    }
-
-    const request: WDXSchema.WDX.Schema.Message.Trend.DataRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.DataRequest(
-            new WDXSchema.WDX.Schema.Model.Trend.DataRequestBody(
+      ): Observable<WDXSchema.WDX.Schema.Model.Chart.ConfigurationData> {
+    const request: WDXSchema.WDX.Schema.Message.Chart.DataRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.DataRequest(
+            new WDXSchema.WDX.Schema.Model.Chart.DataRequestBody(
                 uuid,
-                params,
                 dateFrom,
                 dateTo,
                 ),
         );
 
     const response:
-        Subject<WDXSchema.WDX.Schema.Model.Pagination
-                    .Response<WDXSchema.WDX.Schema.Model.Trend.Data>> =
-            new Subject<WDXSchema.WDX.Schema.Model.Pagination
-                            .Response<WDXSchema.WDX.Schema.Model.Trend.Data>>();
+        Subject<WDXSchema.WDX.Schema.Model.Chart.ConfigurationData> =
+            new Subject<WDXSchema.WDX.Schema.Model.Chart.ConfigurationData>();
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type.TrendingDataResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.ChartDataResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -257,38 +275,15 @@ export class TrendService extends AbstractAPIService {
 
   public export(
       uuid: string,
-      type: WDXSchema.WDX.Schema.Model.Trend.Export.Type,
+      type: WDXSchema.WDX.Schema.Model.Chart.Export.Type,
       dateFrom?: number,
       dateTo?: number,
-      offset:
-          number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_OFFSET,
-      limit:
-          number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_LIMIT,
-      sortColumn?: string,
-      sortOrder?: string,
       ): Observable<string> {
-    let params = {
-      take: limit,
-      skip: offset,
-    };
-
-    if (undefined !== sortOrder && undefined !== sortColumn) {
-      params = Object.assign(
-          params,
-          {
-            order: {
-              [sortColumn]: sortOrder,
-            }
-          },
-      );
-    }
-
-    const request: WDXSchema.WDX.Schema.Message.Trend.ExportRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.ExportRequest(
-            new WDXSchema.WDX.Schema.Model.Trend.ExportRequestBody(
+    const request: WDXSchema.WDX.Schema.Message.Chart.ExportRequest =
+        new WDXSchema.WDX.Schema.Message.Chart.ExportRequest(
+            new WDXSchema.WDX.Schema.Model.Chart.ExportRequestBody(
                 uuid,
                 type,
-                params,
                 dateFrom,
                 dateTo,
                 ),
@@ -300,8 +295,7 @@ export class TrendService extends AbstractAPIService {
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
               if (message.type ===
-                      WDXSchema.WDX.Schema.Message.Type
-                          .TrendingExportResponse &&
+                      WDXSchema.WDX.Schema.Message.Type.ChartExportResponse &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
