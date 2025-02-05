@@ -18,19 +18,21 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'Virtual.virtual-store';
+        const path = 'Virtual.farel.MonthlyProduction';
+        const regressionDataPath = 'Virtual.farel.MonthlykWhProduction';
 
         c.dataService.register(path).subscribe(
             {
-                next: (response) => {
-                    console.log('Response');
-                    console.log(JSON.stringify(response, null, 2));
+                next: async (response) => {
+                    console.log('Virtual.farel.MonthlyProduction changed', response.value);
+                    const data = { "energyConsuption": 0, "production": response.value };
+                    console.log('Virtual.farel.MonthlykWhProduction calculated to', response.value);
+                    await c.dataService.setValue(regressionDataPath, JSON.stringify(data)).toPromise();
                 },
 
                 error: async (error) => {
                     console.error('Error Code: ' + error.code);
                     console.error('Error Message: ' + error.message);
-
                     console.log('Disconnecting');
                     await c.disconnect();
                     console.log('Disconnected successfully');

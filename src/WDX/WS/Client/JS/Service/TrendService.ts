@@ -194,14 +194,15 @@ export class TrendService extends AbstractAPIService {
 
   public data(
       uuid: string,
-      dateFrom?: number,
-      dateTo?: number,
       offset:
           number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_OFFSET,
       limit:
           number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_LIMIT,
       sortColumn?: string,
       sortOrder?: string,
+      dateFrom?: number,
+      dateTo?: number,
+      dateFormat?: string,
       ): Observable<WDXSchema.WDX.Schema.Model.Pagination
                         .Response<WDXSchema.WDX.Schema.Model.Trend.Data>> {
     let params = {
@@ -220,14 +221,16 @@ export class TrendService extends AbstractAPIService {
       );
     }
 
+    const body = new WDXSchema.WDX.Schema.Model.Trend.DataRequestBody();
+    body.conditions = params;
+    body.dateFormat = dateFormat;
+    body.dateFrom = dateFrom;
+    body.dateTo = dateTo;
+    body.trendUuid = uuid;
+
     const request: WDXSchema.WDX.Schema.Message.Trend.DataRequest =
         new WDXSchema.WDX.Schema.Message.Trend.DataRequest(
-            new WDXSchema.WDX.Schema.Model.Trend.DataRequestBody(
-                uuid,
-                params,
-                dateFrom,
-                dateTo,
-                ),
+            body,
         );
 
     const response:
