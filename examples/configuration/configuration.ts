@@ -9,11 +9,7 @@
 'use strict';
 
 const wsConfiguration = {
-  protocol: 'ws',
-  host: 'localhost',
-  port: 4282,
-  // or url
-  // url: 'ws://localhost:4282'
+  url: 'ws://localhost:80/wdx/ws'
 };
 
 module.exports.wsConfiguration = wsConfiguration;

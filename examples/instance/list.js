@@ -18,7 +18,11 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.instanceService.list().subscribe(
+        c.instanceService.list({
+            where: {
+                'namespace': 'WDX',
+            },
+        }).subscribe(
             {
                 next: (response) => {
                     console.log('Response');
