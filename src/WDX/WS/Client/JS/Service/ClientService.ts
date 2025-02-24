@@ -155,7 +155,7 @@ export class ClientService {
 
   private __onOpen(connection: WDXWS.connection): void {
     this.__connection = connection;
-    this.__connection.on('error', (error) => {});
+    this.__connection.on('error', (error:any) => {});
 
     this.__connection.on(
         'close',

@@ -63,6 +63,7 @@
 		"@types/express": "^x.x.x",
 		"@types/node": "^x.x.x",
 		"@types/uuid": "^x.x.x",
+		"@types/websocket": "^1.0.10",
 		"concat-md": "^x.x.x",
 		"nodemon": "^x.x.x",
 		"nyc": "^x.x.x",
@@ -71,7 +72,7 @@
 		"ts-node": "^x.x.x",
 		"typedoc": "^x.x.x",
 		"typedoc-plugin-markdown": "^x.x.x",
-		"update-changelog": "^x.x.x",
-		"typescript": "^x.x.x"
+		"typescript": "^x.x.x",
+		"update-changelog": "^x.x.x"
 	}
 }
