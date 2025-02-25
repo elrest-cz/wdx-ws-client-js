@@ -9,7 +9,7 @@
 'use strict';
 
 const wsConfiguration = {
-  url: 'ws://localhost:80/wdx/ws'
+  url: 'ws://localhost:82'
 };
 
 module.exports.wsConfiguration = wsConfiguration;

@@ -7,7 +7,8 @@
  */
 
 const wsConfiguration = {
-    url: 'ws://localhost:80/wdx/ws',
+    url: 'ws://localhost:82',
+    //url: 'ws://localhost:80/wdx/ws',
     //url: 'ws://localhost:4285/wdx/ws',
     //url: 'ws://localhost:8081/wdx/ws',
     //url: 'ws://wdx-runtime.cloud:8081/wdx/ws',
