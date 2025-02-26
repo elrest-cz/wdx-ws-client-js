@@ -11,12 +11,15 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
 
 (async () => {
     try {
-        const c = new WDXWSClient.ClientService({ protocol: 'ws', host: 'localhost', port: 4282 });
-        await c.connect();
+        const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
+            WDXWSClientConfiguration.wsConfiguration
+        );
 
+        console.log('Connecting');
+        await c.connect();
         console.log('Connected successfully');
 
-        const path = 'Virtual.virtual-store.test';
+        const path = 'Virtual.stats';
 
         c.dataService.getValue(path).subscribe(
             {

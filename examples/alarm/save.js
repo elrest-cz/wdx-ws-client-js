@@ -19,24 +19,13 @@ const WDXSchema = require('@wago/wdx-schema');
         await c.connect();
         console.log('Connected successfully');
 
-        const alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm(
-            'WDX - Examples - Alarms - Virtual.virtual-store.test no empty',//name
-            true,//active
-            3335, // number
-            WDXSchema.WDX.Schema.Model.Alarm.AlarmType.ERROR_WITHOUT_ACK,//type
-            [
-                new WDXSchema.WDX.Schema.Model.Alarm.AlarmCondition(
-                    'Virtual.virtual-store.test',
-                    WDXSchema.WDX.Schema.Model.Alarm.AlarmConditionExpression.IS_NOT_EMPTY,
-                    undefined,
-                    'ee4c3746-8f1c-11ef-b706-088fc37eff34',
-
-                ),
-            ],
-            undefined, //message
-            undefined, //messageOff
-            'a37a75f2-8f1c-11ef-b4ad-088fc37eff34' // uuid
-        );
+        const alarm = new WDXSchema.WDX.Schema.Model.Alarm.Alarm();
+        alarm.name ='WDX - Examples - Alarms - Virtual.virtual-store.test no empty';
+        alarm.enabled = true;
+        alarm.code = 33333333;
+        alarm.classification = WDXSchema.WDX.Schema.Model.Alarm.AlarmClassification.ERROR;
+        alarm.type = WDXSchema.WDX.Schema.Model.Alarm.AlarmType.WITHOUT_ACKNOWLEDGE;
+        alarm.uuid = 'a37a75f2-8f1c-11ef-b4ad-088fc37eff34';
 
         c.alarmService.save(alarm).subscribe(
             {

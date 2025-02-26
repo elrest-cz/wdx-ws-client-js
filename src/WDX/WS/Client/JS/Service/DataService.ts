@@ -45,8 +45,8 @@ export class DataService extends AbstractAPIService {
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
             (message: WDXSchema.WDX.Schema.Message.AbstractMessage) => {
-              if (WDXSchema.WDX.Schema.Message.Type.DataRefreshSchemaResponse ===
-                      message.type &&
+              if (WDXSchema.WDX.Schema.Message.Type
+                          .DataRefreshSchemaResponse === message.type &&
                   message.uuid === request.uuid) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
@@ -145,14 +145,15 @@ export class DataService extends AbstractAPIService {
   }
 
   public register(
-      path: string, refreshMin: number = 1000, refreshMax: number = 0,
-      delta?: number):
-      Observable<WDXSchema.WDX.Schema.Model.Data.DataValue|null> {
+      path: string,
+      ): Observable<WDXSchema.WDX.Schema.Model.Data.DataValue|null> {
     const request: WDXSchema.WDX.Schema.Message.Data.RegisterValueRequest =
         new WDXSchema.WDX.Schema.Message.Data.RegisterValueRequest(path);
 
     const response: Subject<WDXSchema.WDX.Schema.Model.Data.DataValue> =
         new Subject<WDXSchema.WDX.Schema.Model.Data.DataValue>();
+
+    const topic = `${WDXSchema.WDX.Schema.Message.Type.DataUpdate}-${path}`;
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(
@@ -163,7 +164,7 @@ export class DataService extends AbstractAPIService {
                    message.uuid === request.uuid) ||
                   message.type ===
                           WDXSchema.WDX.Schema.Message.Type.DataUpdate &&
-                      message.body.path === path) {
+                      message.topic === topic) {
                 message.error ? response.error(message.error) :
                                 response.next(message.body);
               }

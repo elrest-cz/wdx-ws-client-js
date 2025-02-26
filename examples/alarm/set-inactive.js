@@ -1,17 +1,17 @@
 /**
- * Elrest - WDX - WS - Client - JS - Example - Data Set Value
+ * Elrest - WDX - WS - Client - JS - Example - Create Alarm
  * 
- * Sets Data Value for given path from WDX with WS client.
+ * Creates a new alarm in WDX with WS client.
  *
  * @copyright 2024 Elrest AutomationsSysteme GMBH
  */
 
 const WDXWSClient = require('@wago/wdx-ws-client-js');
 const WDXWSClientConfiguration = require('../../configuration/configuration.js');
+const WDXSchema = require('@wago/wdx-schema');
 
 (async () => {
     try {
-
         const c = new WDXWSClient.WDX.WS.Client.JS.Service.ClientService(
             WDXWSClientConfiguration.wsConfiguration
         );
@@ -19,18 +19,17 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'MQTT.ssssss.Pavol.test-teteet';
-
-        c.dataService.setValue(path, 123).subscribe(
+        c.alarmService.setInactive(4444).subscribe(
             {
-                next: (response) => {
+                next: (alarm) => {
                     console.log('Response');
-                    console.log(JSON.stringify(response, null, 2));
+                    console.log(JSON.stringify(alarm, null, 2));
                 },
 
                 error: async (error) => {
                     console.error('Error Code: ' + error.code);
                     console.error('Error Message: ' + error.message);
+                    console.error('Error Message: ' + JSON.stringify(error.errors, null, 2));
 
                     console.log('Disconnecting');
                     await c.disconnect();
@@ -48,6 +47,6 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
 
     } catch (e) {
         console.error('Error: ' + e.message);
-        console.error('Error: ' + e.stack);
+        //console.error('Error: ' + e.stack);
     }
 })();
