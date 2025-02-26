@@ -9,6 +9,7 @@
 import {Observable, Subject, Subscription} from 'rxjs';
 import {AbstractAPIService} from '.';
 import * as WDXSchema from '@wago/wdx-schema';
+import * as WDXORM from 'typeorm';
 
 export class InstanceService extends AbstractAPIService {
   /**
@@ -40,7 +41,7 @@ export class InstanceService extends AbstractAPIService {
   }
 
   public logSubscribe(uuid: string):
-      Observable<WDXSchema.WDX.Schema.Model.Instance.LogMessageBody> {
+      Observable<null|Array<WDXSchema.WDX.Schema.Model.Instance.Log>> {
     const request:
         WDXSchema.WDX.Schema.Message.Instance.LogSubscribeRequestMessage =
         new WDXSchema.WDX.Schema.Message.Instance.LogSubscribeRequestMessage(
@@ -48,8 +49,8 @@ export class InstanceService extends AbstractAPIService {
         );
 
     const response:
-        Subject<WDXSchema.WDX.Schema.Model.Instance.LogMessageBody> =
-            new Subject<WDXSchema.WDX.Schema.Model.Instance.LogMessageBody>();
+        Subject<null|Array<WDXSchema.WDX.Schema.Model.Instance.Log>> =
+            new Subject<null|Array<WDXSchema.WDX.Schema.Model.Instance.Log>>();
 
     const topic: string =
         `${WDXSchema.WDX.Schema.Message.Type.InstanceLog}-${uuid}`;
@@ -112,14 +113,21 @@ export class InstanceService extends AbstractAPIService {
    * Lists eDesign Instances
    *
    */
-  public list(status?: WDXSchema.WDX.Schema.Model.Instance.Status):
-      Observable<Array<WDXSchema.WDX.Schema.Model.Instance.Instance>> {
+  public list(
+      conditions:
+          WDXORM.FindManyOptions<WDXSchema.WDX.Schema.Model.Instance.Instance>,
+      ):
+
+      Observable<WDXSchema.WDX.Schema.Model.Pagination
+                     .Response<WDXSchema.WDX.Schema.Model.Instance.Instance>> {
     const request: WDXSchema.WDX.Schema.Message.Instance.ListRequest =
-        new WDXSchema.WDX.Schema.Message.Instance.ListRequest();
+        new WDXSchema.WDX.Schema.Message.Instance.ListRequest(conditions);
 
     const response:
-        Subject<Array<WDXSchema.WDX.Schema.Model.Instance.Instance>> =
-            new Subject<Array<WDXSchema.WDX.Schema.Model.Instance.Instance>>;
+        Subject<WDXSchema.WDX.Schema.Model.Pagination
+                    .Response<WDXSchema.WDX.Schema.Model.Instance.Instance>> =
+            new Subject<WDXSchema.WDX.Schema.Model.Pagination.Response<
+                WDXSchema.WDX.Schema.Model.Instance.Instance>>;
 
     const subscription: Subscription =
         this._clientService.incommingMessages.subscribe(

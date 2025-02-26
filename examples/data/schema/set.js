@@ -20,7 +20,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         console.log('Connected successfully');
 
         const schema = new WDXSchema.WDX.Schema.Model.Data.DataSchema(
-            'Virtual.virtual-store.test',
+            'Virtual.store.folder.test',
             'test',
             'test',
             undefined,

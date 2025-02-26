@@ -14,6 +14,7 @@ import {AlarmService} from './AlarmService';
 import {TrendService} from './TrendService';
 import {InstanceService} from './InstanceService';
 import {RuntimeService} from './RuntimeService';
+import {ChartService} from './ChartService';
 
 export {
   AbstractAPIService,
@@ -25,4 +26,5 @@ export {
   TrendService,
   InstanceService,
   RuntimeService,
+  ChartService,
 };

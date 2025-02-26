@@ -19,8 +19,10 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-
-        // c.alarmService.listAlarmHistory('a37a75f2-8f1c-11ef-b4ad-088fc37eff34')
+        /**
+         * 
+         */
+        // c.alarmService.listAlarmHistory(3335/** alarm code */)
         // pass Alarm UUID for specific alarm or list all alarms history
         c.alarmService.listAlarmHistory().subscribe(
             {
