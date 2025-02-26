@@ -269,6 +269,8 @@ export class TrendService extends AbstractAPIService {
           number = WDXSchema.WDX.Schema.Model.Pagination.Request.DEFAULT_LIMIT,
       sortColumn?: string,
       sortOrder?: string,
+      dateFormat?: string,
+      timezone?: string,
       ): Observable<string> {
     let params = {
       take: limit,
@@ -285,17 +287,17 @@ export class TrendService extends AbstractAPIService {
           },
       );
     }
+    const body = new WDXSchema.WDX.Schema.Model.Trend.ExportRequestBody();
+    body.conditions = params;
+    body.dateFormat =dateFormat;
+    body.timezone =timezone;
+    body.dateFrom = dateFrom;
+    body.dateTo = dateTo;
+    body.trendUuid= uuid;
+    body.type= type;
 
     const request: WDXSchema.WDX.Schema.Message.Trend.ExportRequest =
-        new WDXSchema.WDX.Schema.Message.Trend.ExportRequest(
-            new WDXSchema.WDX.Schema.Model.Trend.ExportRequestBody(
-                uuid,
-                type,
-                params,
-                dateFrom,
-                dateTo,
-                ),
-        );
+        new WDXSchema.WDX.Schema.Message.Trend.ExportRequest(body);
 
     const response: Subject<string> = new Subject<string>();
 
