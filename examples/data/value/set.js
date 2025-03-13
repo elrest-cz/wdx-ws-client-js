@@ -19,7 +19,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'MQTT.ssssss.Pavol.test-teteet';
+        const path = 'Virtual.store.c';
 
         c.dataService.setValue(path, 123).subscribe(
             {

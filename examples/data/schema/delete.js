@@ -19,7 +19,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'Virtual.virtual-store.test';
+        const path = 'Virtual.store.c';
 
         c.dataService.deleteSchema(path).subscribe(
             {
@@ -29,8 +29,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
                 },
 
                 error: async (error) => {
-                    console.error('Error Code: ' + error.code);
-                    console.error('Error Message: ' + error.message);
+                    console.error('Error: ' + error);
 
                     console.log('Disconnecting');
                     await c.disconnect();
@@ -47,6 +46,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         );
 
     } catch (e) {
+        console.error('Error: ' + e);
         console.error('Error: ' + e.message);
         console.error('Error: ' + e.stack);
     }
