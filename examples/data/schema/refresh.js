@@ -19,7 +19,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const path = 'MQTT.some-instance';
+        const path = 'some-refreshable-path';
 
         c.dataService.refreshSchema(path).subscribe(
             {

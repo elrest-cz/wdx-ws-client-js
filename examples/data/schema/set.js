@@ -19,19 +19,17 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
         await c.connect();
         console.log('Connected successfully');
 
-        const schema = new WDXSchema.WDX.Schema.Model.Data.DataSchema(
-            'Virtual.store.folder.test',
-            'test',
-            'test',
-            undefined,
-            new WDXSchema.WDX.Schema.Model.Data.MetaData.MetaDataVirtual(),
-            false,
-            true,
-            true,
-            false,
-            true,
-            true,
-        );
+        const schema = new WDXSchema.WDX.Schema.Model.Data.DataSchema();
+        schema.path = 'Virtual.store.c';
+        schema.relativePath = 'c';
+        schema.readonly = false;
+        schema.subscribeable = true;
+        schema.expandable = false;
+        schema.extendable = false;
+        schema.editable = true;
+        schema.removable = true;
+        schema.refreshable = false;
+        schema.metadata = new WDXSchema.WDX.Schema.Model.Data.MetaData.MetaDataVirtual();
 
         c.dataService.setSchema(schema).subscribe(
             {
@@ -40,8 +38,7 @@ const WDXWSClientConfiguration = require('../../configuration/configuration.js')
                 },
 
                 error: async (error) => {
-                    console.error('Error Code: ' + error.code);
-                    console.error('Error Message: ' + error.message);
+                    console.error('Error: ' + error);
 
                     console.log('Disconnecting');
                     await c.disconnect();

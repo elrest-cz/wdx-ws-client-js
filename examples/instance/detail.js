@@ -18,7 +18,7 @@ const WDXWSClientConfiguration = require('../configuration/configuration.js');
         await c.connect();
         console.log('Connected successfully');
 
-        c.instanceService.detail('b8ed912d-db48-4165-937c-6e7e039fedc9').subscribe(
+        c.instanceService.detail('b3e50030-eeac-11ee-8e55-088fc37eff34').subscribe(
             {
                 next: (response) => {
                     console.log('Response');
